@@ -60,7 +60,12 @@ const menuData = [
                {name:"شوايه", price:0},
                {name:"مندي", price:0}  
             ]},
+            
             // الوجبة 4: العرض الاقتصادي الجديد
+            {id:"app-khdar", img:"/Dirty55/ap01.webp", name:"سلطه خضار", basePrice:0, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+                {name:"صغير", price:7},
+                {name:"وسط", price:13}
+            ]},
             {
                 id:"sh4", 
                 img:"/Dirty55/sh20.webp", 
