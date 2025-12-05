@@ -63,8 +63,13 @@ const menuData = [
             
             // الوجبة 4: العرض الاقتصادي الجديد
             {id:"app-khdar", img:"/Dirty55/ap01.webp", name:"سلطه خضار", basePrice:0, availableIn: ['branch1', 'branch2', 'branch3'], options:[
-                {name:"صغير", price:7},
-                {name:"وسط", price:13}
+                {name:"حبه شوايه رز شعبي", price:40},
+                {name:"نص شوايه رز شعبي", price:20},
+                {name:"حبه شوايه رز بشاور", price:50},
+                {name:"نص شوايه بشاور", price:﷼25},
+                {name:"حبه شوايه رز مندي", price:50},
+                {name:"نص شوايه رز مندي", price:25},
+                {name:"ربع شوايه رز شعبي", price:13}
             ]},
             {
                 id:"sh4", 
