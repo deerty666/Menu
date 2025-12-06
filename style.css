@@ -693,13 +693,13 @@ header img {
     }
 }
 header {
-    padding: 4px 0;  /* أصغر بكثير */
+    padding: 2px 0;  /* أصغر بكثير */
 }
 
 /* للجوال – أصغر زيادة */
 @media (max-width: 480px) {
     header {
-        padding: 2px 0;
+        padding: 1px 0;
     }
 }
 
