@@ -1255,3 +1255,10 @@ navigator.geolocation.getCurrentPosition(pos => {
     document.getElementById("userProfile").innerHTML += 
         `<br>📍 موقعك: ${lat}, ${lon}`;
 });
+let userName = localStorage.getItem("userName");
+let userLocation = "";
+navigator.geolocation.getCurrentPosition(pos => {
+    const lat = pos.coords.latitude.toFixed(4);
+    const lon = pos.coords.longitude.toFixed(4);
+    userLocation = `${lat}, ${lon}`;
+});
