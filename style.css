@@ -702,4 +702,170 @@ header {
         padding: 1px 0;
     }
 }
+/* =======================================
+   وضع ليلي فاخر
+======================================= */
+:root {
+    --dark-bg: #1A1512;
+    --dark-card: rgba(255, 255, 255, 0.03);
+    --dark-text: #f5f5f5;
+    --dark-border: rgba(195,158,106,0.22);
+}
+
+body {
+    background: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+/* خلفية ذهبية متحركة خفيفة */
+body {
+    background: url('https://i.imgur.com/CJYHKvV.gif');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* =======================================
+   هيدر زجاجي فاخر
+======================================= */
+header {
+    backdrop-filter: blur(10px);
+    background: rgba(26,21,18,0.55);
+    border-bottom: 1px solid rgba(195,158,106,0.3);
+    padding: 4px 0;
+}
+@media (max-width: 480px) {
+    header { padding: 2px 0; }
+}
+
+/* حركة دخول للشعار */
+header img {
+    animation: logoIn 0.7s ease-out;
+}
+@keyframes logoIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =======================================
+   قسم المستخدم (بروفايل)
+======================================= */
+#userProfile {
+    text-align: center;
+    color: var(--gold);
+    font-weight: 700;
+    padding: 6px;
+    font-size: 1rem;
+}
+
+/* =======================================
+   الأقسام (صور + تبويبات)
+======================================= */
+#sections {
+    margin-top: 5px;
+}
+
+.section-card {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.35);
+    border-radius: 12px;
+}
+
+.section-card img {
+    width: 80px !important;
+    height: 80px !important;
+}
+
+/* =======================================
+   بطاقات الوجبات (فخامة)
+======================================= */
+.menu-card {
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.22);
+}
+
+/* تكبير اسم الوجبة */
+.menu-card h3 {
+    font-size: 1.25rem !important;
+    font-weight: 800;
+}
+
+/* تأثير دخول البطاقات */
+.menu-card {
+    animation: fadeInUp 0.5s ease both;
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =======================================
+   زر الإضافة
+======================================= */
+.add-btn {
+    background: linear-gradient(135deg, #c39e6a, #e8c891);
+    color: #1A1512 !important;
+    font-weight: 800;
+    border-radius: 10px;
+}
+
+.add-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 12px rgba(195,158,106,0.7);
+}
+
+/* ضغطة ذهبية */
+@keyframes added {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+/* =======================================
+   سعر الإضافات
+======================================= */
+.option-price {
+    background: rgba(195,158,106,0.2);
+    color: var(--gold);
+    padding: 3px 8px;
+    border-radius: 8px;
+    font-weight: 800;
+    margin-right: 6px;
+}
+
+/* =======================================
+   تحسين المودال
+======================================= */
+#optionModal .modal-content {
+    background: rgba(26,21,18,0.85);
+    border: 1px solid var(--dark-border);
+    backdrop-filter: blur(6px);
+    animation: modalIn 0.4s ease-out;
+}
+@keyframes modalIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+#itemNote {
+    background: rgba(255,255,255,0.1);
+    color: var(--dark-text);
+    border: 1px solid var(--dark-border);
+}
+
+/* =======================================
+   تأثير دخول السلة (Drawer)
+======================================= */
+#cartDrawer {
+    transform: translateX(120%);
+    transition: transform 0.45s ease;
+}
+#cartDrawer.open {
+    transform: translateX(0);
+}
+
+/* =======================================
+   عداد السلة
+======================================= */
+#cartCount {
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
 
