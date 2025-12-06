@@ -660,9 +660,31 @@ header img {
     object-fit: contain;
 }
 /* 2. إعداد زر السلة (#cartBtn) ليكون نقطة مرجعية لتموضع الشارة */
+/* ================================================= */
+/* 🛒 5. زر السلة العائم (Cart Button) - الكود المُعدَّل */
+/* ================================================= */
 #cartBtn {
-    position: relative;
+    position: fixed; /* 👈 الأهم لجعله عائماً وثابتاً */
+    bottom: 15px;
+    right: 15px;
+    background-color: var(--gold);
+    color: var(--old-brown);
+    border: none;
+    border-radius: 50px;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    position: relative; /* 🌟 تمت إضافة هذا السطر لتموضع الشارة */
 }
+
+
 /* 3. تنسيق أيقونة السلة (الصورة الجديدة) داخل الزر */
 #cartBtn img {
     width: 32px;
