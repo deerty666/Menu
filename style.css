@@ -653,3 +653,38 @@ header img {
         background-position: 468px 0;
     }
 }
+/* 1. تكبير الشعار في رأس الصفحة */
+header img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+/* 2. إعداد زر السلة (#cartBtn) ليكون نقطة مرجعية لتموضع الشارة */
+#cartBtn {
+    position: relative;
+}
+/* 3. تنسيق أيقونة السلة (الصورة الجديدة) داخل الزر */
+#cartBtn img {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle; /* لضمان محاذاة الصورة مع رقم السلة */
+}
+/* 4. تنسيق شارة العدد الدائرية الذهبية (#cartCount) وتموضعها */
+#cartCount {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-color: var(--gold); /* 🪙 اللون الذهبي */
+    color: var(--old-brown); /* لون النص البني الغامق */
+    border-radius: 50%; /* 🔄 لجعلها دائرية */
+    text-align: center;
+    line-height: 22px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    
+    /* التموضع فوق الزاوية العليا اليمنى */
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    z-index: 10; /* لضمان ظهورها فوق الأيقونة */
+}
