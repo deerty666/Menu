@@ -692,3 +692,12 @@ header img {
         height: 90px;
     }
 }
+header {
+    padding: 10px 0;
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 6px 0;
+    }
+}
