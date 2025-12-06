@@ -1220,3 +1220,38 @@ function flyToCart(imgElement) {
     }, 800);
 }
 // ------------------------------------------
+/* ================================
+   فتح وإغلاق السلة + الأنيميشن
+================================= */
+document.getElementById("cartBtn").onclick = () => {
+    document.getElementById("cartDrawer").classList.add("open");
+};
+document.getElementById("closeCartBtn").onclick = () => {
+    document.getElementById("cartDrawer").classList.remove("open");
+};
+
+/* ================================
+   نظام بروفايل العميل
+================================= */
+let userName = localStorage.getItem("userName");
+
+if (!userName) {
+    userName = prompt("ما اسمك الكريم؟");
+    if (userName) {
+        localStorage.setItem("userName", userName);
+    }
+}
+
+document.getElementById("userProfile").textContent =
+    `مرحباً ${userName ?? "زائر"} 👋`;
+
+/* ================================
+   عرض الموقع
+================================= */
+navigator.geolocation.getCurrentPosition(pos => {
+    const lat = pos.coords.latitude.toFixed(4);
+    const lon = pos.coords.longitude.toFixed(4);
+
+    document.getElementById("userProfile").innerHTML += 
+        `<br>📍 موقعك: ${lat}, ${lon}`;
+});
