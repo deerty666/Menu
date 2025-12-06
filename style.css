@@ -680,9 +680,7 @@ header img {
     display: flex;
     align-items: center;
     gap: 8px;
-    
-    position: relative; /* 🌟 تمت إضافة هذا السطر لتموضع الشارة */
-}
+   
 
 
 
