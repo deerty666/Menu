@@ -60,17 +60,7 @@ const menuData = [
                {name:"شوايه", price:0},
                {name:"مندي", price:0}  
             ]},
-            
             // الوجبة 4: العرض الاقتصادي الجديد
-            {id:"app-khdar", img:"/Dirty55/ap01.webp", name:"شوايه", basePrice:0, availableIn: ['branch1', 'branch2', 'branch3'], options:[
-                {name:"حبه شوايه رز شعبي", price:40},
-                {name:"نص شوايه رز شعبي", price:20},
-                {name:"حبه شوايه رز بشاور", price:50},
-                {name:"نص شوايه بشاور", price:25},
-                {name:"حبه شوايه رز مندي", price:50},
-                {name:"نص شوايه رز مندي", price:25},
-                {name:"ربع شوايه رز شعبي", price:13}
-            ]},
             {
                 id:"sh4", 
                 img:"/Dirty55/sh20.webp", 
@@ -929,16 +919,6 @@ sendWhatsapp.addEventListener('click', () => {
     const deliveryType = document.querySelector('input[name="deliveryType"]:checked')?.value;
     // 📍 متغيرات رسائل الواتساب
     const lines=['طلب جديد من مطاعم سحايب ديرتي:'];
-    // 🌟🌟🌟 START: الأسطر التي أضفناها لبيانات العميل 🌟🌟🌟
-    const profileInfoLines = [
-        '⭐️ بيانات العميل (مبدئية):',
-        `الاسم: ${userName ?? "غير محدد"}`, 
-        `الموقع (الإحداثيات): ${userLocation || "لم يتم تحديد إحداثيات GPS بعد"}`,
-        '---'
-    ];
-    // نستخدم splice لإضافة معلومات العميل في بداية مصفوفة الرسالة
-    lines.splice(0, 0, ...profileInfoLines);
-    // 🌟🌟🌟 END: الأسطر التي أضفناها 🌟🌟🌟
     let subtotal = 0;
 
     cart.forEach(it=>{
@@ -1230,44 +1210,3 @@ function flyToCart(imgElement) {
     }, 800);
 }
 // ------------------------------------------
-/* ================================
-   فتح وإغلاق السلة + الأنيميشن
-================================= */
-document.getElementById("cartBtn").onclick = () => {
-    document.getElementById("cartDrawer").classList.add("open");
-};
-document.getElementById("closeCartBtn").onclick = () => {
-    document.getElementById("cartDrawer").classList.remove("open");
-};
-
-/* ================================
-   نظام بروفايل العميل
-================================= */
-
-if (!userName) {
-    userName = prompt("ما اسمك الكريم؟");
-    if (userName) {
-        localStorage.setItem("userName", userName);
-    }
-}
-
-document.getElementById("userProfile").textContent =
-    `مرحباً ${userName ?? "زائر"} 👋`;
-
-/* ================================
-   عرض الموقع
-================================= */
-navigator.geolocation.getCurrentPosition(pos => {
-    const lat = pos.coords.latitude.toFixed(4);
-    const lon = pos.coords.longitude.toFixed(4);
-
-    document.getElementById("userProfile").innerHTML += 
-        `<br>📍 موقعك: ${lat}, ${lon}`;
-});
-let userName = localStorage.getItem("userName");
-let userLocation = "";
-navigator.geolocation.getCurrentPosition(pos => {
-    const lat = pos.coords.latitude.toFixed(4);
-    const lon = pos.coords.longitude.toFixed(4);
-    userLocation = `${lat}, ${lon}`;
-});
