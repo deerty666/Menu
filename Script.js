@@ -1243,7 +1243,6 @@ document.getElementById("closeCartBtn").onclick = () => {
 /* ================================
    نظام بروفايل العميل
 ================================= */
-let userName = localStorage.getItem("userName");
 
 if (!userName) {
     userName = prompt("ما اسمك الكريم؟");
