@@ -170,13 +170,21 @@
     <button id="modalConfirm" class="primary-btn">تأكيد</button>
   </div>
 </div>
-
+ <div id="suggestionModal" class="suggestion-modal">
+  <div class="suggestion-box">
+    <h3>اقتراحات قد تعجبك 🍽️</h3>
+    <p id="suggestionTitle"></p>
+    <div id="suggestionItems"></div>
+    <button id="closeSuggestion" class="danger-btn" style="margin-top:10px">لا، شكراً</button>
+  </div>
+</div>   
 <div id="notificationPrompt">
     <div class="notification-content">
         <h3>هل تريد أن يصلك جديد عروضنا؟ 📢</h3>
         <p>قم بتفعيل الإشعارات لتكون أول من يعلم عند إضافة أطباق جديدة أو خصومات مميزة!</p>
         <button id="allowNotifications">نعم، أريد ذلك</button>
         <button id="denyNotifications">لا شكراً</button>
+        
     </div>
 </div>
 <script src="Script.js?v=3.1" defer></script>
