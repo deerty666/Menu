@@ -1,7 +1,7 @@
 /* ====== بيانات الفروع - يرجى تعديل أرقام الواتساب والأسماء حسب الرغبة ====== */
 const BRANCH_CONFIG = {
     'branch1': { 
-        whatsapp: '966536803598', // ⭐️ رقم واتساب فرع الرياض (كمثال)
+        whatsapp: '966536803598', // ⭐️ رقم واتساب فرع الرياض (كمثال)٣
         name: 'لبن الاحمدية', // اسم الفرع في الرسائل وعنوان الصفحة
         deliveryFee: 5,
     },
@@ -874,13 +874,6 @@ function renderCart(){
 }
 
 
-function updateQty(idx,change){ 
-    if(!cart[idx]) return; 
-    cart[idx].qty+=change; 
-    if(cart[idx].qty<1) cart.splice(idx,1); 
-    saveCart(); 
-}
-
 function showSmartSuggestion(addedItem){
     const sec = addedItem.actualSection || "الكل";
     const suggestedIDs = smartSuggestions[sec];
@@ -898,6 +891,13 @@ function showSmartSuggestion(addedItem){
     document.getElementById("suggestionModal").style.display = "flex";
     document.getElementById("suggestionTitle").innerText = `مناسبة مع ${addedItem.name}`;
     
+function updateQty(idx,change){ 
+    if(!cart[idx]) return; 
+    cart[idx].qty+=change; 
+    if(cart[idx].qty<1) cart.splice(idx,1); 
+    saveCart(); 
+}
+
     const container = document.getElementById("suggestionItems");
     container.innerHTML = "";
 
