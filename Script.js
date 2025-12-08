@@ -519,6 +519,16 @@ const searchBar = document.getElementById('searchBar');
 
 
 /* ====== سلة الطلبات والعناصر ====== */
+const dynamicSuggestionRules = {
+    "شواية": ["سلطة", "مقبلات", "مشروبات"],
+    "مندي": ["سلطة", "مشروبات"],
+    "مظغوط": ["سلطة", "شوربة", "مشروبات"],
+    "برياني": ["سلطة", "مشروبات"],
+    "رز": ["مشروبات", "سلطة"],
+    "مشويات": ["سلطة", "شوربة"],
+    "حلويات": ["مشروبات ساخنة", "مشروبات"],
+    "مشروبات": [],
+};
 let cart = JSON.parse(localStorage.getItem('deerty_cart') || '[]');
 const sectionsEl = document.getElementById('sections');
 const menuList = document.getElementById('menuList');
