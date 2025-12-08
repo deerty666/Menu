@@ -813,6 +813,7 @@ function addToCart(item){
 
     saveCart();
     flashCartButton();
+   showSmartSuggestion(item); 
 }
 
 
