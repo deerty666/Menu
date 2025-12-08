@@ -1,7 +1,7 @@
 /* ====== بيانات الفروع - يرجى تعديل أرقام الواتساب والأسماء حسب الرغبة ====== */
 const BRANCH_CONFIG = {
     'branch1': { 
-        whatsapp: '966536803598', // ⭐️ رقم واتساب فرع الرياض (كمثال)٣
+        whatsapp: '966536803598', // ⭐️ رقم واتساب فرع الرياض (كمثال)
         name: 'لبن الاحمدية', // اسم الفرع في الرسائل وعنوان الصفحة
         deliveryFee: 5,
     },
@@ -506,22 +506,7 @@ function processMenuData(data) {
     // 4. إرجاع مصفوفة البيانات الجديدة والمعالجة
     return processedMenuData;
 }
-// 🧠 جدول الاقتراحات الذكية لكل قسم
-const smartSuggestions = {
-    "الشوايه": ["side1", "side7", "bev-p"],
-    "المظبي": ["side3", "bev-m"],
-    "مندي": ["side7", "bev-s"],
-    "مقلوبه": ["side1", "bev-h"],
-    "مضغوط": ["side7", "side0"],
-    "زربيان": ["side1", "bev-q"],
-    "قسم اللحوم": ["side7", "bev-p"],
-    "المشويات": ["app-khdar", "bev-s"],
-    "الأطباق الجانبية": ["bev-p"],
-    "المشروبات": [],
-    "الايدامات": ["side1", "side5"],
-    "المقبلات": ["bev-q"],
-    "الكنافه": ["bev-s"]
-};
+
 // نستخدم الدالة الجديدة لمعالجة القائمة مرة واحدة
 const processedMenuData = processMenuData(menuData); 
 
@@ -814,7 +799,7 @@ function addToCart(item){
     saveCart();
     flashCartButton();
 }
-showSmartSuggestion(item);
+
 
 /* ====== renderCart - عرض الإجمالي التفصيلي باستخدام رسوم الفرع الحالي ====== */
 function renderCart(){
@@ -874,23 +859,6 @@ function renderCart(){
 }
 
 
-function showSmartSuggestion(addedItem){
-    const sec = addedItem.actualSection || "الكل";
-    const suggestedIDs = smartSuggestions[sec];
-    if (!suggestedIDs || suggestedIDs.length === 0) return;
-
-    const suggestionList = [];
-
-    suggestedIDs.forEach(id=>{
-        const found = menuData.flatMap(s=>s.items).find(i=>i.id === id);
-        if (found) suggestionList.push(found);
-    });
-
-    if (suggestionList.length === 0) return;
-
-    document.getElementById("suggestionModal").style.display = "flex";
-    document.getElementById("suggestionTitle").innerText = `مناسبة مع ${addedItem.name}`;
-    
 function updateQty(idx,change){ 
     if(!cart[idx]) return; 
     cart[idx].qty+=change; 
@@ -898,27 +866,7 @@ function updateQty(idx,change){
     saveCart(); 
 }
 
-    const container = document.getElementById("suggestionItems");
-    container.innerHTML = "";
 
-    suggestionList.forEach(sg=>{
-        const div = document.createElement("div");
-        div.className = "suggestion-item";
-
-        const price = sg.basePrice || sg.options[0].price;
-
-        div.innerHTML = `${sg.name} — ${price} ريال`;
-        div.onclick = () => {
-            addToCart({...sg, qty:1, selectedOption: sg.options[0]});
-            document.getElementById("suggestionModal").style.display = "none";
-        };
-        container.appendChild(div);
-    });
-
-    document.getElementById("closeSuggestion").onclick = () => {
-        document.getElementById("suggestionModal").style.display = "none";
-    };
-}
 function removeItem(idx){ 
     cart.splice(idx,1); 
     saveCart(); 
