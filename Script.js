@@ -175,7 +175,7 @@ const menuData = [
         ]
     },
     { 
-        section:"قسم اللحوم", 
+        section:" اللحوم", 
         sectionImg: "/Dirty55/me00.webp",
         items:[
             // الوجبة 1
@@ -329,9 +329,9 @@ const menuData = [
         sectionImg: "/Dirty55/si00.webp",
         items:[
             // الوجبة الجديدة: شوربة (أكثر مبيعاً)
-            {id:"side0", img:"/Dirty55/si08.webp", name:"شوربة", basePrice:8, isBestSeller: true, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صحن", price:0}]},
+            {id:"side0", img:"/Dirty55/si08.webp", name:"شوربة", basePrice:8,  availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صحن", price:0}]},
             // الوجبة 1: جريش (أكثر مبيعاً)
-            {id:"side1", img:"/Dirty55/si01.webp", name:"جريش", basePrice:0, isBestSeller: true, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صغير", price:5}, {name:"كبير", price:10}]},
+            {id:"side1", img:"/Dirty55/si01.webp", name:"جريش", basePrice:0,  availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صغير", price:5}, {name:"كبير", price:10}]},
             // الوجبة 2
             {id:"side3", img:"/Dirty55/si02.webp", name:"قرصان", basePrice:0, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صغير", price:5}, {name:"كبير", price:10}]},
             // الوجبة 3
@@ -527,7 +527,7 @@ const dynamicSuggestionRules = {
     "مقلوبه": ["المقبلات","الأطباق الجانبية", "الايدامات"],
     "مضغوط": ["المقبلات","الأطباق الجانبية", "المقبلات"],
     "زربيان": ["المقبلات","الأطباق الجانبية", "الايدامات"],
-    "لحم": ["المقبلات","الأطباق الجانبية", "الايدامات"],
+    "اللحوم": ["المقبلات","الأطباق الجانبية", "الايدامات"],
     "المشويات": ["الأطباق الجانبية", "المقبلات"],
     "كنافه": ["المشروبات"],
 };
