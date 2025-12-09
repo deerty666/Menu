@@ -699,3 +699,192 @@ header img {
     border-color: rgba(255, 215, 150, 0.85); /* يصبح ذهبي واضح */
     box-shadow: 0 0 15px rgba(255, 215, 150, 0.45); /* إضاءة ذهبية */
 }
+/* ===========================
+   ROYAL PREMIUM + ULTRA VIP
+   (للبطاقات الحالية .card و .sec-card)
+   =========================== */
+
+/* قاعدة البطاقة - عمق + blur + gradient border */
+.card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(18,18,18,0.72), rgba(12,12,12,0.65));
+  border-radius: 20px;
+  padding: 0; /* الصور و المحتوى داخل البطاقة */
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: transform 0.42s cubic-bezier(.2,.9,.2,1), box-shadow 0.42s, filter 0.42s;
+  will-change: transform;
+  box-shadow:
+    0 18px 35px rgba(0,0,0,0.55),
+    0 2px 8px rgba(0,0,0,0.6),
+    inset 0 -4px 30px rgba(0,0,0,0.25);
+}
+
+/* Dynamic gradient border (gold) using double background */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+/* Gold halo outline */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(115deg, rgba(207,168,92,0.18), rgba(245,230,192,0.12), rgba(207,168,92,0.18));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+  opacity: 0.85;
+}
+
+/* صورة المنتج: inner glow + parallax-ready */
+.card img {
+  display: block;
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  transition: transform 0.55s cubic-bezier(.2,.9,.2,1), filter 0.45s;
+  transform-origin: center center;
+  filter: brightness(1.03) contrast(1.04);
+  z-index: 1;
+}
+
+/* المحتوى (نصوص) فوق الصورة */
+.card > h3, .card > p, .card .price, .card .add-btn {
+  position: relative;
+  z-index: 2;
+}
+
+/* عنوان و سعر */
+.card h3 { margin: 12px 12px 6px; font-size: 1.05rem; color: #fff; letter-spacing: .2px; }
+.card p { margin: 0 12px 8px; color: rgba(255,255,255,0.72); font-weight:700; font-size:0.86rem; }
+
+/* سعر مميّز */
+.card .price { margin: 0 12px 12px; font-size:1.05rem; color: var(--gold); font-weight:900; }
+
+/* زر الإضافة - ستايل VIP */
+.card .add-btn {
+  margin: 0 12px 14px;
+  background: linear-gradient(180deg, #e1b96a, #d0a957);
+  color: var(--old-brown);
+  border-radius: 12px;
+  padding: 10px;
+  font-weight: 800;
+  box-shadow: 0 6px 18px rgba(208,150,60,0.22);
+  transition: transform 0.22s, box-shadow 0.22s, filter 0.22s;
+}
+
+/* زر hover/active */
+.card .add-btn:active { transform: translateY(2px) scale(0.995); }
+.card .add-btn:hover { box-shadow: 0 10px 26px rgba(208,150,60,0.34); transform: translateY(-2px); }
+
+/* best-seller badge تعديل لإبراز أكثر */
+.best-seller-badge {
+  right: 12px;
+  top: 12px;
+  background: linear-gradient(90deg, #D24A4A, #FF7A5A);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-weight:900;
+  z-index:3;
+  box-shadow: 0 6px 18px rgba(210,74,74,0.18);
+}
+
+/* Sweep highlight — لمعة تمر عند hover */
+.card:hover::before {
+  animation: none;
+}
+.card:hover::after {
+  opacity: 1;
+}
+.card:hover::before {
+  /* إضافة شريط لمعة متحرك */
+  box-shadow: 0 0 0 9999px rgba(0,0,0,0); /* no-op to keep pseudo present */
+}
+.card:hover::after {
+  animation: sweep 0.95s ease forwards;
+}
+@keyframes sweep {
+  0% { transform: translateX(-120%) skewX(-12deg); opacity:0.12; }
+  50% { opacity:0.25; }
+  100% { transform: translateX(200%) skewX(-12deg); opacity:0; }
+}
+
+/* دخول أنيميشن لكل بطاقة مع تأخير بسيط حسب الـ index (JS سيضيف delay) */
+.card.appear {
+  opacity: 0;
+  transform: translateY(22px) scale(.96);
+  animation: appearVIP 0.7s cubic-bezier(.2,.9,.2,1) forwards;
+}
+@keyframes appearVIP {
+  to { opacity:1; transform: translateY(0) scale(1); }
+}
+
+/* 3D tilt helper: when active (JS يضيف .tilt-active) */
+.card.tilt-active {
+  transition: transform 0.12s linear;
+  will-change: transform;
+  perspective: 1000px;
+}
+
+/* عند الـ hover — زيادة عمق الظل */
+.card:hover {
+  transform: translateY(-8px) rotateX(0.5deg);
+  box-shadow:
+    0 26px 60px rgba(0,0,0,0.6),
+    0 6px 18px rgba(232,192,101,0.18),
+    inset 0 -6px 40px rgba(232,192,101,0.04);
+}
+
+/* لمسات أقسام (sec-card) لتتماشى مع الستايل */
+.sec-card {
+  border-radius: 14px;
+  transition: transform .32s, box-shadow .32s, border-color .32s;
+  border: 1px solid rgba(255,255,255,0.03);
+  background: linear-gradient(180deg, rgba(30,30,30,0.9), rgba(22,22,22,0.85));
+}
+.sec-card.active {
+  transform: translateY(-6px);
+  border-color: rgba(207,168,92,0.6);
+  box-shadow: 0 10px 30px rgba(207,168,92,0.12);
+}
+
+/* Responsive tweaks */
+@media (max-width:480px) {
+  .card img { height: 120px; }
+  .card h3 { font-size: 0.98rem; }
+  .card .price { font-size: 1rem; }
+}
+
+/* Flying img tweak (ensure above everything) */
+.flying-img {
+  border-radius: 12px;
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  z-index: 99999 !important;
+  transition: transform 0.75s cubic-bezier(.2,.9,.2,1), opacity 0.75s;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+}
