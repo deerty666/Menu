@@ -685,3 +685,17 @@ header img {
 .suggestion-item:hover{
     background:#2d2723;
 }
+/* ✨ خط ذهبي + ظل + حركة */
+.card {
+    border: 2px solid rgba(255, 215, 150, 0.35); /* خط ذهبي خفيف */
+    border-radius: 14px;
+    transition: 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* ✨ تأثير عند المرور */
+.card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 215, 150, 0.85); /* يصبح ذهبي واضح */
+    box-shadow: 0 0 15px rgba(255, 215, 150, 0.45); /* إضاءة ذهبية */
+}
