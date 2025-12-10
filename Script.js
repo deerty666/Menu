@@ -175,7 +175,7 @@ const menuData = [
         ]
     },
     { 
-        section:" اللحوم", 
+        section:"قسم اللحوم", 
         sectionImg: "/Dirty55/me00.webp",
         items:[
             // الوجبة 1
@@ -329,9 +329,9 @@ const menuData = [
         sectionImg: "/Dirty55/si00.webp",
         items:[
             // الوجبة الجديدة: شوربة (أكثر مبيعاً)
-            {id:"side0", img:"/Dirty55/si08.webp", name:"شوربة", basePrice:8,  availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صحن", price:0}]},
+            {id:"side0", img:"/Dirty55/si08.webp", name:"شوربة", basePrice:8, isBestSeller: true, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صحن", price:0}]},
             // الوجبة 1: جريش (أكثر مبيعاً)
-            {id:"side1", img:"/Dirty55/si01.webp", name:"جريش", basePrice:0,  availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صغير", price:5}, {name:"كبير", price:10}]},
+            {id:"side1", img:"/Dirty55/si01.webp", name:"جريش", basePrice:0, isBestSeller: true, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صغير", price:5}, {name:"كبير", price:10}]},
             // الوجبة 2
             {id:"side3", img:"/Dirty55/si02.webp", name:"قرصان", basePrice:0, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صغير", price:5}, {name:"كبير", price:10}]},
             // الوجبة 3
@@ -521,14 +521,14 @@ const searchBar = document.getElementById('searchBar');
 /* ====== سلة الطلبات والعناصر ====== */
 const dynamicSuggestionRules = {
     "شواية": ["المقبلات", "الأطباق الجانبية", "الايدامات"],
-    "مظبي": ["المقبلات", "الأطباق الجانبية", "الايدامات"],
-    "مندي": ["المقبلات", "الأطباق الجانبية", "الايدامات"],
-    "مدفون": ["المقبلات", "الأطباق الجانبية", "الايدامات"],
-    "مقلوبه": ["المقبلات","الأطباق الجانبية", "الايدامات"],
-    "مضغوط": ["المقبلات","الأطباق الجانبية", "المقبلات"],
-    "زربيان": ["المقبلات","الأطباق الجانبية", "الايدامات"],
-    "اللحوم": ["المقبلات","الأطباق الجانبية", "الايدامات"],
-    "المشويات": ["الأطباق الجانبية", "المقبلات"],
+    "مظبي": ["المقبلات", "الأطباق الجانبية", "المشروبات"],
+    "مندي": ["المقبلات", "الأطباق الجانبية", "المشروبات"],
+    "مدفون": ["المقبلات", "الأطباق الجانبية", "المشروبات"],
+    "مقلوبه": ["الأطباق الجانبية", "مشروبات"],
+    "مضغوط": ["الأطباق الجانبية", "المقبلات"],
+    "زربيان": ["المقبلات", "المشروبات"],
+    "رز": ["المقبلات", "المشروبات"],
+    "مشويات": ["الأطباق الجانبية", "المقبلات"],
     "كنافه": ["المشروبات"],
 };
 
@@ -1282,126 +1282,4 @@ function flyToCart(imgElement) {
         flyingImg.remove();
     }, 800);
 }
-/* ===========================
-   VIP MOTION JS (3D tilt + appear delay)
-   ضع هذا في نهاية Script.js
-   =========================== */
-
-(function(){
-  // تأكد أن DOM جاهز
-  document.addEventListener('DOMContentLoaded', () => {
-    const cards = Array.from(document.querySelectorAll('.card'));
-
-    // 1) ظهور متدرج: أضف class .appear مع تأخير بناءً على index
-    cards.forEach((c, i) => {
-      c.style.animationDelay = (i * 60) + 'ms'; // كل بطاقة تتأخر 60ms
-      c.classList.add('appear');
-    });
-
-    // 2) 3D Tilt: يدعم الفأرة واللمس
-    function bindTilt(card) {
-      let rect, width, height, left, top;
-      let moving = false;
-
-      function updateRect() {
-        rect = card.getBoundingClientRect();
-        width = rect.width;
-        height = rect.height;
-        left = rect.left;
-        top = rect.top;
-      }
-
-      updateRect();
-      window.addEventListener('resize', updateRect);
-
-      // الفأرة
-      card.addEventListener('pointermove', (e) => {
-        if (e.pointerType === 'mouse' || e.pointerType === 'pen') {
-          updateRect();
-          const x = (e.clientX - left) / width - 0.5;
-          const y = (e.clientY - top) / height - 0.5;
-          const rotateX = (-y) * 8; // شدة الميل
-          const rotateY = x * 10;
-          card.style.transform = `translateY(-6px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-          card.classList.add('tilt-active');
-        }
-      });
-
-      card.addEventListener('pointerleave', () => {
-        card.style.transform = '';
-        card.classList.remove('tilt-active');
-      });
-
-      // دعم اللمس: لمسة خفيفة تتحكم بالميل عبر حركة اللمس
-      let touchStart = null;
-      card.addEventListener('touchstart', (ev) => {
-        touchStart = ev.touches[0];
-        updateRect();
-        card.classList.add('tilt-active');
-      }, {passive:true});
-
-      card.addEventListener('touchmove', (ev) => {
-        if(!touchStart) return;
-        const t = ev.touches[0];
-        const x = (t.clientX - left) / width - 0.5;
-        const y = (t.clientY - top) / height - 0.5;
-        const rotateX = (-y) * 8;
-        const rotateY = x * 10;
-        card.style.transform = `translateY(-6px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-      }, {passive:true});
-
-      card.addEventListener('touchend', () => {
-        touchStart = null;
-        card.style.transform = '';
-        card.classList.remove('tilt-active');
-      });
-    }
-
-    cards.forEach(bindTilt);
-
-    // 3) تحسين تفاعل زر الإضافة: نبضة صغيرة عند الضغط لإحساس مادي
-    document.addEventListener('click', (e) => {
-      if (e.target.classList.contains('add-btn')) {
-        e.target.animate([
-          { transform: 'scale(1)' },
-          { transform: 'scale(0.96)' },
-          { transform: 'scale(1)' }
-        ], { duration: 220, easing: 'ease-out' });
-      }
-    });
-  });
-})();
-// تحديث عداد السلة
-function updateDiamondCart() {
-    const count = CartLogic.getTotalQuantity();
-    const badge = document.getElementById("diamondCartCount");
-
-    if (count > 0) {
-        badge.textContent = count;
-        badge.style.display = "flex";
-    } else {
-        badge.style.display = "none";
-    }
-}
-
-// اهتزاز ألماسي
-function shakeDiamondCart() {
-    const btn = document.getElementById("diamondCartBtn");
-    btn.style.animation = "diamondShake 0.4s";
-    setTimeout(() => btn.style.animation = "", 400);
-}
-
-// فتح السلة
-document.getElementById("diamondCartBtn").addEventListener("click", () => {
-    document.getElementById("cartDrawer").setAttribute("aria-hidden", "false");
-    document.getElementById("cartOverlay").style.display = "block";
-});
-
-// دمج مع نظام إضافة المنتج
-const oldAddItem = CartLogic.addItem;
-CartLogic.addItem = function (...args) {
-    oldAddItem.apply(this, args);
-    updateDiamondCart();
-    shakeDiamondCart();
-};
 // ------------------------------------------
