@@ -1371,4 +1371,37 @@ function flyToCart(imgElement) {
     });
   });
 })();
+// تحديث عداد السلة
+function updateDiamondCart() {
+    const count = CartLogic.getTotalQuantity();
+    const badge = document.getElementById("diamondCartCount");
+
+    if (count > 0) {
+        badge.textContent = count;
+        badge.style.display = "flex";
+    } else {
+        badge.style.display = "none";
+    }
+}
+
+// اهتزاز ألماسي
+function shakeDiamondCart() {
+    const btn = document.getElementById("diamondCartBtn");
+    btn.style.animation = "diamondShake 0.4s";
+    setTimeout(() => btn.style.animation = "", 400);
+}
+
+// فتح السلة
+document.getElementById("diamondCartBtn").addEventListener("click", () => {
+    document.getElementById("cartDrawer").setAttribute("aria-hidden", "false");
+    document.getElementById("cartOverlay").style.display = "block";
+});
+
+// دمج مع نظام إضافة المنتج
+const oldAddItem = CartLogic.addItem;
+CartLogic.addItem = function (...args) {
+    oldAddItem.apply(this, args);
+    updateDiamondCart();
+    shakeDiamondCart();
+};
 // ------------------------------------------
