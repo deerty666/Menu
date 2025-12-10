@@ -796,7 +796,41 @@ function flashCartButton() {
     }, 400); 
 }
 
+// =====================================
+// 🔥 تحديث عداد السلة الجديد + الأنيميشن
+// =====================================
+function updateCartCount(count) {
+    const cartCount = document.getElementById('cartCount');
+    const cartIcon = document.getElementById('cartIcon');
 
+    if (count > 0) {
+        cartCount.style.display = 'flex';
+        cartCount.textContent = count;
+
+        // pop animation
+        cartCount.classList.remove('pop-count');
+        void cartCount.offsetWidth;
+        cartCount.classList.add('pop-count');
+
+        // flash animation للأيقونة
+        cartIcon.classList.remove('cart-flash');
+        void cartIcon.offsetWidth;
+        cartIcon.classList.add('cart-flash');
+
+    } else {
+        cartCount.style.display = 'none';
+    }
+}
+
+// =====================================
+// مثال عملي لزيادة العدد
+// =====================================
+let cartItemsCount = 0;
+
+function addItemToCart() {
+    cartItemsCount++;
+    updateCartCount(cartItemsCount);
+}
 function addToCart(item){
     const obj={...item};
     // حذف كل الخصائص المتعلقة بالمنطق
