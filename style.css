@@ -888,3 +888,203 @@ header img {
   transition: transform 0.75s cubic-bezier(.2,.9,.2,1), opacity 0.75s;
   box-shadow: 0 16px 40px rgba(0,0,0,0.6);
 }
+/* ========== زر السلة Royal Diamond Ultra VIP ========== */
+
+#diamondCartBtn {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(14px);
+    border: 3px solid rgba(255, 230, 180, 0.85);
+    box-shadow:
+        0 0 20px rgba(255,215,150,1),
+        0 0 60px rgba(232,192,101,0.8),
+        inset 0 0 25px rgba(255,255,255,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 9999;
+    overflow: hidden;
+    transition: transform .4s ease, box-shadow .4s ease;
+    animation: diamondPulse 3s infinite ease-in-out;
+}
+
+#diamondCartBtn:hover {
+    transform: scale(1.15);
+}
+
+/* لمعة ذهبية تتحرك */
+#diamondCartBtn .shine {
+    position: absolute;
+    top: -120%;
+    left: -120%;
+    width: 250%;
+    height: 250%;
+    background: linear-gradient(
+        120deg,
+        transparent 0%, 
+        rgba(255,255,255,0.25) 50%, 
+        transparent 100%
+    );
+    transform: rotate(25deg);
+    animation: shineMove 4s infinite;
+}
+
+/* حركة اللمعة */
+@keyframes shineMove {
+    0% { transform: translate(-200%, -200%) rotate(25deg); }
+    100% { transform: translate(200%, 200%) rotate(25deg); }
+}
+
+/* أيقونة */
+.cart-icon {
+    font-size: 36px;
+    position: relative;
+    z-index: 5;
+}
+
+/* عداد */
+.cart-count {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    min-width: 32px;
+    height: 32px;
+    background: #ff1f1f;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255,0,0,0.7);
+    z-index: 10;
+}
+
+/* نبضة ألماس */
+@keyframes diamondPulse {
+    0% { box-shadow: 0 0 25px rgba(255,215,150,1); }
+    50% { box-shadow: 0 0 70px rgba(255,215,150,1); }
+    100% { box-shadow: 0 0 25px rgba(255,215,150,1); }
+}
+
+/* اهتزاز فاخر عند الإضافة */
+@keyframes diamondShake {
+    0% { transform: translate(0); }
+    35% { transform: translate(-3px, 2px); }
+    55% { transform: translate(3px, -2px); }
+    75% { transform: translate(-2px, -3px); }
+    100% { transform: translate(0); }
+}
+
+
+/* ========== تصميم داخلي فاخر للسلة ========== */
+
+#cartDrawer {
+    background: rgba(12, 10, 9, 0.95);
+    backdrop-filter: blur(14px);
+    border-left: 2px solid rgba(255,230,180,0.5);
+    box-shadow: -5px 0 25px rgba(255,215,150,0.4);
+}
+
+/* رأس السلة */
+.cart-header {
+    background: linear-gradient(120deg, #332a23, #1a1512);
+    color: #f4d18b;
+    padding: 20px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid rgba(255,230,180,0.4);
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* فاصل ذهبي فاخر */
+.gold-divider {
+    height: 1px;
+    width: 90%;
+    margin: 10px auto;
+    background: linear-gradient(90deg, transparent, #d6b16d, transparent);
+}
+
+/* كل منتج */
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    margin: 12px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,230,180,0.4);
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(255,215,150,0.2);
+    position: relative;
+}
+
+/* إطار كريستال لصورة المنتج */
+.cart-item img {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    border: 2px solid rgba(255,230,180,0.6);
+    object-fit: cover;
+    box-shadow: 0 0 12px rgba(255,255,255,0.2);
+}
+
+/* نصوص */
+.cart-item-title {
+    color: #fcdba5;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.cart-item-price {
+    color: #ffffff;
+    opacity: 0.9;
+    font-size: 1rem;
+}
+
+/* أزرار كمية */
+.cart-qty-btn {
+    background: rgba(255,230,180,0.3);
+    border: 1px solid #fcdba5;
+    color: #fcdba5;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 8px;
+}
+
+/* إجمالي الفاتورة */
+#totalBreakdown {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,230,180,0.4);
+    margin: 12px;
+    padding: 15px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    box-shadow: inset 0 0 12px rgba(255,215,150,0.15);
+}
+
+/* زر واتساب */
+.primary-btn {
+    background: linear-gradient(120deg, #f4d18b, #d3a555);
+    color: #1a1512;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 0 16px rgba(255,215,150,0.6);
+}
+
+.primary-btn:hover {
+    filter: brightness(1.15);
+}
