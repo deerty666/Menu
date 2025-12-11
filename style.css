@@ -275,51 +275,59 @@ header img {
 /* ================================================= */
 /* 🛒 5. زر السلة العائم (Cart Button) */
 /* ================================================= */
+/* 🌟 تحسين زر السلة — شكل ذهبي + بريق + حركة */
 #cartBtn {
     position: fixed;
-    bottom: 15px;
-    right: 15px;
-    background-color: var(--gold);
-    color: var(--old-brown);
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #d4b06a, #b48a47);
+    color: #1A1512;
     border: none;
     border-radius: 50px;
-    padding: 15px 20px;
-    font-size: 1.2rem;
-    font-weight: 700;
+    padding: 16px 22px;
+    font-size: 1.3rem;
+    font-weight: 800;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-    z-index: 20;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    box-shadow: 0 0 15px rgba(212, 176, 106, 0.6),
+                0 3px 10px rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    transition: transform 0.2s ease-out, box-shadow 0.2s;
+    animation: cartPulse 5s infinite ease-in-out;
 }
 
-#cartCount {
-    background-color: var(--red);
-    color: var(--light-text);
-    border-radius: 50%;
-    padding: 2px 8px;
-    font-size: 0.9rem;
-    min-width: 25px;
-    text-align: center;
-    line-height: 1.5;
+/* عند اللمس */
+#cartBtn:active {
+    transform: scale(0.95);
 }
 
-.flash-cart-btn {
-    animation: flash 0.4s;
-}
-
-@keyframes flash {
+/* ✨ البريق */
+@keyframes cartPulse {
     0%, 100% {
-        transform: scale(1);
+        box-shadow: 0 0 15px rgba(212, 176, 106, 0.6),
+                    0 3px 10px rgba(0, 0, 0, 0.4);
     }
     50% {
-        transform: scale(1.1);
-        background-color: var(--red);
-        color: var(--light-text);
+        box-shadow: 0 0 25px rgba(255, 220, 160, 0.9),
+                    0 5px 15px rgba(0, 0, 0, 0.5);
     }
 }
 
+/* 🔴 تحسين عدّاد السلة */
+#cartCount {
+    background: #D32F2F;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 9px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    min-width: 26px;
+    text-align: center;
+    line-height: 1.4;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+}
 
 /* ================================================= */
 /* 🚀 6. تأثير سقوط الصورة (Fly-to-Cart Effect) */
