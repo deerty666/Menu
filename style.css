@@ -130,7 +130,31 @@ header img {
     transition: border-color 0.2s, background-color 0.2s;
     scroll-snap-align: start;
 }
+/* ====== أيقونات الأقسام: دائرية + ظل ====== */
+.category-card {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+    transition: 0.25s;
+}
 
+.category-card img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.category-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.35);
+}
 .sec-card:last-child {
     margin-left: 15px; /* لضمان وجود مسافة في النهاية */
 }
@@ -184,7 +208,24 @@ header img {
     position: relative;
     padding-bottom: 10px;
 }
+/* ====== بطاقة الوجبة ستايل Glow ====== */
+.meal-card {
+    border-radius: 16px;
+    background: #fff;
+    padding: 12px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+    transition: 0.25s ease;
+    position: relative;
+}
 
+.meal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 0px 18px rgba(255, 215, 0, 0.45); /* لمعة ذهبية خفيفة */
+}
+
+.meal-card img {
+    border-radius: 14px;
+}
 .card img {
     width: 100%;
     height: 120px;
