@@ -574,7 +574,7 @@ function renderSections(){
         const sectionDisplayName = sec.section === "الكل" ? `فرع ${currentBranch.name}` : sec.section;
 
         const card = document.createElement('div');
-        card.className = 'sec-card';
+        card.className = 'sec-card category-card';
         card.innerHTML = `
             <img src="${sec.sectionImg}" alt="${sec.section}" onerror="this.style.opacity=.35">
             <div class="sec-name">${sectionDisplayName}</div>
