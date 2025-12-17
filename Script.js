@@ -634,64 +634,46 @@ function renderMenu(sectionName, searchTerm = ''){
         return;
     }
 
-    filteredItems.forEach(item=>{
-        const isAvailable = item.isAvailable !== false; 
-        // تحديد السعر المخفض الخاص بالفرع الحالي
+        filteredItems.forEach(item => {
+        const isAvailable = item.isAvailable !== false;
         const discountedPriceForBranch = item.branchDiscounts ? item.branchDiscounts[currentBranchId] : null;
-        // تحديد ما إذا كان هناك خصم يطبق على هذا الفرع
         const hasDiscount = discountedPriceForBranch && discountedPriceForBranch < item.basePrice;
-        const isBestSeller = item.isBestSeller === true; 
+        const isBestSeller = item.isBestSeller === true;
 
-        let buttonText = "أضف للسلة";
-        let buttonAttributes = ""; 
-        let cardClassAddition = ""; 
-        let bestSellerBadge = ''; 
+        // 💰 1. تحديد السعر الذي سيظهر في الشارة (Price Badge)
+        const finalPrice = hasDiscount ? discountedPriceForBranch : (item.basePrice > 0 ? item.basePrice : (item.options[0]?.price || 0));
+
+        let cardClassAddition = "";
+        let bestSellerBadge = isBestSeller ? '<span class="best-seller-badge">الأكثر مبيعاً 🏆</span>' : '';
 
         if (!isAvailable) {
-            buttonText = "غير متوفر مؤقتاً ⛔";
-            buttonAttributes = "disabled"; 
-            cardClassAddition = " unavailable-card"; 
+            cardClassAddition = " unavailable-card";
         } else if (hasDiscount) {
-            cardClassAddition = " discount-card"; 
+            cardClassAddition = " discount-card";
         }
 
-        if (isBestSeller) {
-            bestSellerBadge = '<span class="best-seller-badge">الأكثر مبيعاً 🏆</span>';
-        }
+        const card = document.createElement('div');
+        card.className = 'card' + cardClassAddition;
 
-        let priceDisplay;
-        if (hasDiscount) {
-            priceDisplay = `
-                <span class="old-price">${item.basePrice} ريال</span> 
-                <span class="discount-price">${discountedPriceForBranch} ريال</span>
-            `;
-        } else {
-            priceDisplay = item.basePrice > 0 ? `${item.basePrice} ريال` : 
-                (item.options.length > 0 && item.options[0].price > 0 ? `ابتداءً من ${item.options[0].price} ريال` : `${item.options[0].price} ريال`);
-        }
-
-        // نستخدم actualSection إذا كانت الوجبة في قسم "الأكثر مبيعاً" أو "الكل"، وإلا نستخدم اسم القسم الحالي
-        const displayedSection = item.actualSection || sectionName; 
-
-        const card=document.createElement('div');
-        card.className='card' + cardClassAddition; 
-        card.innerHTML=`
-            <img src="${item.img}" alt="${item.name}" onerror="this.style.opacity=.35">
+        // 🖼️ 2. الهيكل الجديد: استخدام card-img-container و price-badge
+        card.innerHTML = `
+            <div class="card-img-container">
+                <img src="${item.img}" alt="${item.name}" onerror="this.style.opacity=.35">
+                <div class="price-badge">${finalPrice} ريال</div>
+            </div>
             ${bestSellerBadge} 
             <h3>${item.name}</h3>
-            <p>${displayedSection}</p>
-            <div class="price">${priceDisplay}</div>
-            <button class="add-btn" ${buttonAttributes}>${buttonText}</button> 
+            <p>${item.actualSection || sectionName}</p>
+            <button class="add-btn" ${!isAvailable ? 'disabled' : ''}>
+                ${isAvailable ? 'أضف للسلة' : 'غير متوفر مؤقتاً ⛔'}
+            </button> 
         `;
 
         if (isAvailable) {
             card.querySelector('button').onclick = function() {
                 const itemForCart = {...item};
-                
-                // 🚀 NEW: الحصول على مرجع الصورة لبطاقة المنتج الحالية
                 const itemImage = card.querySelector('img'); 
                 
-                // تعيين السعر الأساسي للخصم إذا كان موجوداً لهذا الفرع
                 if(hasDiscount){
                     itemForCart.basePrice = discountedPriceForBranch;
                 }
@@ -700,16 +682,15 @@ function renderMenu(sectionName, searchTerm = ''){
                 const needsOptions = item.options.length > 1 || (item.options.length === 1 && item.options[0].name !== "");
 
                 if(needsOptions){
-                    showOptions(itemForCart, false, itemImage); // 🚀 MODIFIED: تمرير itemImage
+                    showOptions(itemForCart, false, itemImage);
                 } else {
                     itemNoteInput.value = ''; 
-                    showOptions(itemForCart, true, itemImage); // 🚀 MODIFIED: تمرير itemImage
+                    showOptions(itemForCart, true, itemImage);
                 }
             };
         }
         menuList.appendChild(card);
     });
-}
 
 
 /* ====== Show options modal - لدعم الملاحظات ====== */
