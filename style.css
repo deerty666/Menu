@@ -83,13 +83,27 @@ header img {
 }
 
 /* ================================================= */
-/* 🧭 3. الأقسام (Sections) - مع منطق التثبيت (Sticky) */
+/* 🧭 3. الأقسام (Sections) - التصميم النهائي الاحترافي */
 /* ================================================= */
+
+/* تعريف حركة النبض الذهبية */
+@keyframes pulse-gold {
+    0% {
+        box-shadow: 0 0 0 0 rgba(195, 158, 106, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(195, 158, 106, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(195, 158, 106, 0);
+    }
+}
+
 #sections {
     display: flex;
     overflow-x: auto;
-    padding: 10px 15px;
-    gap: 10px;
+    padding: 20px 15px;
+    gap: 15px;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
@@ -97,95 +111,71 @@ header img {
 }
 
 #sections::-webkit-scrollbar {
-    display: none; /* إخفاء شريط التمرير */
-}
-
-/* 📌 تثبيت الأقسام عند التمرير */
-.sections-sticky {
-    position: fixed;
-    top: 70px; /* أسفل الـ header الثابت */
-    left: 0;
-    right: 0;
-    background: var(--body-bg);
-    padding-top: 10px;
-    z-index: 9;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: none;
 }
 
 .sec-card {
     flex: 0 0 auto;
-    width: 100px;
-    height: 100px;
-    border-radius: 12px;
+    width: 110px; /* العرض الجديد المكبر */
+    height: 145px; /* الارتفاع الجديد */
+    border-radius: 20px;
     background-color: var(--section-card-bg);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    padding: 10px;
     text-align: center;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     border: 2px solid transparent;
-    transition: border-color 0.2s, background-color 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     scroll-snap-align: start;
-}
-/* ====== أيقونات الأقسام: دائرية + ظل ====== */
-.category-card {
-    border-radius: 50%;
-    overflow: hidden;
-    width: 90px;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
-    transition: 0.25s;
-}
-
-.category-card img {
-    width: 80%;
-    height: 80%;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-.category-card:hover {
-    transform: scale(1.08);
-    box-shadow: 0px 6px 15px rgba(0,0,0,0.35);
-}
-.sec-card:last-child {
-    margin-left: 15px; /* لضمان وجود مسافة في النهاية */
 }
 
 .sec-card img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    border-radius: 8px;
-    margin-bottom: 4px;
+    width: 80px;  /* تكبير الصورة */
+    height: 80px; /* تكبير الصورة */
+    object-fit: cover;
+    border-radius: 50%; /* شكل دائري عصري */
+    margin-bottom: 10px;
+    background: #1a1a1a;
+    border: 2px solid rgba(195, 158, 106, 0.1);
 }
 
 .sec-card .sec-name {
-    font-size: 0.75rem;
-    font-weight: 700;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.95rem; /* تكبير الخط */
+    font-weight: 800; /* خط عريض */
     color: var(--light-text);
     line-height: 1.2;
+    transition: color 0.3s ease;
 }
 
+/* ✨ تأثير القسم النشط (Active) */
 .sec-card.active {
     border-color: var(--gold);
-    background-color: #333;
+    background-color: #2a2522;
+    transform: translateY(-10px); /* رفع البطاقة للأعلى */
+    animation: pulse-gold 2s infinite; /* تأثير النبض */
 }
 
-/* ================================================= */
-/* 🍽️ 4. بطاقات الوجبات - التصميم الاحترافي المدمج */
-/* ================================================= */
+.sec-card.active .sec-name {
+    color: var(--gold); /* تحويل النص للذهبي */
+}
 
+.sec-card.active img {
+    border-color: var(--gold);
+    transform: scale(1.1); /* تكبير الصورة قليلاً */
+}
+
+
+/* ================================================= */
+/* 🍽️ 4. بطاقات الوجبات (Menu Cards) */
+/* ================================================= */
 #menuList {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 15px;
     padding: 0 15px;
 }
@@ -201,60 +191,44 @@ header img {
 
 .card {
     background-color: var(--card-bg);
-    border-radius: 20px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
-    position: relative; /* ضروري لتثبيت شارة السعر 📍 */
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
-    padding-bottom: 12px;
-}
-
-/* 🖼️ الإطار الداخلي الناعم للصور */
-.card-img-container {
     position: relative;
-    margin: 10px; /* يصنع الإطار حول الصورة */
-    border-radius: 15px;
-    overflow: hidden;
-    background: #1a1a1a;
+    padding-bottom: 10px;
 }
 
 .card img {
     width: 100%;
-    height: 140px;
+    height: 120px;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s ease;
-}
-
-/* 🏷️ شارة السعر الذكية فوق الصورة */
-.price-badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: rgba(195, 158, 106, 0.95); /* لون ذهبي */
-    color: #fff;
-    padding: 4px 10px;
-    border-radius: 8px;
-    font-weight: 800;
-    font-size: 0.85rem;
-    backdrop-filter: blur(4px); /* تأثير زجاجي 🧊 */
-    z-index: 2;
+    margin-bottom: 10px;
 }
 
 .card h3 {
-    margin: 5px 15px 5px;
+    margin: 0 10px 5px;
     font-size: 1rem;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--light-text);
 }
 
 .card p {
-    margin: 0 15px 10px;
+    margin: 0 10px 8px;
     font-size: 0.8rem;
-    color: var(--gold);
+    color: var(--gold); /* لون القسم بلون مميز */
+}
+
+.card .price {
+    margin: 0 10px 10px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .card .add-btn {
@@ -262,90 +236,105 @@ header img {
     color: var(--old-brown);
     padding: 10px;
     border: none;
-    border-radius: 10px;
-    margin: 0 15px;
+    border-radius: 8px;
+    margin: 0 10px;
     font-weight: 700;
     cursor: pointer;
-    transition: 0.2s;
+    transition: background-color 0.2s;
+    font-size: 0.95rem;
 }
 
-.card .add-btn:active { transform: scale(0.95); }
+.card .add-btn:hover {
+    background-color: #a07c4c;
+}
 
-/* تأثيرات إضافية */
-.card:hover img { transform: scale(1.1); }
-.unavailable-card { opacity: 0.6; }
+.card .add-btn:disabled {
+    background-color: #555;
+    color: #bbb;
+    cursor: not-allowed;
+}
+
+.unavailable-card {
+    opacity: 0.6;
+}
+
+/* 🏆 شارة الأكثر مبيعاً */
 .best-seller-badge {
     position: absolute;
-    top: 18px;
-    right: 18px;
+    top: 8px;
+    right: 8px;
     background: var(--red);
-    color: #fff;
+    color: var(--light-text);
     padding: 4px 8px;
     border-radius: 6px;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 700;
     z-index: 5;
 }
-.discount-card { border: 2px solid var(--red); }
 
+/* 🏷️ عرض الخصم */
+.old-price {
+    font-size: 0.9rem;
+    color: #aaa;
+    text-decoration: line-through;
+}
+.discount-price {
+    color: var(--red);
+    font-size: 1.1rem;
+}
+.discount-card {
+    border: 2px solid var(--red);
+}
 
 
 /* ================================================= */
 /* 🛒 5. زر السلة العائم (Cart Button) */
 /* ================================================= */
-/* 🌟 تحسين زر السلة — شكل ذهبي + بريق + حركة */
 #cartBtn {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: linear-gradient(135deg, #d4b06a, #b48a47);
-    color: #1A1512;
+    bottom: 15px;
+    right: 15px;
+    background-color: var(--gold);
+    color: var(--old-brown);
     border: none;
     border-radius: 50px;
-    padding: 16px 22px;
-    font-size: 1.3rem;
-    font-weight: 800;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
     cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    z-index: 20;
     display: flex;
     align-items: center;
-    gap: 10px;
-    box-shadow: 0 0 15px rgba(212, 176, 106, 0.6),
-                0 3px 10px rgba(0, 0, 0, 0.4);
-    z-index: 9999;
-    transition: transform 0.2s ease-out, box-shadow 0.2s;
-    animation: cartPulse 5s infinite ease-in-out;
+    gap: 8px;
 }
 
-/* عند اللمس */
-#cartBtn:active {
-    transform: scale(0.95);
+#cartCount {
+    background-color: var(--red);
+    color: var(--light-text);
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 0.9rem;
+    min-width: 25px;
+    text-align: center;
+    line-height: 1.5;
 }
 
-/* ✨ البريق */
-@keyframes cartPulse {
+.flash-cart-btn {
+    animation: flash 0.4s;
+}
+
+@keyframes flash {
     0%, 100% {
-        box-shadow: 0 0 15px rgba(212, 176, 106, 0.6),
-                    0 3px 10px rgba(0, 0, 0, 0.4);
+        transform: scale(1);
     }
     50% {
-        box-shadow: 0 0 25px rgba(255, 220, 160, 0.9),
-                    0 5px 15px rgba(0, 0, 0, 0.5);
+        transform: scale(1.1);
+        background-color: var(--red);
+        color: var(--light-text);
     }
 }
 
-/* 🔴 تحسين عدّاد السلة */
-#cartCount {
-    background: #D32F2F;
-    color: white;
-    border-radius: 50%;
-    padding: 3px 9px;
-    font-size: 0.85rem;
-    font-weight: 800;
-    min-width: 26px;
-    text-align: center;
-    line-height: 1.4;
-    box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
-}
 
 /* ================================================= */
 /* 🚀 6. تأثير سقوط الصورة (Fly-to-Cart Effect) */
@@ -710,4 +699,31 @@ header img {
 
 .suggestion-item:hover{
     background:#2d2723;
+}
+/* ===============================
+   🍎 بانر تثبيت الآيفون
+================================ */
+.ios-install-banner {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  color: #fff;
+  padding: 16px 20px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 360px;
+  text-align: center;
+  z-index: 9999;
+  box-shadow: 0 10px 25px rgba(0,0,0,.5);
+}
+
+.ios-install-banner button {
+  margin-top: 10px;
+  background: var(--gold);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
 }

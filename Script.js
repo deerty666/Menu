@@ -1,7 +1,7 @@
 /* ====== بيانات الفروع - يرجى تعديل أرقام الواتساب والأسماء حسب الرغبة ====== */
 const BRANCH_CONFIG = {
     'branch1': { 
-        whatsapp: '966536803598', // ⭐️ رقم واتساب فرع الرياض (كمثال)
+        whatsapp: '966112020203', // ⭐️ رقم واتساب فرع الرياض (كمثال)
         name: 'لبن الاحمدية', // اسم الفرع في الرسائل وعنوان الصفحة
         deliveryFee: 5,
     },
@@ -11,7 +11,7 @@ const BRANCH_CONFIG = {
         deliveryFee: 5, 
     },
     'branch3': {
-        whatsapp: '9665XXXXXXXX3', // ⚠️ يرجى تغيير رقم الواتساب لفرع مكة
+        whatsapp: '966500535160', // ⚠️ يرجى تغيير رقم الواتساب لفرع مكة
         name: 'الروضه خالد بن الوليد ', 
         deliveryFee: 5,
     }
@@ -46,15 +46,15 @@ const menuData = [
                 {name:"رز مثلوثه", price:4}
             ]},
             // الوجبة 2: تم تغيير اسمها
-            {id:"sh2", img:"/Dirty55/sh00.webp", name:"نص شواية بالرز", basePrice:24, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"sh2", img:"/Dirty55/sh00.webp", name:"نص شواية بالرز", basePrice:23, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
-                {name:"رز بشاور", price:1},
-                {name:"رز مندي", price:1},
-                {name:"رز مثلوثه", price:1}
+                {name:"رز بشاور", price:2},
+                {name:"رز مندي", price:2},
+                {name:"رز مثلوثه", price:2}
             ]},
             // الوجبة 3: نص شواية سادة
             {id:"sh3", img:"/Dirty55/sh10.webp", name:"ربع دجاج ",
-             basePrice:13,
+             basePrice:15,
              isBestSeller: true,
              availableIn: ['branch1', 'branch2', 'branch3'], options:[
                {name:"شوايه", price:0},
@@ -88,11 +88,11 @@ const menuData = [
                 {name:"رز مثلوثه", price:4}
             ]},
             // الوجبة 2
-            {id:"md2", img:"/Dirty55/md00.webp", name:"نص مظبي", basePrice:24, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"md2", img:"/Dirty55/md00.webp", name:"نص مظبي", basePrice:23, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
-                {name:"رز بشاور", price:1},
-                {name:"رز مندي", price:1},
-                {name:"رز مثلوثه", price:1}
+                {name:"رز بشاور", price:2},
+                {name:"رز مندي", price:2},
+                {name:"رز مثلوثه", price:2}
             ]}
         ]
     },
@@ -108,11 +108,11 @@ const menuData = [
                 {name:"رز مثلوثه", price:4}
             ]},
             // الوجبة 2
-            {id:"mn2", img:"/Dirty55/mn00.webp", name:"نص مندي", basePrice:24, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"mn2", img:"/Dirty55/mn00.webp", name:"نص مندي", basePrice:23, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
-                {name:"رز بشاور", price:1},
-                {name:"رز مندي", price:1},
-                {name:"رز مثلوثه", price:1}
+                {name:"رز بشاور", price:2},
+                {name:"رز مندي", price:2},
+                {name:"رز مثلوثه", price:2}
             ]}
         ]
     },
@@ -128,11 +128,11 @@ const menuData = [
                 {name:"رز مثلوثه", price:4}
             ]},
             // الوجبة 2
-            {id:"mdf2", img:"/Dirty55/mf00.webp", name:"نص مدفون", basePrice:24, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"mdf2", img:"/Dirty55/mf00.webp", name:"نص مدفون", basePrice:23, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
-                {name:"رز بشاور", price:1},
-                {name:"رز مندي", price:1},
-                {name:"رز مثلوثه", price:1}
+                {name:"رز بشاور", price:2},
+                {name:"رز مندي", price:2},
+                {name:"رز مثلوثه", price:2}
             ]}
         ]
     },
@@ -261,12 +261,12 @@ const menuData = [
                 id:"gr1",
                 img:"/Dirty55/gr01.webp",
                 name:"كباب لحم",
-                basePrice:38,
+                basePrice:0,
                 availableIn: ['branch1'], // مقيد بـ branch1
                 options:[
-                    {name:"نفر", price:0},
-                    {name:"نص كيلو", price:38},
-                    {name:"كيلو", price:112}
+                    {name:"نفر", price:38},
+                    {name:"نص كيلو", price:76},
+                    {name:"كيلو", price:150}
                 ]
             },
             // الوجبة 2
@@ -274,12 +274,12 @@ const menuData = [
                 id:"gr2",
                 img:"/Dirty55/gr02.webp",
                 name:"كباب دجاج",
-                basePrice:30,
+                basePrice:0,
                 availableIn: ['branch1'], // مقيد بـ branch1
                 options:[
-                    {name:"نفر", price:0},
-                    {name:"نص كيلو", price:30},
-                    {name:"كيلو", price:90}
+                    {name:"نفر", price:30},
+                    {name:"نص كيلو", price:60},
+                    {name:"كيلو", price:120}
                 ]
             },
             // الوجبة 3
@@ -287,12 +287,12 @@ const menuData = [
                 id:"gr3",
                 img:"/Dirty55/gr03.webp",
                 name:"اوصال لحم",
-                basePrice:45,
+                basePrice:0,
                 availableIn: ['branch1'], // مقيد بـ branch1
                 options:[
-                    {name:"نفر", price:0},
-                    {name:"نص كيلو", price:45},
-                    {name:"كيلو", price:135}
+                    {name:"نفر", price:45},
+                    {name:"نص كيلو", price:90},
+                    {name:"كيلو", price:180}
                 ]
             },
             // الوجبة 4
@@ -300,26 +300,40 @@ const menuData = [
                 id:"gr4",
                 img:"/Dirty55/gr04.webp",
                 name:"شيش طاووق",
-                basePrice:30,
+                basePrice:0,
                 availableIn: ['branch1'], // مقيد بـ branch1
                 options:[
-                    {name:"نفر", price:0},
-                    {name:"نص كيلو", price:30},
-                    {name:"كيلو", price:90}
+                    {name:"نفر", price:30},
+                    {name:"نص كيلو", price:60},
+                    {name:"كيلو", price:120}
+                ]
+            },
+            
+            {
+                id:"gr5",
+                img:"/Dirty55/gr07.jpg",
+                name:"مشكل فاخر على الأرز32 سيخ",
+                basePrice:300,
+                isBestSeller: true, 
+                availableIn: ['branch1'], // مقيد بـ branch1
+                options:[
+                    {name:"تامين صحن", price:30},
+                    
+         
                 ]
             },
             // الوجبة 5 (مشكل مشاوي - أكثر مبيعاً)
             {
-                id:"gr5",
+                id:"gr6",
                 img:"/Dirty55/gr05.webp",
                 name:"مشكل مشاوي",
-                basePrice:35,
+                basePrice:0,
                 isBestSeller: true, 
                 availableIn: ['branch1'], // مقيد بـ branch1
                 options:[
-                    {name:"نفر", price:0},
-                    {name:"نص كيلو", price:35},
-                    {name:"كيلو", price:95}
+                    {name:"نفر", price:35},
+                    {name:"نص كيلو", price:70},
+                    {name:"كيلو", price:130}
                 ]
             }
         ]
@@ -521,14 +535,14 @@ const searchBar = document.getElementById('searchBar');
 /* ====== سلة الطلبات والعناصر ====== */
 const dynamicSuggestionRules = {
     "شواية": ["المقبلات", "الأطباق الجانبية", "الايدامات"],
-    "مظبي": ["المقبلات", "الأطباق الجانبية", "المشروبات"],
-    "مندي": ["المقبلات", "الأطباق الجانبية", "المشروبات"],
-    "مدفون": ["المقبلات", "الأطباق الجانبية", "المشروبات"],
-    "مقلوبه": ["الأطباق الجانبية", "مشروبات"],
-    "مضغوط": ["الأطباق الجانبية", "المقبلات"],
-    "زربيان": ["المقبلات", "المشروبات"],
-    "رز": ["المقبلات", "المشروبات"],
-    "مشويات": ["الأطباق الجانبية", "المقبلات"],
+    "مظبي": ["المقبلات", "الأطباق الجانبية", "الايدامات"],
+    "مندي": ["المقبلات", "الأطباق الجانبية", "الايدامات"],
+    "مدفون": ["المقبلات", "الأطباق الجانبية", "الايدامات"],
+    "مقلوبه": ["المقبلات","الأطباق الجانبية", "الايدامات"],
+    "مضغوط": ["المقبلات","الأطباق الجانبية", "المقبلات"],
+    "زربيان": ["المقبلات","الأطباق الجانبية", "الايدامات"],
+    "رز": ["المقبلات","الأطباق الجانبية", "الايدامات"],
+    "مشويات": ["المقبلات"],
     "كنافه": ["المشروبات"],
 };
 
@@ -536,6 +550,8 @@ let cart = JSON.parse(localStorage.getItem('deerty_cart') || '[]');
 const sectionsEl = document.getElementById('sections');
 const menuList = document.getElementById('menuList');
 const cartBtn = document.getElementById('cartBtn');
+
+
 const cartCount = document.getElementById('cartCount');
 const cartDrawer = document.getElementById('cartDrawer');
 const cartOverlay = document.getElementById('cartOverlay');
@@ -574,7 +590,7 @@ function renderSections(){
         const sectionDisplayName = sec.section === "الكل" ? `فرع ${currentBranch.name}` : sec.section;
 
         const card = document.createElement('div');
-        card.className = 'sec-card category-card';
+        card.className = 'sec-card';
         card.innerHTML = `
             <img src="${sec.sectionImg}" alt="${sec.section}" onerror="this.style.opacity=.35">
             <div class="sec-name">${sectionDisplayName}</div>
@@ -634,46 +650,64 @@ function renderMenu(sectionName, searchTerm = ''){
         return;
     }
 
-        filteredItems.forEach(item => {
-        const isAvailable = item.isAvailable !== false;
+    filteredItems.forEach(item=>{
+        const isAvailable = item.isAvailable !== false; 
+        // تحديد السعر المخفض الخاص بالفرع الحالي
         const discountedPriceForBranch = item.branchDiscounts ? item.branchDiscounts[currentBranchId] : null;
+        // تحديد ما إذا كان هناك خصم يطبق على هذا الفرع
         const hasDiscount = discountedPriceForBranch && discountedPriceForBranch < item.basePrice;
-        const isBestSeller = item.isBestSeller === true;
+        const isBestSeller = item.isBestSeller === true; 
 
-        // 💰 1. تحديد السعر الذي سيظهر في الشارة (Price Badge)
-        const finalPrice = hasDiscount ? discountedPriceForBranch : (item.basePrice > 0 ? item.basePrice : (item.options[0]?.price || 0));
-
-        let cardClassAddition = "";
-        let bestSellerBadge = isBestSeller ? '<span class="best-seller-badge">الأكثر مبيعاً 🏆</span>' : '';
+        let buttonText = "أضف للسلة";
+        let buttonAttributes = ""; 
+        let cardClassAddition = ""; 
+        let bestSellerBadge = ''; 
 
         if (!isAvailable) {
-            cardClassAddition = " unavailable-card";
+            buttonText = "غير متوفر مؤقتاً ⛔";
+            buttonAttributes = "disabled"; 
+            cardClassAddition = " unavailable-card"; 
         } else if (hasDiscount) {
-            cardClassAddition = " discount-card";
+            cardClassAddition = " discount-card"; 
         }
 
-        const card = document.createElement('div');
-        card.className = 'card' + cardClassAddition;
+        if (isBestSeller) {
+            bestSellerBadge = '<span class="best-seller-badge">الأكثر مبيعاً 🏆</span>';
+        }
 
-        // 🖼️ 2. الهيكل الجديد: استخدام card-img-container و price-badge
-        card.innerHTML = `
-            <div class="card-img-container">
-                <img src="${item.img}" alt="${item.name}" onerror="this.style.opacity=.35">
-                <div class="price-badge">${finalPrice} ريال</div>
-            </div>
+        let priceDisplay;
+        if (hasDiscount) {
+            priceDisplay = `
+                <span class="old-price">${item.basePrice} ريال</span> 
+                <span class="discount-price">${discountedPriceForBranch} ريال</span>
+            `;
+        } else {
+            priceDisplay = item.basePrice > 0 ? `${item.basePrice} ريال` : 
+                (item.options.length > 0 && item.options[0].price > 0 ? `ابتداءً من ${item.options[0].price} ريال` : `${item.options[0].price} ريال`);
+        }
+
+        // نستخدم actualSection إذا كانت الوجبة في قسم "الأكثر مبيعاً" أو "الكل"، وإلا نستخدم اسم القسم الحالي
+        const displayedSection = item.actualSection || sectionName; 
+
+        const card=document.createElement('div');
+        card.className='card' + cardClassAddition; 
+        card.innerHTML=`
+            <img src="${item.img}" alt="${item.name}" onerror="this.style.opacity=.35">
             ${bestSellerBadge} 
             <h3>${item.name}</h3>
-            <p>${item.actualSection || sectionName}</p>
-            <button class="add-btn" ${!isAvailable ? 'disabled' : ''}>
-                ${isAvailable ? 'أضف للسلة' : 'غير متوفر مؤقتاً ⛔'}
-            </button> 
+            <p>${displayedSection}</p>
+            <div class="price">${priceDisplay}</div>
+            <button class="add-btn" ${buttonAttributes}>${buttonText}</button> 
         `;
 
         if (isAvailable) {
             card.querySelector('button').onclick = function() {
                 const itemForCart = {...item};
+                
+                // 🚀 NEW: الحصول على مرجع الصورة لبطاقة المنتج الحالية
                 const itemImage = card.querySelector('img'); 
                 
+                // تعيين السعر الأساسي للخصم إذا كان موجوداً لهذا الفرع
                 if(hasDiscount){
                     itemForCart.basePrice = discountedPriceForBranch;
                 }
@@ -682,15 +716,16 @@ function renderMenu(sectionName, searchTerm = ''){
                 const needsOptions = item.options.length > 1 || (item.options.length === 1 && item.options[0].name !== "");
 
                 if(needsOptions){
-                    showOptions(itemForCart, false, itemImage);
+                    showOptions(itemForCart, false, itemImage); // 🚀 MODIFIED: تمرير itemImage
                 } else {
                     itemNoteInput.value = ''; 
-                    showOptions(itemForCart, true, itemImage);
+                    showOptions(itemForCart, true, itemImage); // 🚀 MODIFIED: تمرير itemImage
                 }
             };
         }
         menuList.appendChild(card);
     });
+}
 
 
 /* ====== Show options modal - لدعم الملاحظات ====== */
@@ -1263,4 +1298,34 @@ function flyToCart(imgElement) {
         flyingImg.remove();
     }, 800);
 }
+ // 🍎 iOS Install Banner — FINAL & STABLE
+(function () {
+
+  const ua = navigator.userAgent.toLowerCase();
+
+  const isIOS = /iphone|ipad|ipod/.test(ua);
+  const isSafari = /safari/.test(ua) && !/crios|fxios|opios|edgios|chrome/.test(ua);
+
+  const isStandalone =
+    window.matchMedia('(display-mode: standalone)').matches ||
+    window.navigator.standalone === true;
+
+  if (!isIOS || !isSafari || isStandalone || localStorage.getItem('iosInstallDismissed')) {
+    return;
+  }
+
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const banner = document.getElementById('iosInstallBanner');
+      if (banner) banner.style.display = 'block';
+    }, 3000);
+  });
+
+})();
+
+function closeIosBanner() {
+  localStorage.setItem('iosInstallDismissed', '1');
+  const banner = document.getElementById('iosInstallBanner');
+  if (banner) banner.style.display = 'none';
+} 
 // ------------------------------------------

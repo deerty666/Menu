@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>قائمة مطاعم ومطابخ سحايب ديرتي</title>
+<title> مطاعم ومطابخ سحايب ديرتي</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
 <link rel="manifest" href="/Dirty55/manifest.json">
@@ -158,7 +158,13 @@
   </div>
 </div>
 
-<button id="cartBtn" aria-label="عرض السلة">🛒 <span id="cartCount" style="display:none"></span></button>
+<!-- 🔥 Premium Cart Button -->
+<button id="cartBtn" aria-label="عرض السلة">
+  <svg viewBox="0 0 24 24" class="cart-icon">
+    <path d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.44C7.52 16.37 8 17 8.7 17H19v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12L10.1 13h6.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 21 4H7z"/>
+  </svg>
+  <span id="cartCount">0</span>
+</button>
 
 <div id="optionModal">
   <div class="modal-content">
@@ -187,7 +193,16 @@
         
     </div>
 </div>
-<script src="Script.js?v=3.1" defer></script>
 
+<!-- 🍎 بانر تثبيت الآيفون -->
+<div id="iosInstallBanner" class="ios-install-banner" style="display:none">
+  <p><strong>لتثبيت التطبيق على الآيفون</strong></p>
+  <p>
+    اضغط زر <strong>المشاركة ⬆️</strong><br>
+    ثم اختر <strong>إضافة إلى الشاشة الرئيسية</strong>
+  </p>
+  <button onclick="closeIosBanner()">حسنًا</button>
+</div>
+<script src="Script.js?v=3.1" defer></script>
 </body>
 </html>
