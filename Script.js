@@ -945,6 +945,7 @@ function renderCart(){
     cartCount.innerText=count;
     cartCount.style.display=count===0?'none':'inline-block';
     localStorage.setItem('deerty_cart',JSON.stringify(cart));
+    renderCartSuggestions(); // 👈 هذا السطر يشغل الرف الجديد
 }
 
 
@@ -1328,4 +1329,71 @@ function closeIosBanner() {
   const banner = document.getElementById('iosInstallBanner');
   if (banner) banner.style.display = 'none';
 } 
+/* ================================================= */
+/* 🛒 منطق "رف الاقتراحات" الذكي (استراتيجية الكاشير) */
+/* ================================================= */
+function renderCartSuggestions() {
+    const suggestionsContainer = document.getElementById('cartSuggestions');
+    suggestionsContainer.innerHTML = ''; // تنظيف الرف
+    suggestionsContainer.style.display = 'none'; // إخفاء مبدئي
+
+    if (cart.length === 0) return; // لا اقتراحات إذا السلة فارغة
+
+    let suggestedCategories = new Set();
+    
+    // 1. البحث عن الأقسام المقترحة بناءً على محتويات السلة
+    cart.forEach(cartItem => {
+        // البحث في القواعد الذكية الموجودة لديك مسبقاً
+        Object.keys(dynamicSuggestionRules).forEach(ruleKey => {
+            if (cartItem.name.includes(ruleKey)) {
+                dynamicSuggestionRules[ruleKey].forEach(cat => suggestedCategories.add(cat));
+            }
+        });
+    });
+
+    if (suggestedCategories.size === 0) return;
+
+    // 2. جلب منتجات من الأقسام المقترحة (غير موجودة في السلة)
+    let suggestionsToShow = [];
+    processedMenuData.forEach(section => {
+        if (suggestedCategories.has(section.section)) {
+            section.items.forEach(item => {
+                // شرط: ألا يكون المنتج موجوداً بالفعل في السلة
+                const alreadyInCart = cart.some(cItem => cItem.id === item.id);
+                if (!alreadyInCart && suggestionsToShow.length < 5) { // نكتفي بـ 5 اقتراحات
+                    suggestionsToShow.push(item);
+                }
+            });
+        }
+    });
+
+    if (suggestionsToShow.length === 0) return;
+
+    // 3. رسم المنتجات في الرف
+    suggestionsContainer.style.display = 'block'; // إظهار الرف
+    suggestionsContainer.innerHTML = '<div style="font-size:0.9rem; margin-bottom:5px; color:#ccc;">أكمل وجبتك بـ... 👇</div>'; // عنوان بسيط
+
+    suggestionsToShow.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'cart-suggestion-item';
+        itemDiv.innerHTML = `
+            <img src="${item.img}" onerror="this.src='/Dirty55/logo-bg.png'">
+            <h4>${item.name}</h4>
+            <span class="price">${item.basePrice} ريال</span>
+            <button>أضف +</button>
+        `;
+        
+        // عند الضغط على زر الإضافة
+        itemDiv.querySelector('button').onclick = () => {
+            // إضافة للسلة (بدون خيارات معقدة للسرعة)
+            const defaultOption = item.options.length > 0 ? item.options[0] : null;
+            addToCart({...item, qty: 1, selectedOption: defaultOption});
+            // (اختياري) تأثير طيران الصورة
+            const img = itemDiv.querySelector('img');
+            if(typeof flyToCart === 'function') flyToCart(img);
+        };
+
+        suggestionsContainer.appendChild(itemDiv);
+    });
+}
 // ------------------------------------------
