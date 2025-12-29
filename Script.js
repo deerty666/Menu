@@ -827,68 +827,10 @@ function addToCart(item){
 
     saveCart();
 flashCartButton();
-showSmartSuggestion(item);
+
 }
 // 🚀 ———————————————
-//  نظام الاقتراحات الذكي
-// ————————————————
 
-function showSmartSuggestion(item) {
-    const itemName = item.name;
-
-    // البحث عن مفتاح مناسب داخل dynamicSuggestionRules
-    let matchedKey = Object.keys(dynamicSuggestionRules).find(key =>
-        itemName.includes(key)
-    );
-
-    if (!matchedKey) return;  // لا يوجد اقتراحات
-
-    const suggestedSections = dynamicSuggestionRules[matchedKey];
-
-    if (!suggestedSections || suggestedSections.length === 0) return;
-
-    // العثور على المنتجات التي تنتمي لهذه الأقسام
-    let suggestions = [];
-
-    suggestedSections.forEach(sectionName => {
-        processedMenuData.forEach(sec => {
-            if (sec.section.includes(sectionName)) {
-                suggestions.push(...sec.items.slice(0, 2)); // نأخذ فقط 2 من كل قسم
-            }
-        });
-    });
-
-    if (suggestions.length === 0) return;
-
-    openSuggestionModal(suggestions);
-}
-
-
-function openSuggestionModal(list) {
-    const modal = document.getElementById('suggestionModal');
-    const suggestionItems = document.getElementById('suggestionItems');
-
-    suggestionItems.innerHTML = ''; 
-
-    list.forEach(sug => {
-        const div = document.createElement('div');
-        div.className = 'suggestion-item';
-        div.innerText = sug.name;
-
-        div.onclick = () => {
-            addToCart({...sug, qty:1, selectedOption: sug.options[0], note:null});
-            modal.style.display = "none";
-        };
-
-        suggestionItems.appendChild(div);
-    });
-
-    modal.style.display = "flex";
-
-    document.getElementById('closeSuggestion').onclick = () => {
-        modal.style.display = "none";
-    };
-}
 
 /* ====== renderCart - عرض الإجمالي التفصيلي باستخدام رسوم الفرع الحالي ====== */
 function renderCart(){
