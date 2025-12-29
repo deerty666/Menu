@@ -1278,16 +1278,15 @@ function closeIosBanner() {
 /* ================================================= */
 function renderCartSuggestions() {
     const suggestionsContainer = document.getElementById('cartSuggestions');
-    suggestionsContainer.innerHTML = ''; // تنظيف الرف
-    suggestionsContainer.style.display = 'none'; // إخفاء مبدئي
+    suggestionsContainer.innerHTML = ''; 
+    suggestionsContainer.style.display = 'none'; 
 
-    if (cart.length === 0) return; // لا اقتراحات إذا السلة فارغة
+    if (cart.length === 0) return; 
 
     let suggestedCategories = new Set();
     
-    // 1. البحث عن الأقسام المقترحة بناءً على محتويات السلة
+    // 1. تحديد الأقسام المقترحة
     cart.forEach(cartItem => {
-        // البحث في القواعد الذكية الموجودة لديك مسبقاً
         Object.keys(dynamicSuggestionRules).forEach(ruleKey => {
             if (cartItem.name.includes(ruleKey)) {
                 dynamicSuggestionRules[ruleKey].forEach(cat => suggestedCategories.add(cat));
@@ -1297,25 +1296,30 @@ function renderCartSuggestions() {
 
     if (suggestedCategories.size === 0) return;
 
-    // 2. جلب منتجات من الأقسام المقترحة (غير موجودة في السلة)
-    let suggestionsToShow = [];
+    // 2. تجميع كل المرشحين (بدلاً من الاختيار الفوري)
+    let allCandidates = [];
     processedMenuData.forEach(section => {
         if (suggestedCategories.has(section.section)) {
             section.items.forEach(item => {
-                // شرط: ألا يكون المنتج موجوداً بالفعل في السلة
                 const alreadyInCart = cart.some(cItem => cItem.id === item.id);
-                if (!alreadyInCart && suggestionsToShow.length < 5) { // نكتفي بـ 5 اقتراحات
-                    suggestionsToShow.push(item);
+                if (!alreadyInCart) {
+                    allCandidates.push(item);
                 }
             });
         }
     });
 
-    if (suggestionsToShow.length === 0) return;
+    if (allCandidates.length === 0) return;
 
-    // 3. رسم المنتجات في الرف
-    suggestionsContainer.style.display = 'block'; // إظهار الرف
-    suggestionsContainer.innerHTML = '<div style="font-size:0.9rem; margin-bottom:5px; color:#ccc;">أكمل وجبتك بـ... 👇</div>'; // عنوان بسيط
+    // 3. خلط المرشحين عشوائياً لضمان التنوع
+    allCandidates.sort(() => Math.random() - 0.5);
+
+    // 4. أخذ أول 5 عناصر فقط
+    const suggestionsToShow = allCandidates.slice(0, 5);
+
+    // 5. رسم المنتجات
+    suggestionsContainer.style.display = 'block'; 
+    suggestionsContainer.innerHTML = '<div style="font-size:0.9rem; margin-bottom:5px; color:#ccc;">أكمل وجبتك بـ... 👇</div>'; 
 
     suggestionsToShow.forEach(item => {
         const itemDiv = document.createElement('div');
@@ -1327,12 +1331,9 @@ function renderCartSuggestions() {
             <button>أضف +</button>
         `;
         
-        // عند الضغط على زر الإضافة
         itemDiv.querySelector('button').onclick = () => {
-            // إضافة للسلة (بدون خيارات معقدة للسرعة)
             const defaultOption = item.options.length > 0 ? item.options[0] : null;
             addToCart({...item, qty: 1, selectedOption: defaultOption});
-            // (اختياري) تأثير طيران الصورة
             const img = itemDiv.querySelector('img');
             if(typeof flyToCart === 'function') flyToCart(img);
         };
@@ -1340,4 +1341,5 @@ function renderCartSuggestions() {
         suggestionsContainer.appendChild(itemDiv);
     });
 }
+
 // ------------------------------------------
