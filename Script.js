@@ -342,17 +342,7 @@ const menuData = [
         section:"الأطباق الجانبية", 
         sectionImg: "/Dirty55/si00.webp",
         items:[
-            // الوجبة الجديدة: شوربة (أكثر مبيعاً)
-            {id:"side0", img:"/Dirty55/si08.webp", name:"شوربة", basePrice:8, isBestSeller: true, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صحن", price:0}]},
-            // الوجبة 1: جريش (أكثر مبيعاً)
-            {id:"side1", img:"/Dirty55/si01.webp", name:"جريش", basePrice:0, isBestSeller: true, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صغير", price:5}, {name:"كبير", price:10}]},
-            // الوجبة 2
-            {id:"side3", img:"/Dirty55/si02.webp", name:"قرصان", basePrice:0, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صغير", price:5}, {name:"كبير", price:10}]},
-            // الوجبة 3
-            {id:"side5", img:"/Dirty55/si03.webp", name:"طحينه", basePrice:3, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"علبه", price:0}]},
-            // الوجبة 4
-            {id:"side6", img:"/Dirty55/si04.webp", name:"سلطه حار", basePrice:3, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"علبه", price:0}]},
-            // الوجبة 5
+              // الوجبة 3 // الوجبة 5
             {id:"side7", img:"/Dirty55/si05.webp", name:"نفر رز شعبي", basePrice:10, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"نفر", price:0}]},
             // الوجبة 6
             {id:"side8", img:"/Dirty55/si06.webp", name:"نفر رز بشاور", basePrice:10, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"نفر", price:0}]},
@@ -406,6 +396,13 @@ const menuData = [
             {id:"eid4", img:"/Dirty55/ed04.webp", name:"مشكل فران", basePrice:10, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صحن", price:0}]},
             // الوجبة 5
             {id:"eid5", img:"/Dirty55/ed05.webp", name:"مسقع", basePrice:12, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صحن", price:0}]}
+            // الوجبة الجديدة: شوربة (أكثر مبيعاً)
+            {id:"side0", img:"/Dirty55/si08.webp", name:"شوربة", basePrice:8, isBestSeller: true, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صحن", price:0}]},
+            // الوجبة 1: جريش (أكثر مبيعاً)
+            {id:"side1", img:"/Dirty55/si01.webp", name:"جريش", basePrice:0, isBestSeller: true, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صغير", price:5}, {name:"كبير", price:10}]},
+            // الوجبة 2
+            {id:"side3", img:"/Dirty55/si02.webp", name:"قرصان", basePrice:0, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صغير", price:5}, {name:"كبير", price:10}]},
+          
         ]
     },
     { 
@@ -454,6 +451,11 @@ const menuData = [
             ]},
             // الوجبة 8
             {id:"app-mshkl", img:"/Dirty55/ap08.webp", name:"مشكل مقبلات", basePrice:13, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"طبق", price:0}]}
+            
+            {id:"side5", img:"/Dirty55/si03.webp", name:"طحينه", basePrice:3, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"علبه", price:0}]},
+            // الوجبة 4
+            {id:"side6", img:"/Dirty55/si04.webp", name:"سلطه حار", basePrice:3, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"علبه", price:0}]},
+           
         ]
     },
     { 
@@ -534,14 +536,14 @@ const searchBar = document.getElementById('searchBar');
 
 /* ====== سلة الطلبات والعناصر ====== */
 const dynamicSuggestionRules = {
-    "شواية": ["المقبلات", "الأطباق الجانبية", "الايدامات"],
-    "مظبي": ["المقبلات", "الأطباق الجانبية", "الايدامات"],
-    "مندي": ["المقبلات", "الأطباق الجانبية", "الايدامات"],
-    "مدفون": ["المقبلات", "الأطباق الجانبية", "الايدامات"],
-    "مقلوبه": ["المقبلات","الأطباق الجانبية", "الايدامات"],
-    "مضغوط": ["المقبلات","الأطباق الجانبية", "المقبلات"],
-    "زربيان": ["المقبلات","الأطباق الجانبية", "الايدامات"],
-    "رز": ["المقبلات","الأطباق الجانبية", "الايدامات"],
+    "شواية": ["المقبلات", "الايدامات"],
+    "مظبي": ["المقبلات","الايدامات"],
+    "مندي": ["المقبلات","الايدامات"],
+    "مدفون": ["المقبلات","الايدامات"],
+    "مقلوبه": ["المقبلات","الايدامات"],
+    "مضغوط": ["المقبلات","المقبلات"],
+    "زربيان": ["المقبلات","الايدامات"],
+    "رز": ["المقبلات","الايدامات"],
     "مشويات": ["المقبلات"],
     "كنافه": ["المشروبات"],
 };
