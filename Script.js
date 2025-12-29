@@ -395,7 +395,7 @@ const menuData = [
             // الوجبة 4
             {id:"eid4", img:"/Dirty55/ed04.webp", name:"مشكل فران", basePrice:10, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صحن", price:0}]},
             // الوجبة 5
-            {id:"eid5", img:"/Dirty55/ed05.webp", name:"مسقع", basePrice:12, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صحن", price:0}]}
+            {id:"eid5", img:"/Dirty55/ed05.webp", name:"مسقع", basePrice:12, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صحن", price:0}]},
             // الوجبة الجديدة: شوربة (أكثر مبيعاً)
             {id:"side0", img:"/Dirty55/si08.webp", name:"شوربة", basePrice:8, isBestSeller: true, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"صحن", price:0}]},
             // الوجبة 1: جريش (أكثر مبيعاً)
@@ -450,7 +450,7 @@ const menuData = [
                 {name:"وسط", price:13}
             ]},
             // الوجبة 8
-            {id:"app-mshkl", img:"/Dirty55/ap08.webp", name:"مشكل مقبلات", basePrice:13, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"طبق", price:0}]}
+            {id:"app-mshkl", img:"/Dirty55/ap08.webp", name:"مشكل مقبلات", basePrice:13, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"طبق", price:0}]},
             
             {id:"side5", img:"/Dirty55/si03.webp", name:"طحينه", basePrice:3, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"علبه", price:0}]},
             // الوجبة 4
