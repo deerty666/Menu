@@ -463,7 +463,7 @@ const menuData = [
   availableIn: ['branch1', 'branch2', 'branch3'],
   options:[
     {name:"طبق", price:0}
-  ]
+  ],
 }
             {id:"side5", img:"/Dirty55/si03.webp", name:"طحينه", basePrice:3, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"علبه", price:0}]},
             // الوجبة 4
