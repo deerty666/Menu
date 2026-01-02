@@ -460,7 +460,7 @@ const menuData = [
                     'branch1': 10,
                     'branch2': 10,
                     'branch3': 10
-                },
+                ]},
                 
 
             {id:"side5", img:"/Dirty55/si03.webp", name:"طحينه", basePrice:3, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"علبه", price:0}]},
