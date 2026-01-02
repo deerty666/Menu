@@ -450,8 +450,21 @@ const menuData = [
                 {name:"وسط", price:13}
             ]},
             // الوجبة 8
-            {id:"app-mshkl", img:"/Dirty55/ap08.webp", name:"مشكل مقبلات", basePrice:13, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"طبق", price:0}]},
-            
+            {
+  id:"app-mshkl",
+  img:"/Dirty55/ap08.webp",
+  name:"مشكل مقبلات",
+  basePrice: 13,   // السعر الأصلي
+  branchDiscounts: {
+    'branch1': 10,
+    'branch2': 10,
+    'branch3': 10
+  },
+  availableIn: ['branch1', 'branch2', 'branch3'],
+  options:[
+    {name:"طبق", price:0}
+  ]
+}
             {id:"side5", img:"/Dirty55/si03.webp", name:"طحينه", basePrice:3, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"علبه", price:0}]},
             // الوجبة 4
             {id:"side6", img:"/Dirty55/si04.webp", name:"سلطه حار", basePrice:3, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"علبه", price:0}]},
