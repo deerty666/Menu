@@ -464,7 +464,7 @@ const menuData = [
   options:[
     {name:"طبق", price:0}
   ],
-}
+},
             {id:"side5", img:"/Dirty55/si03.webp", name:"طحينه", basePrice:3, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"علبه", price:0}]},
             // الوجبة 4
             {id:"side6", img:"/Dirty55/si04.webp", name:"سلطه حار", basePrice:3, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"علبه", price:0}]},
