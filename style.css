@@ -86,97 +86,53 @@ header img {
 }
 
 /* ================================================= */
-/* 🧭 3. الأقسام (Sections) - التصميم النهائي الاحترافي */
-/* ================================================= */
-
-/* تعريف حركة النبض الذهبية */
-@keyframes pulse-gold {
-    0% {
-        box-shadow: 0 0 0 0 rgba(195, 158, 106, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(195, 158, 106, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(195, 158, 106, 0);
-    }
-}
+/* 🧭 تنسيق شريط الأقسام المحدث */
 #sections {
     display: flex;
     overflow-x: auto;
-    padding: 15px 15px;      /* تعديل بسيط للحشوة */
+    padding: 15px;
     gap: 15px;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
+    background-color: transparent; /* جعل الخلفية شفافة لتظهر خلفية الصفحة */
     margin-bottom: 20px;
-
-    /* --- خصائص التثبيت الجديدة --- */
-    position: sticky;        /* يجعل العنصر يلتصق عند التمرير */
-    top: 70px;               /* يحدد المسافة من أعلى الشاشة */
-    z-index: 9;              /* يضمن بقاء الشريط فوق المحتوى الآخر */
-    background-color: var(--body-bg); /* لون الخلفية لتغطية ما يمر تحته */
-    padding-bottom: 20px;    /* مسافة إضافية للجمالية */
+    position: sticky;
+    top: 70px;
+    z-index: 9;
 }
 
-
-#sections::-webkit-scrollbar {
-    display: none;
-}
-
+/* 💠 بطاقة القسم الصغير */
 .sec-card {
     flex: 0 0 auto;
-    width: 110px; /* العرض الجديد المكبر */
-    height: 145px; /* الارتفاع الجديد */
-    border-radius: 20px;
-    background-color: var(--section-card-bg);
+    width: 100px;
+    height: 130px;
+    border-radius: 15px;
+    background-color: #ffffff; /* خلفية بيضاء ناصعة ⚪ */
+    border: 1px solid #e0e0e0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    border: 2px solid transparent;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    scroll-snap-align: start;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
 }
 
-.sec-card img {
-    width: 80px;  /* تكبير الصورة */
-    height: 80px; /* تكبير الصورة */
-    object-fit: cover;
-    border-radius: 50%; /* شكل دائري عصري */
-    margin-bottom: 10px;
-    background: #1a1a1a;
-    border: 2px solid rgba(195, 158, 106, 0.1);
-}
-
-.sec-card .sec-name {
-    font-family: 'Cairo', sans-serif;
-    font-size: 0.95rem; /* تكبير الخط */
-    font-weight: 800; /* خط عريض */
-    color: var(--light-text);
-    line-height: 1.2;
-    transition: color 0.3s ease;
-}
-
-/* ✨ تأثير القسم النشط (Active) */
+/* ✨ تأثير القسم المختار (النشط) */
 .sec-card.active {
-    border-color: var(--gold);
-    background-color: #2a2522;
-    transform: translateY(-10px); /* رفع البطاقة للأعلى */
-    animation: pulse-gold 2s infinite; /* تأثير النبض */
+    border: 2px solid var(--gold); /* إطار أزرق بحري 🔵 */
+    background-color: #e1f5fe; /* لون أزرق فاتح جداً */
+    transform: translateY(-5px);
 }
 
 .sec-card.active .sec-name {
-    color: var(--gold); /* تحويل النص للذهبي */
+    color: var(--gold);
+    font-weight: 800;
 }
 
-.sec-card.active img {
-    border-color: var(--gold);
-    transform: scale(1.1); /* تكبير الصورة قليلاً */
+.sec-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #f0f0f0;
+    margin-bottom: 8px;
 }
 
 
