@@ -853,9 +853,9 @@ function requestNotificationPermission() {
         if (permission === 'granted') {
             console.log("Notification permission granted.");
             // إشعار ترحيبي
-            new Notification('أهلاً بك في سحايب ديرتي!', {
+            new Notification('أهلاً بك في الجنوب للأسماك!', {
                 body: 'تم تفعيل الإشعارات بنجاح. سنعلمك بأحدث العروض!',
-                icon: '/Dirty55/Icon-192.png' 
+                icon: 'Icon-192.png' 
             });
         } else {
             console.log("Notification permission denied or ignored.");
