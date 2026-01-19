@@ -197,78 +197,70 @@ header img {
         max-width: 1200px;
         margin: 0 auto;
     }
-}
+}/* 🍽️ تصميم بطاقات الوجبات بالهوية البحرية الجديدة */
 .card {
-    background-color: var(--card-bg);
+    background-color: var(--card-bg); /* ستكون الخلفية بيضاء ⚪ */
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    /* ظل أزرق خفيف يعطي إحساسًا بالعمق 🌊 */
+    box-shadow: 0 4px 15px rgba(0, 74, 173, 0.1); 
     display: flex;
     flex-direction: column;
     position: relative;
     padding-bottom: 10px;
-
-    /* 👇 انسخ هذا السطر وأضفه هنا 👇 */
-    border: 1px solid var(--gold); 
+    border: 2px solid var(--gold); /* إطار بلون أزرق بحري 🔵 */
 }
 
 .card img {
     width: 100%;
-    height: 120px;
+    height: 140px; /* زيادة الطول قليلاً لجعل الصور أوضح */
     object-fit: cover;
     display: block;
     margin-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0; /* خط فاصل بسيط تحت الصورة */
 }
 
 .card h3 {
     margin: 0 10px 5px;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--light-text);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--old-brown); /* نص أزرق داكن وواضح ⚓ */
 }
 
 .card p {
     margin: 0 10px 8px;
-    font-size: 0.8rem;
-    color: var(--gold); /* لون القسم بلون مميز */
+    font-size: 0.85rem;
+    color: #666; /* وصف بلون رمادي هادئ */
 }
 
 .card .price {
     margin: 0 10px 10px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 800;
-    color: var(--light-text);
+    color: var(--red); /* السعر باللون الأحمر لفت الانتباه 📍 */
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
 .card .add-btn {
-    background-color: var(--gold);
-    color: var(--old-brown);
+    background-color: var(--gold); /* زر أزرق ناصع 🔵 */
+    color: #ffffff; /* نص أبيض */
     padding: 10px;
     border: none;
-    border-radius: 8px;
+    border-radius: 25px; /* حواف دائرية أكثر حداثة */
     margin: 0 10px;
     font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: all 0.3s;
     font-size: 0.95rem;
 }
 
 .card .add-btn:hover {
-    background-color: #a07c4c;
+    background-color: #003580; /* لون أزرق أغمق عند التمرير */
+    transform: scale(1.02); /* تكبير بسيط للزر */
 }
 
-.card .add-btn:disabled {
-    background-color: #555;
-    color: #bbb;
-    cursor: not-allowed;
-}
-
-.unavailable-card {
-    opacity: 0.6;
-}
 
 /* 🏆 شارة الأكثر مبيعاً */
 .best-seller-badge {
