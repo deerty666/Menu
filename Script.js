@@ -283,19 +283,7 @@ const menuData = [
             {id:"mq1", img:"mq00.webp", name:"حلبة", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]},
             {id:"mq1", img:"mq00.webp", name:"دقة فلفل زبادي", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]},
             {id:"mq2", img:"mq00.webp", name:"طحينه", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]}
-        ]
-    },
-    
-    { 
-        section:"زربيان", 
-        sectionImg: "zb00.webp",
-        items:[
-            // الوجبة 1
-            {id:"zb1", img:"zb00.webp", name:"دجاج زربيان حبه", basePrice:50, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز زربيان", price:0}]},
-            // الوجبة 2
-            {id:"zb2", img:"zb00.webp", name:"نص حبه زربيان", basePrice:25, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز زربيان", price:0}]}
-        ]
-    },
+        ]},
     { 
         section:"المشروبات", 
         sectionImg: "dr00.webp",
