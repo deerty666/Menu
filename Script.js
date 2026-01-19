@@ -52,6 +52,14 @@ const menuData = [
                 {name:"رز مندي", price:2},
                 {name:"رز مثلوثه", price:2}
             ]},
+            
+            // الوجبة 2: تم تغيير اسمها
+            {id:"sh2", img:"sh00.webp", name:"مرسله بلدي", basePrice:13, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+                {name:"رز شعبي", price:0},
+                {name:"رز بشاور", price:2},
+                {name:"رز مندي", price:2},
+                {name:"رز مثلوثه", price:2}
+            ]},
             // الوجبة 3: نص شواية سادة
             {id:"sh3", img:"sh10.webp", name:"مكشن سليط ملوخية كنعد",
              basePrice:34,
