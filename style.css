@@ -248,51 +248,42 @@ header img {
 
 
 /* ================================================= */
-/* 🛒 5. زر السلة العائم (Cart Button) */
-/* ================================================= */
+/* 🛒 تنسيق زر السلة البحري */
 #cartBtn {
     position: fixed;
-    bottom: 15px;
-    right: 15px;
-    background-color: var(--gold);
-    color: var(--old-brown);
-    border: none;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--gold); /* أزرق بحري 🔵 */
+    color: #ffffff; /* أيقونة بيضاء ⚪ */
+    border: 2px solid #ffffff; /* إطار أبيض لإبرازه بوضوح */
     border-radius: 50px;
-    padding: 15px 20px;
+    padding: 12px 20px;
     font-size: 1.2rem;
     font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 74, 173, 0.4);
     z-index: 20;
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: all 0.3s ease;
+}
+
+#cartBtn:hover {
+    transform: scale(1.05);
+    background-color: #003580; /* أزرق أغمق عند التمرير ⚓ */
 }
 
 #cartCount {
-    background-color: var(--red);
-    color: var(--light-text);
+    background-color: #ff3d00; /* أحمر برتقالي للتنبيه 📍 */
+    color: #ffffff;
     border-radius: 50%;
     padding: 2px 8px;
     font-size: 0.9rem;
     min-width: 25px;
     text-align: center;
     line-height: 1.5;
-}
-
-.flash-cart-btn {
-    animation: flash 0.4s;
-}
-
-@keyframes flash {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-        background-color: var(--red);
-        color: var(--light-text);
-    }
+    border: 1px solid #ffffff;
 }
 
 
