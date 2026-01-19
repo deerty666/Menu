@@ -1041,7 +1041,7 @@ renderCart();
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         // تم التأكد من المسار إلى /Dirty55/
-        navigator.serviceWorker.register('/Dirty55/service-worker.js') .then(reg => {
+        navigator.serviceWorker.register('service-worker.js') .then(reg => {
             console.log('Service Worker Registered!', reg.scope);
         })
         .catch(err => {
@@ -1160,7 +1160,7 @@ function renderCartSuggestions() {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'cart-suggestion-item';
         itemDiv.innerHTML = `
-            <img src="${item.img}" onerror="this.src='/Dirty55/logo-bg.png'">
+            <img src="${item.img}" onerror="this.src='logo-bg.png'">
             <h4>${item.name}</h4>
             <span class="price">${item.basePrice} ريال</span>
             <button>أضف +</button>
