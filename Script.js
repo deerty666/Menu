@@ -286,21 +286,24 @@ const menuData = [
         ]
     },
     { 
-        section:"مضغوط", 
+        section:"الشروبات", 
         sectionImg: "mg00.webp",
         items:[
             // الوجبة 1
             {
                 id:"mg1", 
                 img:"mg00.webp", 
-                name:"حبه دجاج مضغوط ", 
-                basePrice:50, 
-                isBestSeller: true, 
+                name:"ببسي", 
+                basePrice:3,
                 availableIn: ['branch1', 'branch2', 'branch3'], 
-                options:[{name:"رز مضغوط", price:0}]
+                options:[
+                {name:"ببسي", price:0},
+                {name:"سفن", price:0},
+                {name:"حمضيات", price:0},
+                {name:"ببسي دايت", price:0}
             }, 
             // الوجبة 2
-            {id:"mg2", img:"mg00.webp", name:"نص حبه مضغوط", basePrice:25, availableIn: ['branch1', 'branch2', 'branch3'], optins:[{name:"رز مضغوط", price:0}]}
+            {id:"mg2", img:"mg00.webp", name:"عصير نجران", basePrice:1, availableIn: ['branch1', 'branch2', 'branch3'], optins:[{name:"عصيرنجران", price:0}]}
         ]
     },
     { 
