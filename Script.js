@@ -24,7 +24,7 @@ if (urlParams.has('branch')) {
     currentBranchId = urlParams.get('branch');
 }
 const currentBranch = BRANCH_CONFIG[currentBranchId] || BRANCH_CONFIG['branch1'];
-document.title = `قائمة سحايب ديرتي - فرع ${currentBranch.name}`; // تحديث عنوان الصفحة باسم الفرع
+document.title = `قائمة مطعم الجنوب للأسماك- فرع ${currentBranch.name}`; // تحديث عنوان الصفحة باسم الفرع
 
 /* ====== بيانات المنيو - تم تحديث جميع مسارات الصور إلى صيغة WEBP وباسم قصير (مثال: /Dirty55/sh01.webp) ====== */
 const menuData = [
@@ -35,26 +35,26 @@ const menuData = [
         items:[] 
     },
     { 
-        section:"الشوايه", 
+        section:"الاطباق الرئيسية", 
         sectionImg: "sh00.webp", // صورة القسم
         items:[
             // الوجبة 1
-            {id:"sh1", img:"sh00.webp", name:"حبة شواية", basePrice:46, availableIn: ['branch1','branch2', 'branch3'], options:[ 
+            {id:"sh1", img:"sh00.webp", name:"مكشن سليط كنعد بلدي", basePrice:38, availableIn: ['branch1','branch2', 'branch3'], options:[ 
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:4},
                 {name:"رز مندي", price:4},
                 {name:"رز مثلوثه", price:4}
             ]},
             // الوجبة 2: تم تغيير اسمها
-            {id:"sh2", img:"sh00.webp", name:"نص شواية بالرز", basePrice:23, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"sh2", img:"sh00.webp", name:"مكشن سليط جمبري", basePrice:43, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:2},
                 {name:"رز مندي", price:2},
                 {name:"رز مثلوثه", price:2}
             ]},
             // الوجبة 3: نص شواية سادة
-            {id:"sh3", img:"sh10.webp", name:"ربع دجاج ",
-             basePrice:15,
+            {id:"sh3", img:"sh10.webp", name:"مكشن سليط ملوخية كنعد",
+             basePrice:34,
              isBestSeller: true,
              availableIn: ['branch1', 'branch2', 'branch3'], options:[
                {name:"شوايه", price:0},
