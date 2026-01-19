@@ -285,27 +285,7 @@ const menuData = [
             {id:"mq2", img:"mq00.webp", name:"طحينه", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]}
         ]
     },
-    { 
-        section:"الشروبات", 
-        sectionImg: "mg00.webp",
-        items:[
-            // الوجبة 1
-            {
-                id:"mg1", 
-                img:"mg00.webp", 
-                name:"ببسي", 
-                basePrice:3,
-                availableIn: ['branch1', 'branch2', 'branch3'], 
-                options:[
-                {name:"ببسي", price:0},
-                {name:"سفن", price:0},
-                {name:"حمضيات", price:0},
-                {name:"ببسي دايت", price:0}
-            }, 
-            // الوجبة 2
-            {id:"mg2", img:"mg00.webp", name:"عصير نجران", basePrice:1, availableIn: ['branch1', 'branch2', 'branch3'], optins:[{name:"عصيرنجران", price:0}]}
-        ]
-    },
+    
     { 
         section:"زربيان", 
         sectionImg: "zb00.webp",
