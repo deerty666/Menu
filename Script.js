@@ -272,13 +272,17 @@ const menuData = [
         ]
     },
     { 
-        section:"مقلوبه", 
+        section:"الصوصات", 
         sectionImg: "mq00.webp",
         items:[
             // الوجبة 1
-            {id:"mq1", img:"mq00.webp", name:" حبه مقلوبه ", basePrice:50, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]},
-            // الوجبة 2
-            {id:"mq2", img:"mq00.webp", name:"نص دجاج مقلوبه", basePrice:25, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]}
+            {id:"mq1", img:"mq00.webp", name:"حمر", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]},
+            
+            {id:"mq1", img:"mq00.webp", name:"سحاوق جبن", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]},
+            {id:"mq1", img:"mq00.webp", name:"زبادي مصلح", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]},
+            {id:"mq1", img:"mq00.webp", name:"حلبة", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]},
+            {id:"mq1", img:"mq00.webp", name:"دقة فلفل زبادي", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]},
+            {id:"mq2", img:"mq00.webp", name:"طحينه", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]}
         ]
     },
     { 
@@ -296,7 +300,7 @@ const menuData = [
                 options:[{name:"رز مضغوط", price:0}]
             }, 
             // الوجبة 2
-            {id:"mg2", img:"mg00.webp", name:"نص حبه مضغوط", basePrice:25, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز مضغوط", price:0}]}
+            {id:"mg2", img:"mg00.webp", name:"نص حبه مضغوط", basePrice:25, availableIn: ['branch1', 'branch2', 'branch3'], optins:[{name:"رز مضغوط", price:0}]}
         ]
     },
     { 
