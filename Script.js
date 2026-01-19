@@ -72,13 +72,7 @@ const menuData = [
                     {name:"شوايه", price:0},
                     {name:"مظبي", price:0},
                     {name:"مندي", price:0}
-                     ]},
-            // الوجبة 2: تم تغيير اسمها
-            {id:"sh2", img:"sh00.webp", name:"مرسة بلدي", basePrice:13, availableIn: ['branch1', 'branch2', 'branch3'], options:[
-                {name:"رز شعبي", price:0},
-                {name:"رز بشاور", price:2},
-                {name:"رز مندي", price:2},
-                {name:"رز مثلوثه", pri 
+                 
                 ]
             }
         ]
