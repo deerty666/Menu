@@ -64,14 +64,21 @@ const menuData = [
             {
                 id:"sh4", 
                 img:"sh20.webp", 
-                name:"نصف دجاج (ساده بدون رز شوايه آو مضبي آو مندي)", 
-                basePrice:15, 
+                name:"حايسيه", 
+                basePrice:18, 
                 isBestSeller: true, 
                 availableIn: ['branch1', 'branch2', 'branch3'], 
                 options:[
                     {name:"شوايه", price:0},
                     {name:"مظبي", price:0},
                     {name:"مندي", price:0}
+                     ]},
+            // الوجبة 2: تم تغيير اسمها
+            {id:"sh2", img:"sh00.webp", name:"مرسة بلدي", basePrice:13, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+                {name:"رز شعبي", price:0},
+                {name:"رز بشاور", price:2},
+                {name:"رز مندي", price:2},
+                {name:"رز مثلوثه", pri 
                 ]
             }
         ]
