@@ -26,7 +26,7 @@ const menuData = [
     // 1. القسم الجديد: الكل
     { 
         section:"الكل", 
-        sectionImg: "logo-bg1.webp", // صورة عامة
+        sectionImg: "logo-bg11.webp", // صورة عامة
         items:[] 
     },
     { 
