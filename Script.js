@@ -294,7 +294,9 @@ const menuData = [
             {id:"bev-q", img:"dr05.webp", name:"عصير نجران", basePrice:3, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"عبوة", price:0}]}
         ]
     
-    },    { 
+    },    
+    
+    { 
         section: "بوكسات الجمعات", 
         sectionImg: "gathering_boxes.webp", 
         sectionAvailableIn: ['branch1', 'branch2', 'branch3'], 
@@ -328,11 +330,10 @@ const menuData = [
                 bestSeller: true,
                 availableIn: ['branch1', 'branch2', 'branch3'], 
                 options: [{name: "عادي", price: 0}]
+               ] 
             }
-        ]
-    }
-
-
+       ];
+ 
 /* ====== دالة معالجة البيانات لتقديم "الأكثر مبيعاً" في بداية القائمة ====== */
 function processMenuData(data) {
     let bestSellers = []; 
