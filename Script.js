@@ -34,9 +34,9 @@ const menuData = [
         sectionImg: "sh00.webp", // صورة القسم
         items:[
             // الوجبة 1
-            {id:"sh1", img:"sh00.webp", name:"مكشن سليط كنعد بلدي", basePrice:38, availableIn: ['branch1','branch2', 'branch3'], options:[ 
-                
-            ]},
+            {id:"sh1", img:"sh00.webp", name:"مكشن سليط كنعد بلدي", basePrice:38, availableIn: ['branch1','branch2', 'branch3'], options:[]}, 
+              
+           
             // الوجبة 2: تم تغيير اسمها
             {id:"sh2", img:"sh01.webp", name:"مكشن سليط جمبري", basePrice:43, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"بدون رز", price:0},
