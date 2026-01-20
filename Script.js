@@ -48,35 +48,35 @@ const menuData = [
             ]},
             
             // الوجبة 2: تم تغيير اسمها
-            {id:"sh2", img:"sh00.webp", name:"مرسة بلدي", basePrice:13, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"sh3", img:"sh00.webp", name:"مرسة بلدي", basePrice:13, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"بدون رز", price:0},
                 {name:"رز ابيض", price:11.5},
                 {name:"رز صياديه", price:11.5},
                 {name:"رز مكس", price:11.5}
             ]},
             // الوجبة 2: تم تغيير اسمها
-            {id:"sh2", img:"sh00.webp", name:"مرسة ملكي بلدي", basePrice:18, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"sh4", img:"sh00.webp", name:"مرسة ملكي بلدي", basePrice:18, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"بدون رز", price:0},
                 {name:"رز ابيض", price:2},
                 {name:"رز صيديه", price:2},
                 {name:"رز مكس", price:2}
             ]},
             // الوجبة 2: تم تغيير اسمها
-            {id:"sh2", img:"sh60.webp", name:"سلطة يوناني", basePrice:10, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"sh5", img:"sh60.webp", name:"سلطة يوناني", basePrice:10, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"بدون رز", price:0},
                 {name:"رز ابيض", price:11.5},
                 {name:"رز صديه", price:11.5},
                 {name:"رز مكس", price:11.5}
             ]},
             // الوجبة 2: تم تغيير اسمها
-            {id:"sh2", img:"sh00.webp", name:"سلطة خضراء", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"sh6", img:"sh00.webp", name:"سلطة خضراء", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:2},
                 {name:"رز مندي", price:2},
                 {name:"رز مثلوثه", price:2}
             ]},
             // الوجبة 3: نص شواية سادة
-            {id:"sh3", img:"sh10.webp", name:"مكشن سليط ملوخية كنعد",
+            {id:"sh7", img:"sh10.webp", name:"مكشن سليط ملوخية كنعد",
              basePrice:34,
              isBestSeller: false,
              availableIn: ['branch1', 'branch2', 'branch3'], options:[
@@ -85,7 +85,7 @@ const menuData = [
             ]},
             // الوجبة 4: العرض الاقتصادي الجديد
             {
-                id:"sh4", 
+                id:"sh8", 
                 img:"sh20.webp", 
                 name:"حايسيه", 
                 basePrice:18, 
@@ -119,70 +119,70 @@ const menuData = [
                 {name:"رز مثلوثه", price:2}
             ]},
             // الوجبة 2
-            {id:"md2", img:"md30.webp", name:"شعور", basePrice:80, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"md3", img:"md30.webp", name:"شعور", basePrice:80, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:2},
                 {name:"رز مندي", price:2},
                 {name:"رز مثلوثه", price:2}
             ]},
             // الوجبة 2
-            {id:"md2", img:"md40.webp", name:"قاروص", basePrice:75, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"md4", img:"md40.webp", name:"قاروص", basePrice:75, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:2},
                 {name:"رز مندي", price:2},
                 {name:"رز مثلوثه", price:2}
             ]},
             // الوجبة 2
-            {id:"md2", img:"md50.webp", name:"دنياس", basePrice:80, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"md5", img:"md50.webp", name:"دنياس", basePrice:80, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:2},
                 {name:"رز مندي", price:2},
                 {name:"رز مثلوثه", price:2}
             ]},
             // الوجبة 2
-            {id:"md2", img:"md60.webp", name:"بياض", basePrice:70, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"md6", img:"md60.webp", name:"بياض", basePrice:70, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:2},
                 {name:"رز مندي", price:2},
                 {name:"رز مثلوثه", price:2}
             ]},
             // الوجبة 2
-            {id:"md2", img:"md70.webp", name:"حريد", basePrice:70, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"md7", img:"md70.webp", name:"حريد", basePrice:70, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:2},
                 {name:"رز مندي", price:2},
                 {name:"رز مثلوثه", price:2}
             ]},
             // الوجبة 2
-            {id:"md2", img:"md80.webp", name:"كنعد بلدي", basePrice:110, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"md8", img:"md80.webp", name:"كنعد بلدي", basePrice:110, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:2},
                 {name:"رز مندي", price:2},
                 {name:"رز مثلوثه", price:2}
             ]},
             // الوجبة 2
-            {id:"md2", img:"md90.webp", name:"سلمون", basePrice:110, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"md9", img:"md90.webp", name:"سلمون", basePrice:110, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:2},
                 {name:"رز مندي", price:2},
                 {name:"رز مثلوثه", price:2}
             ]},
             // الوجبة 2
-            {id:"md2", img:"md10.webp", name:"فارس", basePrice:83, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"md11", img:"md10.webp", name:"فارس", basePrice:83, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:2},
                 {name:"رز مندي", price:2},
                 {name:"رز مثلوثه", price:2}
             ]},
             // الوجبة 2
-            {id:"md2", img:"md011.webp", name:"عربي", basePrice:83, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"md12", img:"md011.webp", name:"عربي", basePrice:83, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:2},
                 {name:"رز مندي", price:2},
                 {name:"رز مثلوثه", price:2}
             ]},
             // الوجبة 2
-            {id:"md2", img:"md12.webp", name:"بلوط", basePrice:60, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"md13", img:"md12.webp", name:"بلوط", basePrice:60, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:2},
                 {name:"رز مندي", price:2},
@@ -209,28 +209,28 @@ const menuData = [
                 {name:"رز مثلوثه", price:2}
             ]},
             // الوجبة 2
-            {id:"mn2", img:"mn00.webp", name:"مكشن خضار سليط", basePrice:13, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"mn3", img:"mn00.webp", name:"مكشن خضار سليط", basePrice:13, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:2},
                 {name:"رز مندي", price:2},
                 {name:"رز مثلوثه", price:2}
             ]},
             // الوجبة 2
-            {id:"mn2", img:"mn00.webp", name:"مكشن قوار سليط", basePrice:13, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"mn4", img:"mn00.webp", name:"مكشن قوار سليط", basePrice:13, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:2},
                 {name:"رز مندي", price:2},
                 {name:"رز مثلوثه", price:2}
             ]},
             // الوجبة 2
-            {id:"mn2", img:"mn00.webp", name:"مكشن باطاطس سليط", basePrice:13, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"mn5", img:"mn00.webp", name:"مكشن باطاطس سليط", basePrice:13, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:2},
                 {name:"رز مندي", price:2},
                 {name:"رز مثلوثه", price:2}
             ]},
             // الوجبة 2
-            {id:"mn2", img:"mn00.webp", name:"مكشن حلبة خضار", basePrice:18, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"mn6", img:"mn00.webp", name:"مكشن حلبة خضار", basePrice:18, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:2},
                 {name:"رز مندي", price:2},
@@ -250,14 +250,14 @@ const menuData = [
                 {name:"رز مثلوثه", price:4}
             ]},
             // الوجبة 1
-            {id:"mdf1", img:"mf01.webp", name:"رز ابيض", basePrice:11.50, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"mdf2", img:"mf01.webp", name:"رز ابيض", basePrice:11.50, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:4},
                 {name:"رز مندي", price:4},
                 {name:"رز مثلوثه", price:4}
             ]},
             // الوجبة 2
-            {id:"mdf2", img:"mf11.webp", name:"رز مكس", basePrice:11.50, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"mdf3", img:"mf11.webp", name:"رز مكس", basePrice:11.50, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:2},
                 {name:"رز مندي", price:2},
@@ -272,11 +272,11 @@ const menuData = [
             // الوجبة 1
             {id:"mq1", img:"mq00.webp", name:"حمر", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]},
             
-            {id:"mq1", img:"mq00.webp", name:"سحاوق جبن", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]},
-            {id:"mq1", img:"mq00.webp", name:"زبادي مصلح", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]},
-            {id:"mq1", img:"mq00.webp", name:"حلبة", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]},
-            {id:"mq1", img:"mq00.webp", name:"دقة فلفل زبادي", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]},
-            {id:"mq2", img:"mq00.webp", name:"طحينه", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]}
+            {id:"mq2", img:"mq00.webp", name:"سحاوق جبن", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]},
+            {id:"mq3", img:"mq00.webp", name:"زبادي مصلح", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[]},
+            {id:"mq4", img:"mq00.webp", name:"حلبة", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]},
+            {id:"mq5", img:"mq00.webp", name:"دقة فلفل زبادي", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]},
+            {id:"mq6", img:"mq00.webp", name:"طحينه", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"رز شعبي", price:0}]}
         ]},
     { 
         section:"المشروبات", 
@@ -290,7 +290,7 @@ const menuData = [
             ]},
             // الوجبة 2
           
-            {id:"bev-q", img:"dr05.webp", name:"عصير نجران", basePrice:3, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"عبوة", price:0}]}
+            {id:"bev1-q", img:"dr05.webp", name:"عصير نجران", basePrice:3, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"عبوة", price:0}]}
         ]
     
     },    
