@@ -180,6 +180,38 @@ body {
     from { opacity: 0; transform: scale(0.9); }
     to { opacity: 1; transform: scale(1); }
 }
+/* تنسيق البطاقة الترحيبية الجديدة 🌊 */
+.welcome-card {
+    margin: 20px auto;
+    width: 92%;
+    background-color: #ffffff; /* خلفية بيضاء للبطاقة */
+    border-radius: 15px; /* حواف منحنية */
+    overflow: hidden; /* لقص أطراف الصورة لتناسب المنحنى */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* ظل خفيف */
+    text-align: center;
+}
+
+.welcome-card img {
+    width: 100%;
+    height: 250px; /* ارتفاع مناسب للصورة */
+    object-fit: cover; /* يمنع تمدد الصورة ويحافظ على جودتها */
+}
+
+.welcome-content {
+    padding: 20px;
+}
+
+.welcome-content h2 {
+    color: #004aad; /* اللون الأزرق الملكي للعناوين */
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+
+.welcome-content p {
+    color: #333; /* لون نص داكن لسهولة القراءة */
+    font-size: 1rem;
+    line-height: 1.6;
+}
 
 </style>
 </head>
@@ -194,6 +226,13 @@ body {
  
   <div><img src="logo-bg11.png" alt="شعار المطعم" onerror="this.style.opacity=0.25; this.style.height='50px'"></div>
 </header>
+<div class="welcome-card">
+    <img src="1000365830.jpg" alt="أجواء مطعم الجنوب">
+    <div class="welcome-content">
+        <h2>مرحباً بكم في مطعم الجنوب للأسماك 🐟</h2>
+        <p>استمتعوا بأشهى المأكولات البحرية الطازجة في أجوائنا الشعبية الأصيلة. نسعد بلقائكم!</p>
+    </div>
+</div>
 
 <input type="search" id="searchBar" placeholder="ابحث عن وجبة سريعة أو صنف..." aria-label="البحث في القائمة">
 
