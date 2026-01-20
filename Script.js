@@ -295,7 +295,7 @@ const menuData = [
         ]
     
     },    
-        { 
+            { 
         section: "بوكسات الجمعات", 
         sectionImg: "gathering_boxes.webp", 
         sectionAvailableIn: ['branch1', 'branch2', 'branch3'], 
@@ -304,9 +304,9 @@ const menuData = [
                 id: "box_small", 
                 img: "small_box.webp", 
                 name: "بوكس صغير", 
-                description: "يتكون من 5 أصناف: (أدخل محتوى البوكس هنا)", 
-                basePrice: 0, 
-                isBestSeller: true, // تم تعديل الاسم ليعمل مع دالة البحث لديك ✅
+                description: "يتكون من 5 أصناف مختارة بعناية", 
+                basePrice: 50, 
+                isBestSeller: true,
                 availableIn: ['branch1', 'branch2', 'branch3'], 
                 options: [{name: "عادي", price: 0}]
             },
@@ -314,8 +314,8 @@ const menuData = [
                 id: "box_medium", 
                 img: "medium_box.webp", 
                 name: "بوكس وسط", 
-                description: "يتكون من 8 أصناف: (أدخل محتوى البوكس هنا)", 
-                basePrice: 0, 
+                description: "يتكون من 8 أصناف متنوعة للجمعات", 
+                basePrice: 80, 
                 isBestSeller: true,
                 availableIn: ['branch1', 'branch2', 'branch3'], 
                 options: [{name: "عادي", price: 0}]
@@ -324,15 +324,15 @@ const menuData = [
                 id: "box_large", 
                 img: "large_box.webp", 
                 name: "بوكس كبير", 
-                description: "يتكون من 10 أصناف: (أدخل محتوى البوكس هنا)", 
-                basePrice: 0, 
+                description: "يتكون من 10 أصناف فاخرة وشاملة", 
+                basePrice: 110, 
                 isBestSeller: true,
                 availableIn: ['branch1', 'branch2', 'branch3'], 
                 options: [{name: "عادي", price: 0}]
-            } // إغلاق الوجبة الأخيرة
-        ] // إغلاق مصفوفة الوجبات
-    } // إغلاق قسم البوكسات
-]; // إغلاق مصفوفة menuData الكبيرة
+            }
+        ]
+    }
+
 
  
 /* ====== دالة معالجة البيانات لتقديم "الأكثر مبيعاً" في بداية القائمة ====== */
