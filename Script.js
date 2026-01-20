@@ -241,7 +241,7 @@ const menuData = [
     },
     { 
         section:"الارز", 
-        sectionImg: "mf00.webp",
+        sectionImg: "mf01.webp",
         items:[
             // الوجبة 1
             {id:"mdf1", img:"mf01.webp", name:"رز صياديه", basePrice:11.50, availableIn: ['branch1', 'branch2', 'branch3'], options:[
@@ -258,7 +258,7 @@ const menuData = [
                 {name:"رز مثلوثه", price:4}
             ]},
             // الوجبة 2
-            {id:"mdf2", img:"mf00.webp", name:"رز مكس", basePrice:11.50, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"mdf2", img:"mf11.webp", name:"رز مكس", basePrice:11.50, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:2},
                 {name:"رز مندي", price:2},
