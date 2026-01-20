@@ -294,21 +294,44 @@ const menuData = [
             {id:"bev-q", img:"dr05.webp", name:"عصير نجران", basePrice:3, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"عبوة", price:0}]}
         ]
     
-    },
-    { 
-        section:"الكنافه", 
-        sectionImg: "kn00.webp",
+    },    { 
+        section: "بوكسات الجمعات", 
+        sectionImg: "gathering_boxes.webp", 
         sectionAvailableIn: ['branch1', 'branch2', 'branch3'], 
-        items:[
-            // الوجبة 1
-            {id:"kna1", img:"kn01.webp", name:"كنافه قشطه", basePrice:10, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"", price:0}]},
-            // الوجبة 2
-            {id:"kna2", img:"kn02.webp", name:"كنافه جلاكسي", basePrice:12, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"", price:0}]},
-            // الوجبة 3
-            {id:"kna3", img:"kn03.webp", name:"كنافه نوتيلا", basePrice:12, availableIn: ['branch1', 'branch2', 'branch3'], options:[{name:"", price:0}]}
+        items: [
+            {
+                id: "box_small", 
+                img: "small_box.webp", 
+                name: "بوكس صغير", 
+                description: "يتكون من 5 أصناف: (أدخل محتوى البوكس هنا)", 
+                basePrice: 0, 
+                bestSeller: true, // سيظهر تلقائياً في قسم الأكثر مبيعاً 🏷️
+                availableIn: ['branch1', 'branch2', 'branch3'], 
+                options: [{name: "عادي", price: 0}]
+            },
+            {
+                id: "box_medium", 
+                img: "medium_box.webp", 
+                name: "بوكس وسط", 
+                description: "يتكون من 8 أصناف: (أدخل محتوى البوكس هنا)", 
+                basePrice: 0, 
+                bestSeller: true,
+                availableIn: ['branch1', 'branch2', 'branch3'], 
+                options: [{name: "عادي", price: 0}]
+            },
+            {
+                id: "box_large", 
+                img: "large_box.webp", 
+                name: "بوكس كبير", 
+                description: "يتكون من 10 أصناف: (أدخل محتوى البوكس هنا)", 
+                basePrice: 0, 
+                bestSeller: true,
+                availableIn: ['branch1', 'branch2', 'branch3'], 
+                options: [{name: "عادي", price: 0}]
+            }
         ]
     }
-];
+
 
 /* ====== دالة معالجة البيانات لتقديم "الأكثر مبيعاً" في بداية القائمة ====== */
 function processMenuData(data) {
