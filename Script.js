@@ -295,8 +295,7 @@ const menuData = [
         ]
     
     },    
-    
-    { 
+        { 
         section: "بوكسات الجمعات", 
         sectionImg: "gathering_boxes.webp", 
         sectionAvailableIn: ['branch1', 'branch2', 'branch3'], 
@@ -307,7 +306,7 @@ const menuData = [
                 name: "بوكس صغير", 
                 description: "يتكون من 5 أصناف: (أدخل محتوى البوكس هنا)", 
                 basePrice: 0, 
-                bestSeller: true, // سيظهر تلقائياً في قسم الأكثر مبيعاً 🏷️
+                isBestSeller: true, // تم تعديل الاسم ليعمل مع دالة البحث لديك ✅
                 availableIn: ['branch1', 'branch2', 'branch3'], 
                 options: [{name: "عادي", price: 0}]
             },
@@ -317,7 +316,7 @@ const menuData = [
                 name: "بوكس وسط", 
                 description: "يتكون من 8 أصناف: (أدخل محتوى البوكس هنا)", 
                 basePrice: 0, 
-                bestSeller: true,
+                isBestSeller: true,
                 availableIn: ['branch1', 'branch2', 'branch3'], 
                 options: [{name: "عادي", price: 0}]
             },
@@ -327,12 +326,14 @@ const menuData = [
                 name: "بوكس كبير", 
                 description: "يتكون من 10 أصناف: (أدخل محتوى البوكس هنا)", 
                 basePrice: 0, 
-                bestSeller: true,
+                isBestSeller: true,
                 availableIn: ['branch1', 'branch2', 'branch3'], 
                 options: [{name: "عادي", price: 0}]
-               ] 
-            }
-       ];
+            } // إغلاق الوجبة الأخيرة
+        ] // إغلاق مصفوفة الوجبات
+    } // إغلاق قسم البوكسات
+]; // إغلاق مصفوفة menuData الكبيرة
+
  
 /* ====== دالة معالجة البيانات لتقديم "الأكثر مبيعاً" في بداية القائمة ====== */
 function processMenuData(data) {
