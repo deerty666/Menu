@@ -297,7 +297,7 @@ const menuData = [
     },    
             { 
         section: "بوكسات الجمعات", 
-        sectionImg: "gathering_boxes.webp", 
+        sectionImg: "small_box.webp", 
         sectionAvailableIn: ['branch1', 'branch2', 'branch3'], 
         items: [
             {
@@ -312,7 +312,7 @@ const menuData = [
             },
             {
                 id: "box_medium", 
-                img: "medium_box.webp", 
+                img: "small_box.webp", 
                 name: "بوكس وسط", 
                 description: "يتكون من 8 أصناف متنوعة للجمعات", 
                 basePrice: 80, 
@@ -322,7 +322,7 @@ const menuData = [
             },
             {
                 id: "box_large", 
-                img: "large_box.webp", 
+                img: "small_box.webp", 
                 name: "بوكس كبير", 
                 description: "يتكون من 10 أصناف فاخرة وشاملة", 
                 basePrice: 110, 
