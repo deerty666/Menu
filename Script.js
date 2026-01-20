@@ -79,7 +79,7 @@ const menuData = [
             // الوجبة 3: نص شواية سادة
             {id:"sh3", img:"sh10.webp", name:"مكشن سليط ملوخية كنعد",
              basePrice:34,
-             isBestSeller: true,
+             isBestSeller: false,
              availableIn: ['branch1', 'branch2', 'branch3'], options:[
                {name:"شوايه", price:0},
                {name:"مندي", price:0}  
@@ -90,7 +90,7 @@ const menuData = [
                 img:"sh20.webp", 
                 name:"حايسيه", 
                 basePrice:18, 
-                isBestSeller: true, 
+                isBestSeller: false, 
                 availableIn: ['branch1', 'branch2', 'branch3'], 
                 options:[
                     {name:"شوايه", price:0},
