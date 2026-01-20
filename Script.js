@@ -36,37 +36,37 @@ const menuData = [
             // الوجبة 1
             {id:"sh1", img:"sh00.webp", name:"مكشن سليط كنعد بلدي", basePrice:38, availableIn: ['branch1','branch2', 'branch3'], options:[ 
                 {name:" بدون رز", price:0},
-                {name:"رز ابيض", price:13},
-                {name:"رز صياديه", price:13}
+                {name:"رز ابيض", price:11.5},
+                {name:"رز صياديه", price:11.5}
             ]},
             // الوجبة 2: تم تغيير اسمها
             {id:"sh2", img:"sh01.webp", name:"مكشن سليط جمبري", basePrice:43, availableIn: ['branch1', 'branch2', 'branch3'], options:[
-                {name:"رز شعبي", price:0},
-                {name:"رز بشاور", price:2},
-                {name:"رز مندي", price:2},
-                {name:"رز مثلوثه", price:2}
+                {name:"بدون رز", price:0},
+                {name:"رز ابيض", price:11.5},
+                {name:"رز صياديه", price:11.5},
+                {name:"رز مكس", price:11.5}
             ]},
             
             // الوجبة 2: تم تغيير اسمها
             {id:"sh2", img:"sh00.webp", name:"مرسة بلدي", basePrice:13, availableIn: ['branch1', 'branch2', 'branch3'], options:[
-                {name:"رز شعبي", price:0},
-                {name:"رز بشاور", price:2},
-                {name:"رز مندي", price:2},
-                {name:"رز مثلوثه", price:2}
+                {name:"بدون رز", price:0},
+                {name:"رز ابيض", price:11.5},
+                {name:"رز صياديه", price:11.5},
+                {name:"رز مكس", price:11.5}
             ]},
             // الوجبة 2: تم تغيير اسمها
             {id:"sh2", img:"sh00.webp", name:"مرسة ملكي بلدي", basePrice:18, availableIn: ['branch1', 'branch2', 'branch3'], options:[
-                {name:"رز شعبي", price:0},
-                {name:"رز بشاور", price:2},
-                {name:"رز مندي", price:2},
-                {name:"رز مثلوثه", price:2}
+                {name:"بدون رز", price:0},
+                {name:"رز ابيض", price:2},
+                {name:"رز صيديه", price:2},
+                {name:"رز مكس", price:2}
             ]},
             // الوجبة 2: تم تغيير اسمها
             {id:"sh2", img:"sh60.webp", name:"سلطة يوناني", basePrice:10, availableIn: ['branch1', 'branch2', 'branch3'], options:[
-                {name:"رز شعبي", price:0},
-                {name:"رز بشاور", price:2},
-                {name:"رز مندي", price:2},
-                {name:"رز مثلوثه", price:2}
+                {name:"بدون رز", price:0},
+                {name:"رز ابيض", price:11.5},
+                {name:"رز صديه", price:11.5},
+                {name:"رز مكس", price:11.5}
             ]},
             // الوجبة 2: تم تغيير اسمها
             {id:"sh2", img:"sh00.webp", name:"سلطة خضراء", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[
