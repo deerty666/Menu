@@ -69,7 +69,10 @@ const menuData = [
                 basePrice:18, 
                 isBestSeller: false, 
                 availableIn: ['branch1', 'branch2', 'branch3'], 
-                options:[]},
+                options:[]
+                    } // إغلاق الوجبة sh8
+        ] // <--- أضف هذا لإغلاق قائمة الوجبات (items) ✅
+    }, // <--- أضف هذا لإغلاق القسم الأول بالكامل ✅
                     
     { 
         section:"الاسماك", 
@@ -80,7 +83,7 @@ const menuData = [
                 
             // الوجبة 2
             {id:"md2", img:"md20.webp", name:"هامور", basePrice:85, availableIn: ['branch1', 'branch2', 'branch3'], options:[]},
-                {name:"رز شعبي", price:0},
+                
                 
             // الوجبة 2
             {id:"md3", img:"md30.webp", name:"شعور", basePrice:80, availableIn: ['branch1', 'branch2', 'branch3'], options:[]},
