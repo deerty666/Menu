@@ -35,9 +35,7 @@ const menuData = [
         items:[
             // الوجبة 1
             {id:"sh1", img:"sh00.webp", name:"مكشن سليط كنعد بلدي", basePrice:38, availableIn: ['branch1','branch2', 'branch3'], options:[ 
-                {name:" بدون رز", price:0},
-                {name:"رز ابيض", price:11.5},
-                {name:"رز صياديه", price:11.5}
+                
             ]},
             // الوجبة 2: تم تغيير اسمها
             {id:"sh2", img:"sh01.webp", name:"مكشن سليط جمبري", basePrice:43, availableIn: ['branch1', 'branch2', 'branch3'], options:[
