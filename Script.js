@@ -38,49 +38,29 @@ const menuData = [
               
            
             // الوجبة 2: تم تغيير اسمها
-            {id:"sh2", img:"sh01.webp", name:"مكشن سليط جمبري", basePrice:43, availableIn: ['branch1', 'branch2', 'branch3'], options:[
-                {name:"بدون رز", price:0},
-                {name:"رز ابيض", price:11.5},
-                {name:"رز صياديه", price:11.5},
-                {name:"رز مكس", price:11.5}
-            ]},
+            {id:"sh2", img:"sh01.webp", name:"مكشن سليط جمبري", basePrice:43, availableIn: ['branch1', 'branch2', 'branch3'], options:[]},
+                
+            
             
             // الوجبة 2: تم تغيير اسمها
-            {id:"sh3", img:"sh00.webp", name:"مرسة بلدي", basePrice:13, availableIn: ['branch1', 'branch2', 'branch3'], options:[
-                {name:"بدون رز", price:0},
-                {name:"رز ابيض", price:11.5},
-                {name:"رز صياديه", price:11.5},
-                {name:"رز مكس", price:11.5}
-            ]},
+            {id:"sh3", img:"sh00.webp", name:"مرسة بلدي", basePrice:13, availableIn: ['branch1', 'branch2', 'branch3'], options:[]},
+                
             // الوجبة 2: تم تغيير اسمها
-            {id:"sh4", img:"sh00.webp", name:"مرسة ملكي بلدي", basePrice:18, availableIn: ['branch1', 'branch2', 'branch3'], options:[
-                {name:"بدون رز", price:0},
-                {name:"رز ابيض", price:2},
-                {name:"رز صيديه", price:2},
-                {name:"رز مكس", price:2}
-            ]},
+            {id:"sh4", img:"sh00.webp", name:"مرسة ملكي بلدي", basePrice:18, availableIn: ['branch1', 'branch2', 'branch3'], options:[]},
+                
             // الوجبة 2: تم تغيير اسمها
-            {id:"sh5", img:"sh60.webp", name:"سلطة يوناني", basePrice:10, availableIn: ['branch1', 'branch2', 'branch3'], options:[
-                {name:"بدون رز", price:0},
-                {name:"رز ابيض", price:11.5},
-                {name:"رز صديه", price:11.5},
-                {name:"رز مكس", price:11.5}
-            ]},
+            {id:"sh5", img:"sh60.webp", name:"سلطة يوناني", basePrice:10, availableIn: ['branch1', 'branch2', 'branch3'], options:[]},
+                
+                
             // الوجبة 2: تم تغيير اسمها
-            {id:"sh6", img:"sh00.webp", name:"سلطة خضراء", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[
-                {name:"رز شعبي", price:0},
-                {name:"رز بشاور", price:2},
-                {name:"رز مندي", price:2},
-                {name:"رز مثلوثه", price:2}
-            ]},
+            {id:"sh6", img:"sh00.webp", name:"سلطة خضراء", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[]},
+                
             // الوجبة 3: نص شواية سادة
             {id:"sh7", img:"sh10.webp", name:"مكشن سليط ملوخية كنعد",
              basePrice:34,
              isBestSeller: false,
-             availableIn: ['branch1', 'branch2', 'branch3'], options:[
-               {name:"شوايه", price:0},
-               {name:"مندي", price:0}  
-            ]},
+             availableIn: ['branch1', 'branch2', 'branch3'], options:[]},
+               
             // الوجبة 4: العرض الاقتصادي الجديد
             {
                 id:"sh8", 
