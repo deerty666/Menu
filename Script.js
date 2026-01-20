@@ -373,7 +373,7 @@ function processMenuData(data) {
     if (bestSellers.length > 0) {
         let bestSellerSection = {
             section: "الأكثر مبيعاً 🏆", 
-            sectionImg: "best_seller_icon.webp", 
+            sectionImg: "best_seller1_icon.webp", 
             items: bestSellers,
             sectionAvailableIn: ['branch1', 'branch2', 'branch3'] 
         };
