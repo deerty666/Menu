@@ -63,7 +63,7 @@ const menuData = [
                 {name:"رز مثلوثه", price:2}
             ]},
             // الوجبة 2: تم تغيير اسمها
-            {id:"sh2", img:"sh00.webp", name:"سلطة يوناني", basePrice:10, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"sh2", img:"sh60.webp", name:"سلطة يوناني", basePrice:10, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"رز شعبي", price:0},
                 {name:"رز بشاور", price:2},
                 {name:"رز مندي", price:2},
@@ -284,7 +284,7 @@ const menuData = [
         sectionImg: "dr00.webp",
         items:[
             // الوجبة 1
-            {id:"bev-p", img:"/dr01.webp", name:"ببسي", basePrice:3, availableIn: ['branch1', 'branch2', 'branch3'], options:[
+            {id:"bev-p", img:"dr01.webp", name:"ببسي", basePrice:3, availableIn: ['branch1', 'branch2', 'branch3'], options:[
                 {name:"ببسي", price:0},
                 {name:"سفن", price:0},
                 {name:"حمضيات", price:0}
@@ -304,7 +304,7 @@ const menuData = [
                 id: "box_small", 
                 img: "small_box.webp", 
                 name: "بوكس صغير", 
-                description: "يتكون من 5 أصناف مختارة بعناية", 
+                description:"يتكون من 5 أصناف سمك مقلي/ورز/مقبلات/ومرسه/وتنميت جمبري", 
                 basePrice: 50, 
                 isBestSeller: true,
                 availableIn: ['branch1', 'branch2', 'branch3'], 
