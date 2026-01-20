@@ -113,8 +113,12 @@ const menuData = [
             {id:"md12", img:"md011.webp", name:"عربي", basePrice:83, availableIn: ['branch1', 'branch2', 'branch3'], options:[]},
                 
             // الوجبة 2
-            {id:"md13", img:"md12.webp", name:"بلوط", basePrice:60, availableIn: ['branch1', 'branch2', 'branch3'], options:[]},
-                
+            {id:"md13", img:"md12.webp", name:"بلوط", basePrice:60, availableIn: ['branch1', 'branch2', 'branch3'], options:[]
+          
+                    } // إغلاق الوجبة sh8
+        ] // <--- أضف هذا لإغلاق قائمة الوجبات (items) ✅
+    }, // <--- أضف هذا لإغلاق القسم الأول بالكامل ✅
+                          
         
                 
     { 
@@ -137,8 +141,12 @@ const menuData = [
             {id:"mn5", img:"mn00.webp", name:"مكشن باطاطس سليط", basePrice:13, availableIn: ['branch1', 'branch2', 'branch3'], options:[]},
                 
             // الوجبة 2
-            {id:"mn6", img:"mn00.webp", name:"مكشن حلبة خضار", basePrice:18, availableIn: ['branch1', 'branch2', 'branch3'], options:[]},
-                
+            {id:"mn6", img:"mn00.webp", name:"مكشن حلبة خضار", basePrice:18, availableIn: ['branch1', 'branch2', 'branch3'], options:[]
+             
+                    } // إغلاق الوجبة sh8
+        ] // <--- أضف هذا لإغلاق قائمة الوجبات (items) ✅
+    }, // <--- أضف هذا لإغلاق القسم الأول بالكامل ✅
+                       
     { 
         section:"الارز", 
         sectionImg: "mf01.webp",
@@ -150,8 +158,12 @@ const menuData = [
             {id:"mdf2", img:"mf01.webp", name:"رز ابيض", basePrice:11.50, availableIn: ['branch1', 'branch2', 'branch3'], options:[]},
                 
             // الوجبة 2
-            {id:"mdf3", img:"mf11.webp", name:"رز مكس", basePrice:11.50, availableIn: ['branch1', 'branch2', 'branch3'], options:[]},
-                
+            {id:"mdf3", img:"mf11.webp", name:"رز مكس", basePrice:11.50, availableIn: ['branch1', 'branch2', 'branch3'], options:[]
+              
+                    } // إغلاق الوجبة sh8
+        ] // <--- أضف هذا لإغلاق قائمة الوجبات (items) ✅
+    }, // <--- أضف هذا لإغلاق القسم الأول بالكامل ✅
+                      
     { 
         section:"الصوصات", 
         sectionImg: "mq00.webp",
@@ -163,8 +175,12 @@ const menuData = [
             {id:"mq3", img:"mq00.webp", name:"زبادي مصلح", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[]},
             {id:"mq4", img:"mq00.webp", name:"حلبة", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[]},
             {id:"mq5", img:"mq00.webp", name:"دقة فلفل زبادي", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[]},
-            {id:"mq6", img:"mq00.webp", name:"طحينه", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[]}
-        ]},
+            {id:"mq6", img:"mq00.webp", name:"طحينه", basePrice:5, availableIn: ['branch1', 'branch2', 'branch3'], options:[]
+        
+                    } // إغلاق الوجبة sh8
+        ] // <--- أضف هذا لإغلاق قائمة الوجبات (items) ✅
+    }, // <--- أضف هذا لإغلاق القسم الأول بالكامل ✅
+                    
     { 
         section:"المشروبات", 
         sectionImg: "dr00.webp",
@@ -174,9 +190,13 @@ const menuData = [
               
             // الوجبة 2
           
-            {id:"bev1-q", img:"dr05.webp", name:"عصير نجران", basePrice:3, availableIn: ['branch1', 'branch2', 'branch3'], options:[]}
+            {id:"bev1-q", img:"dr05.webp", name:"عصير نجران", basePrice:3, availableIn: ['branch1', 'branch2', 'branch3'], options:[]
         
     
+                    } // إغلاق الوجبة sh8
+        ] // <--- أضف هذا لإغلاق قائمة الوجبات (items) ✅
+    }, // <--- أضف هذا لإغلاق القسم الأول بالكامل ✅
+                    
         
             { 
         section: "بوكسات الجمعات", 
