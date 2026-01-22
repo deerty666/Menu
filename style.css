@@ -221,9 +221,11 @@ header img {
 
 .card p {
     margin: 0 10px 8px;
-    font-size: 0.85rem;
-    color: #d7ccc8; /* لون فاتح للوصف */
+    font-size: 0.9rem; /* تكبير بسيط للخط لزيادة الوضوح */
+    color: #fdf5e6;    /* اللون الكريمي الفاتح */
+    line-height: 1.5;  /* مسافة بين الأسطر لراحة العين */
 }
+
 
 .card .price {
     margin: 0 10px 10px;
@@ -237,9 +239,11 @@ header img {
 
 .card p {
     margin: 0 10px 8px;
-    font-size: 0.85rem;
-    color: #666; /* وصف بلون رمادي هادئ */
+    font-size: 0.9rem; /* تكبير بسيط للخط لزيادة الوضوح */
+    color: #fdf5e6;    /* اللون الكريمي الفاتح */
+    line-height: 1.5;  /* مسافة بين الأسطر لراحة العين */
 }
+
 
 .card .price {
     margin: 0 10px 10px;
