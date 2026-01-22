@@ -86,40 +86,42 @@ header img {
 }
 
 /* ================================================= */
-/* 🧭 تنسيق شريط الأقسام المحدث */
+/* ================================================= */
+/* 🧭 تنسيق قائمة الفروع/الأقسام (رأسي - واحد فوق الآخر) */
 #sections {
     display: flex;
-    overflow-x: auto;
-    padding: 15px;
-    gap: 15px;
-    background-color: transparent; /* جعل الخلفية شفافة لتظهر خلفية الصفحة */
+    flex-direction: column; /* جعل العناصر تترتب تحت بعضها ⬇️ */
+    align-items: center;    /* توسيط البطاقات في المنتصف */
+    padding: 20px 15px;
+    gap: 20px;             /* مسافة أكبر بين كل فرع وآخر */
+    background-color: transparent;
     margin-bottom: 20px;
-    position: sticky;
-    top: 70px;
-    z-index: 9;
+    /* إزالة التمرير الأفقي لأنه لم يعد مطلوباً */
+    overflow-x: hidden;
 }
 
-/* 💠 بطاقة القسم الصغير */
+/* 💠 بطاقة الفرع المحدثة (عرض كامل) */
 .sec-card {
-    flex: 0 0 auto;
-    width: 100px;
-    height: 130px;
-    border-radius: 15px;
-    background-color: #ffffff; /* خلفية بيضاء ناصعة ⚪ */
-    border: 1px solid #e0e0e0;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;    /* ترتيب الصورة والنص بجانب بعضهما داخل البطاقة ↔️ */
     align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    justify-content: flex-start; /* محاذاة المحتوى لليمين */
+    width: 95%;             /* جعل البطاقة تأخذ عرض الشاشة تقريباً */
+    max-width: 450px;       /* حماية العرض في الشاشات الكبيرة */
+    height: auto;           /* ترك الارتفاع يتحدد حسب المحتوى */
+    padding: 15px 20px;     /* مساحة داخلية مريحة */
+    border-radius: 15px;
+    background-color: #ffffff; ⚪
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* ظل أعمق ليبرز البطاقة */
     transition: all 0.3s ease;
 }
 
-/* ✨ تأثير القسم المختار (النشط) */
+/* ✨ تأثير الفرع المختار (النشط) */
 .sec-card.active {
-    border: 2px solid var(--gold); /* إطار أزرق بحري 🔵 */
+    border: 2px solid var(--gold); 🔵
     background-color: #e1f5fe; /* لون أزرق فاتح جداً */
-    transform: translateY(-5px);
+    transform: scale(1.02);    /* تكبير بسيط بدلاً من الارتفاع للأعلى */
 }
 
 .sec-card.active .sec-name {
@@ -127,12 +129,20 @@ header img {
     font-weight: 800;
 }
 
+/* 🖼️ تنسيق الصورة داخل البطاقة الرأسية */
 .sec-card img {
-    width: 60px;
-    height: 60px;
+    width: 70px;            /* تكبير الأيقونة قليلاً */
+    height: 70px;
     border-radius: 50%;
     border: 2px solid #f0f0f0;
-    margin-bottom: 8px;
+    margin-left: 15px;      /* مسافة بين الصورة والنص */
+    margin-bottom: 0;       /* إلغاء المسافة السفلية القديمة */
+}
+
+/* 📝 تنسيق اسم القسم/الفرع */
+.sec-name {
+    font-size: 1.1rem;
+    color: var(--light-text);
 }
 
 
@@ -141,7 +151,7 @@ header img {
 /* ================================================= */
 #menuList {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: 1fr; /* عمود واحد فقط بعرض الشاشة */
     gap: 15px;
     padding: 0 15px;
 }
