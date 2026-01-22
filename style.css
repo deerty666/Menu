@@ -23,11 +23,11 @@
     box-sizing: border-box;
     font-family: 'Cairo', sans-serif;
     transition: all 0.2s ease-out; /* حركة سلسة للمتغيرات */
-}body {
+body {
     margin: 0;
     padding: 0;
-    /* خلفية متدرجة تشبه ألوان البحر الهادئ */
-    background: linear-gradient(to bottom, #ffffff 0%, #f0faff 100%);
+    /* التعديل هنا: من ألوان السماء إلى ألوان الرمال الدافئة 🏖️ */
+    background: linear-gradient(180deg, #fdf5e6 0%, #eee8aa 100%);
     background-attachment: fixed;
     color: var(--light-text);
     padding-bottom: 90px;
@@ -35,6 +35,7 @@
     text-align: right;
     font-size: 16px;
 }
+
 
 
 
@@ -169,17 +170,26 @@ header img {
     }
 }/* 🍽️ تصميم بطاقات الوجبات بالهوية البحرية الجديدة */
 .card {
-    background-color: var(--card-bg); /* ستكون الخلفية بيضاء ⚪ */
+    /* التعديل هنا: تحويل البطاقة البيضاء إلى صندوق خشبي داكن 🪵 */
+    background: repeating-linear-gradient(
+        to right,
+        #5d4037,        /* لون الخشب */
+        #5d4037 40px,   
+        #4e342e 41px    /* فواصل الألواح */
+    );
+    
     border-radius: 12px;
     overflow: hidden;
-    /* ظل أزرق خفيف يعطي إحساسًا بالعمق 🌊 */
-    box-shadow: 0 4px 15px rgba(0, 74, 173, 0.1); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     position: relative;
     padding-bottom: 10px;
-    border: 2px solid var(--gold); /* إطار بلون أزرق بحري 🔵 */
+    
+    /* إضافة إطار الحبل المجدول 🧶 */
+    border: 6px double #c39e6a; 
 }
+
 
 .card img {
     width: 100%;
@@ -191,10 +201,26 @@ header img {
 }
 
 .card h3 {
-    margin: 0 10px 5px;
-    font-size: 1.1rem;
+    margin: 15px 10px 5px;
+    font-size: 1.2rem;
     font-weight: 800;
-    color: var(--old-brown); /* نص أزرق داكن وواضح ⚓ */
+    color: #fdf5e6; /* رملي فاتح ليكون واضحاً */
+}
+
+.card p {
+    margin: 0 10px 8px;
+    font-size: 0.85rem;
+    color: #d7ccc8; /* لون فاتح للوصف */
+}
+
+.card .price {
+    margin: 0 10px 10px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #ffd700; /* ذهبي براق للسعر ✨ */
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .card p {
