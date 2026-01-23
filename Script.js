@@ -460,14 +460,8 @@ const displayedSection = item.actualSection || sectionName;
 const card = document.createElement('div');
 
 // تحديد نوع التصميم (كبير للأكثر مبيعاً / أفقي للباقي)
-let layoutClass = '';
-if (sectionName === "الأكثر مبيعاً 🏆") {
-    layoutClass = ' featured';   // كرت كبير فقط داخل قسم الأكثر مبيعاً
-} else {
-    layoutClass = ' horizontal'; // باقي الأقسام دائماً أفقي
-}
+let layoutClass = isBestSeller ? ' featured' : '';
 
-// تعيين الكلاسات النهائية
 card.className = 'card' + layoutClass + cardClassAddition;
 
 // محتوى البطاقة
