@@ -22,7 +22,8 @@
 * {
     box-sizing: border-box;
     font-family: 'Cairo', sans-serif;
-    transition: all 0.2s ease-out; /* حركة سلسة للمتغيرات */
+    transition: all 0.2s ease-out;
+}
 body {
     margin: 0;
     padding: 0;
