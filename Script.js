@@ -511,7 +511,7 @@ if (isAvailable) {
 
 // إضافة البطاقة إلى القائمة
 menuList.appendChild(card);
-
+}); // ✅ إغلاق filteredItems.forEach
 
 /* ====== Show options modal - لدعم الملاحظات ====== */
 // 🚀 MODIFIED: إضافة itemImage للمُعاملات
@@ -735,7 +735,7 @@ sendWhatsapp.addEventListener('click', () => {
 
     const deliveryType = document.querySelector('input[name="deliveryType"]:checked')?.value;
     // 📍 متغيرات رسائل الواتساب
-    const lines=['طلب جديد من مطاعم سحايب ديرتي:'];
+    const lines=['طلب جديد من   :'];
     let subtotal = 0;
 
     cart.forEach(it=>{
