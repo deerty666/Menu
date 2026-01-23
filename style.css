@@ -172,30 +172,101 @@ header img {
         margin: 0 auto;
     }
 }/* 🍽️ تصميم بطاقات الوجبات بالهوية البحرية الجديدة */
-/* ✅ ضع هذا الكود الموحد الجديد مكانه في ملف CSS ✅ */
-
-/* 🍽️ تنسيق بطاقة الوجبة الموحد (الخشب والرمال) */
+/* =============================== */
+/* 🐟 Seafood Luxury Card (Fakhm) */
+/* =============================== */
 .card {
+    position: relative;
     background: linear-gradient(
         180deg,
-        #142238 0%,
+        #16263f 0%,
         #0b1320 100%
     );
-    border: 1px solid rgba(195,158,106,0.35);
-    border-radius: 18px;
+    border-radius: 22px;
     overflow: hidden;
+    margin: 18px auto;
+    padding-bottom: 12px;
+
     box-shadow:
-        0 20px 40px rgba(0,0,0,0.6),
-        inset 0 0 0 1px rgba(255,255,255,0.03);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    padding-bottom: 10px;
-    margin: 15px auto;
+        0 30px 60px rgba(0,0,0,0.7),
+        inset 0 0 0 1px rgba(255,255,255,0.04);
 }
+
+/* إطار ذهبي داخلي أنيق */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border-radius: 16px;
+    border: 1px solid rgba(195,158,106,0.35);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* تدرج ناعم فوق الصورة */
+.card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0)
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* صورة الوجبة */
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    filter: contrast(1.05) saturate(1.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* اسم الوجبة */
+.card h3 {
+    margin: 14px 12px 6px;
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #fdf5e6;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+    position: relative;
+    z-index: 2;
+}
+
+/* وصف الوجبة */
+.card p {
+    margin: 0 12px 10px;
+    font-size: 0.95rem;
+    color: #e6dcc8;
+    line-height: 1.6;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    position: relative;
+    z-index: 2;
+}
+
+/* السعر */
+.card .price {
+    margin: 10px 12px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--gold);
+    text-shadow: 0 3px 8px rgba(0,0,0,0.7);
+    position: relative;
+    z-index: 2;
+}
+
+/* تأثير التحويم */
 .card:hover {
-    transform: translateY(-6px) scale(1.01);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow:
+        0 40px 80px rgba(0,0,0,0.85);
 }
 
 /* صورة الوجبة */
