@@ -453,48 +453,64 @@ function renderMenu(sectionName, searchTerm = ''){
                 (item.options.length > 0 && item.options[0].price > 0 ? `ابتداءً من ${item.options[0].price} ريال` : `${item.options[0].price} ريال`);
         }
 
-        // نستخدم actualSection إذا كانت الوجبة في قسم "الأكثر مبيعاً" أو "الكل"، وإلا نستخدم اسم القسم الحالي
-        const displayedSection = item.actualSection || sectionName; 
+// نستخدم actualSection إذا كانت الوجبة في قسم "الأكثر مبيعاً" أو "الكل"، وإلا نستخدم اسم القسم الحالي
+const displayedSection = item.actualSection || sectionName;
 
-        const card=document.createElement('div');
-        card.className='card' + cardClassAddition; 
-        card.innerHTML=`
-            <img src="${item.img}" alt="${item.name}" onerror="this.style.opacity=.35">
-            ${bestSellerBadge} 
-            <h3>${item.name}</h3>
-            <p>${displayedSection}</p>
-            ${item.description ? `<div class="item-description">${item.description}</div>` : ''}
+// إنشاء بطاقة الوجبة
+const card = document.createElement('div');
 
-            <div class="price">${priceDisplay}</div>
-            <button class="add-btn" ${buttonAttributes}>${buttonText}</button> 
-        `;
-
-        if (isAvailable) {
-            card.querySelector('button').onclick = function() {
-                const itemForCart = {...item};
-                
-                // 🚀 NEW: الحصول على مرجع الصورة لبطاقة المنتج الحالية
-                const itemImage = card.querySelector('img'); 
-                
-                // تعيين السعر الأساسي للخصم إذا كان موجوداً لهذا الفرع
-                if(hasDiscount){
-                    itemForCart.basePrice = discountedPriceForBranch;
-                }
-
-                delete itemForCart.actualSection;
-                const needsOptions = item.options.length > 1 || (item.options.length === 1 && item.options[0].name !== "");
-
-                if(needsOptions){
-                    showOptions(itemForCart, false, itemImage); // 🚀 MODIFIED: تمرير itemImage
-                } else {
-                    itemNoteInput.value = ''; 
-                    showOptions(itemForCart, true, itemImage); // 🚀 MODIFIED: تمرير itemImage
-                }
-            };
-        }
-        menuList.appendChild(card);
-    });
+// تحديد نوع التصميم (كبير للأكثر مبيعاً / أفقي للباقي)
+let layoutClass = '';
+if (isBestSeller) {
+    layoutClass = ' featured';   // كرت كبير
+} else {
+    layoutClass = ' horizontal'; // كرت أفقي أصغر
 }
+
+// تعيين الكلاسات النهائية
+card.className = 'card' + layoutClass + cardClassAddition;
+
+// محتوى البطاقة
+card.innerHTML = `
+    <img src="${item.img}" alt="${item.name}" onerror="this.style.opacity=.35">
+    ${bestSellerBadge}
+    <h3>${item.name}</h3>
+    <p>${displayedSection}</p>
+    ${item.description ? `<div class="item-description">${item.description}</div>` : ''}
+    <div class="price">${priceDisplay}</div>
+    <button class="add-btn" ${buttonAttributes}>${buttonText}</button>
+`;
+
+// حدث زر الإضافة للسلة
+if (isAvailable) {
+    card.querySelector('button').onclick = function () {
+        const itemForCart = { ...item };
+
+        // 🚀 مرجع صورة المنتج (لتأثير الطيران)
+        const itemImage = card.querySelector('img');
+
+        // تطبيق الخصم إن وجد
+        if (hasDiscount) {
+            itemForCart.basePrice = discountedPriceForBranch;
+        }
+
+        delete itemForCart.actualSection;
+
+        const needsOptions =
+            item.options.length > 1 ||
+            (item.options.length === 1 && item.options[0].name !== "");
+
+        if (needsOptions) {
+            showOptions(itemForCart, false, itemImage);
+        } else {
+            itemNoteInput.value = '';
+            showOptions(itemForCart, true, itemImage);
+        }
+    };
+}
+
+// إضافة البطاقة إلى القائمة
+menuList.appendChild(card);
 
 
 /* ====== Show options modal - لدعم الملاحظات ====== */
