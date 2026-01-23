@@ -870,3 +870,49 @@ transition: background 0.2s;
 .ios-install-banner button:hover {
 background: #a07c4c;
 }
+/* ================================================= */
+/* 📱 12. لمسات iOS & Android (Enhancements) */
+/* ================================================= */
+/* iOS Tap Effect */
+button,
+.sec-card,
+.card {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active,
+.sec-card:active,
+.card:active {
+  transform: scale(0.97);
+}
+/* Android Ripple Feel */
+button {
+  position: relative;
+  overflow: hidden;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.15);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+button:active::after {
+  opacity: 1;
+}
+/* Safe Area Support (iOS Notch) */
+body {
+  padding-bottom: calc(90px + env(safe-area-inset-bottom));
+}
+
+#cartBtn {
+  bottom: calc(20px + env(safe-area-inset-bottom));
+}
+/* Smooth Native Scrolling */
+#sections,
+#cartItems {
+  scroll-behavior: smooth;
+}
