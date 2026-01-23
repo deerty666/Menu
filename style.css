@@ -3,11 +3,10 @@
 /* ================================================= */
 :root {
     /* الألوان الأساسية للهوية البحرية */
-    --gold: #004aad;         /* الأزرق الملكي الموجود في المنيو */
-    --old-brown: #002f6c;   /* كحلي داكن للنصوص */
-    --light-text: #333333;  /* لون نص داكن للقراءة على خلفية فاتحة */
-    --red: #ff3d00;         /* لون أحمر برتقالي للتنبيهات أو العروض */
-
+--gold: #c39e6a;        /* ذهبي فخم */
+--old-brown: #0e1a2b;  /* كحلي داكن */
+--light-text: #eaeaea; /* نص راقي */
+--red: #c62828;        /* أحمر داكن */
     /* ألوان الخلفيات */
     --body-bg: #f0faff;     /* أزرق سماوي باهت جداً للخلفية */
     --header-bg: #004aad;   /* شريط علوي أزرق ناصع */
@@ -28,7 +27,9 @@ body {
     margin: 0;
     padding: 0;
     /* التعديل هنا: من ألوان السماء إلى ألوان الرمال الدافئة 🏖️ */
-    background: linear-gradient(180deg, #fdf5e6 0%, #eee8aa 100%);
+    background:
+  radial-gradient(circle at top, rgba(195,158,106,0.08), transparent 40%),
+  linear-gradient(180deg, #0b1320 0%, #050a14 100%);
     background-attachment: fixed;
     color: var(--light-text);
     padding-bottom: 90px;
@@ -174,21 +175,26 @@ header img {
 
 /* 🍽️ تنسيق بطاقة الوجبة الموحد (الخشب والرمال) */
 .card {
-    background: repeating-linear-gradient(
-        to right,
-        #5d4037,        /* لون الخشب الأساسي */
-        #5d4037 40px,   
-        #4e342e 41px    /* فواصل الألواح الخشبية */
+    background: linear-gradient(
+        180deg,
+        #142238 0%,
+        #0b1320 100%
     );
-    border: 6px double #c39e6a; /* إطار الحبل المجدول 🧶 */
-    border-radius: 12px;
+    border: 1px solid rgba(195,158,106,0.35);
+    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.6),
+        inset 0 0 0 1px rgba(255,255,255,0.03);
     display: flex;
     flex-direction: column;
     position: relative;
     padding-bottom: 10px;
-    margin: 15px auto; /* توسيط البطاقة */
+    margin: 15px auto;
+}
+.card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
 }
 
 /* صورة الوجبة */
