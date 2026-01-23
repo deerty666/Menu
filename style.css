@@ -120,12 +120,7 @@ header img {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* ✨ الحالة النشطة */
-.sec-card.active {
-    border: 3px solid var(--gold);
-    transform: scale(1.05);
-    box-shadow: 0 16px 35px rgba(0,0,0,0.45);
-}
+
 
 /* 📝 اسم القسم */
 .sec-name {
