@@ -14,6 +14,9 @@
     --card-dark: #0b1320;  /* بطاقات */
     --surface: #ffffff;    /* أبيض للأقسام */
     --border-soft: rgba(195,158,106,.35);
+    --border-color: rgba(195,158,106,.35);
+--search-bg: #ffffff;
+--card-bg-dark: #0b1320;
 }
 
 
@@ -132,10 +135,11 @@ header img {
 
 
 /* ✨ تأثير الفرع المختار (النشط) */
+
 .sec-card.active {
-    border: 2px solid var(--gold); 🔵
-    background-color: #e1f5fe; /* لون أزرق فاتح جداً */
-    transform: scale(1.02);    /* تكبير بسيط بدلاً من الارتفاع للأعلى */
+    border: 3px solid var(--gold);
+    transform: scale(1.05);
+    box-shadow: 0 16px 35px rgba(0,0,0,0.45);
 }
 
 .sec-card.active .sec-name {
@@ -153,11 +157,6 @@ header img {
     margin-bottom: 0;       /* إلغاء المسافة السفلية القديمة */
 }
 
-/* 📝 تنسيق اسم القسم/الفرع */
-.sec-name {
-    font-size: 1.1rem;
-    color: var(--light-text);
-}
 
 
 /* ================================================= */
@@ -198,7 +197,7 @@ header img {
     position: relative;
     padding-bottom: 10px;
     margin: 15px auto;
-}8
+}
 .card:hover {
     transform: translateY(-6px) scale(1.01);
     box-shadow: 0 30px 60px rgba(0,0,0,0.8);
@@ -858,4 +857,4 @@ div[style*="border-top"] label {
 .ios-install-banner button:hover {
     background: #a07c4c;
 }
-وين احطه هنه
+
