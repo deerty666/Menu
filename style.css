@@ -207,8 +207,9 @@ box-shadow:
     align-items: center;
     gap: 12px;
     padding: 10px;
-}
 
+    grid-column: 1 / -1; /* ← هذا السطر المهم */
+}
 .card.horizontal img {
     width: 90px;
     height: 90px;
