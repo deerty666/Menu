@@ -2,18 +2,18 @@
 /* 🌙 1. الألوان والمتغيرات العامة (لدعم الوضع الداكن) */
 /* ================================================= */
 :root {
-    /* الألوان الأساسية للهوية البحرية */
---gold: #c39e6a;        /* ذهبي فخم */
---old-brown: #0e1a2b;  /* كحلي داكن */
---light-text: #eaeaea; /* نص راقي */
---red: #c62828;        /* أحمر داكن */
-    /* ألوان الخلفيات */
-    --body-bg: #f0faff;     /* أزرق سماوي باهت جداً للخلفية */
-    --header-bg: #004aad;   /* شريط علوي أزرق ناصع */
-    --search-bg: #ffffff;   /* شريط بحث أبيض */
-    --card-bg: #ffffff;     /* بطاقات وجبات بيضاء */
-    --card-bg-dark: #e1f5fe; /* خلفية السلة زرقاء فاتحة */
-    --border-color: #004aad; /* حدود زرقاء */
+    /* الهوية البحرية */
+    --gold: #c39e6a;        /* ذهبي رملي فخم */
+    --old-brown: #0b1d33;  /* كحلي بحري */
+    --light-text: #f2f2f2; /* نص فاتح */
+    --muted-text: #cfcfcf; /* نص ثانوي */
+    --red: #c62828;        /* تنبيهات */
+
+    /* الخلفيات */
+    --header-bg: #004aad;  /* أزرق الهيدر */
+    --card-dark: #0b1320;  /* بطاقات */
+    --surface: #ffffff;    /* أبيض للأقسام */
+    --border-soft: rgba(195,158,106,.35);
 }
 
 
@@ -26,20 +26,13 @@
 body {
     margin: 0;
     padding: 0;
-    /* التعديل هنا: من ألوان السماء إلى ألوان الرمال الدافئة 🏖️ */
-    background:
-  radial-gradient(circle at top, rgba(195,158,106,0.08), transparent 40%),
-  linear-gradient(180deg, #0b1320 0%, #050a14 100%);
-    background-attachment: fixed;
+    background-color: #050a14; /* أسود بحري */
     color: var(--light-text);
     padding-bottom: 90px;
     direction: rtl;
     text-align: right;
-    font-size: 16px;
+    font-family: 'Cairo', sans-serif;
 }
-
-
-
 
 /* ================================================= */
 /* 📱 2. الشريط العلوي والبحث (Header & Search) */
@@ -108,19 +101,33 @@ header img {
     display: none;
 }
 
-/* 💠 بطاقة القسم الصغير */
+/* 💠 بطاقة القسم – نسخة متوافقة بدون تضارب */
 .sec-card {
-    flex: 0 0 auto;         /* منع انكماش البطاقة لضمان ظهورها عرضياً */
+    flex: 0 0 auto;
     width: 100px;
     height: 130px;
-    border-radius: 15px;
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
+    background: var(--surface);           /* أبيض واضح */
+    border-radius: 18px;
+    border: 2px solid #e6e6e6;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* ✨ الحالة النشطة */
+.sec-card.active {
+    border: 3px solid var(--gold);
+    transform: scale(1.05);
+    box-shadow: 0 16px 35px rgba(0,0,0,0.45);
+}
+
+/* 📝 اسم القسم */
+.sec-name {
+    color: #222;
+    font-weight: 700;
 }
 
 
@@ -191,7 +198,7 @@ header img {
     position: relative;
     padding-bottom: 10px;
     margin: 15px auto;
-}
+}8
 .card:hover {
     transform: translateY(-6px) scale(1.01);
     box-shadow: 0 30px 60px rgba(0,0,0,0.8);
