@@ -185,6 +185,7 @@ box-shadow:
     0 30px 60px rgba(0,0,0,0.7),  
     inset 0 0 0 1px rgba(255,255,255,0.04);
 
+  max-width: 95%;
 }
 
 /* إطار ذهبي داخلي أنيق */
@@ -248,16 +249,17 @@ color: #fdf5e6 !important; /* لون رملي فاتح ليبرز فوق الخ�
 line-height: 1.5;
 text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* ظل خفيف خلف النص للوضوح */
 }
-
-/* 💰 تنسيق السعر (لون الذهب 🏴‍☠️) */
+/* 💰 تنسيق السعر */
 .card .price {
-margin: 10px 10px;
-font-size: 1.3rem;
-font-weight: 800;
-color: #ffd700 !important; /* لون ذهبي مشرق ✨ */
-display: flex;
-align-items: center;
-gap: 5px;
+  margin: 10px 10px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #ffd700 !important;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6); /* ← هنا */
 }
 
 /* 🏆 شارة الأكثر مبيعاً */
@@ -915,4 +917,12 @@ body {
 #sections,
 #cartItems {
   scroll-behavior: smooth;
+}
+/* ========================= */
+/* 📱 Mobile App Touch Feel */
+/* ========================= */
+button, 
+.sec-card, 
+.card {
+  -webkit-tap-highlight-color: transparent;
 }
