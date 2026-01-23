@@ -1,39 +1,38 @@
-/* ================================================= /
-/ 🌙 1. الألوان والمتغيرات العامة (لدعم الوضع الداكن) /
-/ ================================================= /
+/* ================================================= */
+/* 🌙 1. الألوان والمتغيرات العامة (لدعم الوضع الداكن) */
+/* ================================================= */
 :root {
-/ الهوية البحرية /
---gold: #c39e6a;        / ذهبي رملي فخم /
---old-brown: #0b1d33;  / كحلي بحري /
---light-text: #f2f2f2; / نص فاتح /
---muted-text: #cfcfcf; / نص ثانوي /
---red: #c62828;        / تنبيهات */
+    /* الهوية البحرية */
+    --gold: #c39e6a;
+    --old-brown: #0b1d33;
+    --light-text: #f2f2f2;
+    --muted-text: #cfcfcf;
+    --red: #c62828;
 
-/* الخلفيات */  
---header-bg: #004aad;  /* أزرق الهيدر */  
---card-dark: #0b1320;  /* بطاقات */  
---surface: #ffffff;    /* أبيض للأقسام */  
---border-soft: rgba(195,158,106,.35);  
---border-color: rgba(195,158,106,.35);
-
---search-bg: #ffffff;
---card-bg-dark: #0b1320;
+    /* الخلفيات */
+    --header-bg: #004aad;
+    --card-dark: #0b1320;
+    --surface: #ffffff;
+    --border-soft: rgba(195,158,106,.35);
+    --border-color: rgba(195,158,106,.35);
+    --search-bg: #ffffff;
+    --card-bg-dark: #0b1320;
 }
 
-{
-box-sizing: border-box;
-font-family: 'Cairo', sans-serif;
-transition: all 0.2s ease-out;
+* {
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+    transition: all 0.2s ease-out;
 }
+
 body {
-margin: 0;
-padding: 0;
-background-color: #050a14; /* أسود بحري */
-color: var(--light-text);
-padding-bottom: 90px;
-direction: rtl;
-text-align: right;
-font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #050a14;
+    color: var(--light-text);
+    padding-bottom: 90px;
+    direction: rtl;
+    text-align: right;
 }
 
 
