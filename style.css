@@ -208,41 +208,6 @@ box-shadow:
 /* 📦 الكرت الأفقي (باقي المنتجات) */
 /* =============================== */
 
-.card.horizontal img {
-    width: 90px;
-    height: 90px;
-    border-radius: 12px;
-    flex-shrink: 0;
-}
-
-.card.horizontal h3 {
-    font-size: 1rem;
-    margin: 0 0 4px;
-}
-
-.card.horizontal p {
-    font-size: 0.85rem;
-    margin: 0;
-    opacity: 0.85;
-}
-
-.card.horizontal .price {
-    font-size: 1rem;
-    margin-top: 6px;
-}
-
-.card.horizontal .add-btn {
-    margin-top: 6px;
-    width: 100%;
-}
-
-/* 📱 تحسين للجوال */
-@media (max-width: 480px) {
-    .card.horizontal img {
-        width: 80px;
-        height: 80px;
-    }
-}
 /* إطار ذهبي داخلي أنيق */
 .card::before {
 content: "";
