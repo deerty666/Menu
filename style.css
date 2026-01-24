@@ -17,15 +17,17 @@
 --border-color: #004aad; /* حدود زرقاء */
 
 }
-
-{
-box-sizing: border-box;
-font-family: 'Cairo', sans-serif;
-transition: all 0.2s ease-out; /* حركة سلسة للمتغيرات */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Cairo', sans-serif;
+  transition: all 0.2s ease-out;
+}
 body {
 margin: 0;
 padding: 0;
-/ التعديل هنا: من ألوان السماء إلى ألوان الرمال الدافئة 🏖️ */
+/* التعديل هنا: من ألوان السماء إلى ألوان الرمال الدافئة 🏖️ */
 background: linear-gradient(180deg, #fdf5e6 0%, #eee8aa 100%);
 background-attachment: fixed;
 color: var(--light-text);
@@ -36,9 +38,9 @@ font-size: 16px;
 }
 
 
-/* ================================================= /
-/ 📱 2. الشريط العلوي والبحث (Header & Search) /
-/ ================================================= */
+/* ================================================= */
+/* 📱 2. الشريط العلوي والبحث (Header & Search) */
+/* ================================================= */
 header {
 background: var(--header-bg);
 padding: 10px 15px;
@@ -120,7 +122,9 @@ box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 
 /* ✨ تأثير الفرع المختار (النشط) */
 .sec-card.active {
-border: 2px solid var(--gold); 🔵
+.sec-card.active {
+  border: 2px solid var(--gold); /* 🔵 */
+}
 background-color: #e1f5fe; /* لون أزرق فاتح جداً */
 transform: scale(1.02);    /* تكبير بسيط بدلاً من الارتفاع للأعلى */
 }
@@ -501,8 +505,8 @@ justify-content: space-between;
 padding: 5px 15px; /* 🔥 تقليل الحواف */
 border-top: 1px solid var(--border-color);
 border-bottom: 1px solid var(--border-color);
-gap: 6px; / 🔥 تقليل الفجوة /
-flex-shrink: 0; / منع الانكماش */
+gap: 6px; /* 🔥 تقليل الفجوة */
+flex-shrink: 0; /* منع الانكماش */
 }
 
 .delivery-options-container input[type="radio"] {
