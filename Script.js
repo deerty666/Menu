@@ -26,7 +26,7 @@ if (urlParams.has('branch')) {
 const currentBranch = BRANCH_CONFIG[currentBranchId] || BRANCH_CONFIG['branch1'];
 document.title = `قائمة سحايب ديرتي - فرع ${currentBranch.name}`; // تحديث عنوان الصفحة باسم الفرع
 
-/* ====== بيانات المنيو - تم تحديث جميع مسارات الصور إلى صيغة WEBP وباسم قصير (مثال: /Dirty55/sh01.webp) ====== */
+/* ====== بيانات المنيو - تم تحديث جميع مسارات الصور إلى صيغة WEBP وباسم قصير (مثال: sh01.webp) ====== */
 const menuData = [
     // 1. القسم الجديد: الكل
     { 
@@ -68,7 +68,7 @@ function processMenuData(data) {
     if (bestSellers.length > 0) {
         let bestSellerSection = {
             section: "الأكثر مبيعاً 🏆", 
-            sectionImg: "/Dirty55/best_seller_icon.webp", 
+            sectionImg: "best_seller_icon.webp", 
             items: bestSellers,
             sectionAvailableIn: ['branch1', 'branch2', 'branch3'] 
         };
@@ -705,7 +705,7 @@ sendWhatsapp.addEventListener('click', () => {
 
     const deliveryType = document.querySelector('input[name="deliveryType"]:checked')?.value;
     // 📍 متغيرات رسائل الواتساب
-    const lines=['طلب جديد من مطاعم سحايب ديرتي:'];
+    const lines=['طلب جديد من مطاعم :'];
     let subtotal = 0;
 
     cart.forEach(it=>{
