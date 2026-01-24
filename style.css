@@ -20,10 +20,10 @@
 
 }
 
-{
-box-sizing: border-box;
-font-family: 'Cairo', sans-serif;
-transition: all 0.2s ease-out;
+* {
+  box-sizing: border-box;
+  font-family: 'Cairo', sans-serif;
+  transition: all 0.2s ease-out;
 }
 
 
@@ -873,10 +873,10 @@ transition: background 0.2s;
 .ios-install-banner button:hover {
 background: #a07c4c;
 }
-/* ================================================= /
-/ 📱 12. لمسات iOS & Android (Enhancements) /
-/ ================================================= /
-/ iOS Tap Effect */
+/* ================================================= */
+/* 📱 12. لمسات iOS & Android (Enhancements) */
+/* ================================================= */
+/* iOS Tap Effect */
 button,
 .sec-card,
 .card {
@@ -914,14 +914,14 @@ padding-bottom: calc(90px + env(safe-area-inset-bottom));
 #cartBtn {
 bottom: calc(20px + env(safe-area-inset-bottom));
 }
-/* Smooth Native Scrolling /
+/* Smooth Native Scrolling */
 #sections,
 #cartItems {
 scroll-behavior: smooth;
 }
-/ ========================= /
-/ 📱 Mobile App Touch Feel /
-/ ========================= */
+/* ========================= */
+/* 📱 Mobile App Touch Feel */
+/* ========================= */
 button,
 .sec-card,
 .card {
