@@ -1,375 +1,210 @@
-<!DOCTYPE html>  <html lang="ar" dir="rtl">  
-<head>  
-<meta charset="utf-8" />  
-<meta name="viewport" content="width=device-width,initial-scale=1" />  
-<title> مطاعم الجنوب للأسماك </title>  
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">  <link rel="manifest" href="manifest.json">  
-<meta name="theme-color" content="#1A1512">   <link rel="stylesheet" href="style.css">   <style>  
-    /* 🛠️ تحسينات الوضوح الشاملة والنهائية للسلة والنافذة */  
-  
-/* 1. إجبار جميع النصوص والعناصر داخل درج السلة على اللون الأبيض ⚪ */  
-/* علامة النجمة * تعني "كل شيء" بداخل السلة */  
-#cartDrawer, #cartDrawer * {  
-    color: #ffffff !important;  
-}  
-  
-/* 2. تنسيق خاص لزر الإغلاق (X) لضمان ظهوره ✖️ */  
-#closeCartBtn {  
-    color: #ffffff !important; /* لون أبيض */  
-    opacity: 1 !important;     /* إلغاء أي شفافية قديمة */  
-    font-size: 1.8rem;         /* تكبير الزر قليلاً */  
-}  
-  
-/* 3. توضيح نصوص خيارات التوصيل بداخل السلة 🚚 */  
-.delivery-option span, .cost {  
-     color: #ffffff !important;  
-}  
-  
-/* 4. تعديل نصوص النافذة المنبثقة (خارج السلة) تبقى كما هي */  
-.modal-content h3 {  
-    color: #004aad !important; /* أزرق داكن للعنوان */  
-}  
-#itemNote {  
-    color: #000000 !important; /* نص الملاحظات أسود */  
-}  
-  
-/* تحويل "إرسال عبر واتساب" إلى زر حقيقي 🟢 */  
-#sendWhatsapp {  
-    background-color: #25D366 !important; /* لون الواتساب الأخضر */  
-    color: #ffffff !important;            /* نص أبيض ناصع */  
-    padding: 12px 25px;                   /* مساحة داخلية لتعطي شكل الزر */  
-    border-radius: 50px;                  /* حواف دائرية أنيقة */  
-    display: inline-block;                /* لكي يأخذ مساحة الصندوق */  
-    text-decoration: none;                /* إزالة الخط تحت النص */  
-    font-weight: bold;                    /* خط عريض */  
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* ظل خفيف ليعطي عمق */  
-}  
-  
-/* تحسين نافذة الإضافات والخيارات 🍚 */  
-#optionModal .modal-content {  
-    background-color: #ffffff !important; /* خلفية بيضاء بالكامل */  
-    color: #1A1512 !important;            /* نص داكن جداً للوضوح */  
-    border: 3px solid #004aad;            /* إطار أزرق ملكي حول النافذة */  
-}  
-  
-/* جعل أزرار الخيارات (مثل نوع الأرز) واضحة 🔘 */  
-.opt-btn {  
-    background-color: #004aad !important; /* خلفية زرقاء للأزرار */  
-    color: #ffffff !important;            /* نص أبيض للأزرار */  
-    border: none;  
-    padding: 8px 15px;  
-    margin: 4px;  
-    border-radius: 8px;  
-}/* 1. الحالة الأساسية (قبل الاختيار): شفافة وبسيطة 🌫️ */  
-.delivery-option {  
-    background-color: rgba(255, 255, 255, 0.1) !important; /* خلفية شفافة جداً لتحديد المكان */  
-    color: #ffffff !important;           /* نص أبيض ناصع */  
-    border: 1px solid #ffffff !important; /* إطار أبيض خفيف */  
-    transition: all 0.3s ease;           /* حركة ناعمة عند التغيير */  
-}  
-  
-/* 2. الحالة النشطة (عندما يختار العميل): تظهر الخلفية البيضاء ⚪✅ */  
-input[type="radio"]:checked + .delivery-option {  
-    background-color: #ffffff !important; /* هنا تظهر الخلفية البيضاء فقط */  
-    color: #004aad !important;           /* يتحول النص للأزرق الداكن ليظهر بوضوح */  
-    border: 2px solid #25D366 !important; /* إطار أخضر يؤكد الاختيار */  
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* إضاءة خفيفة حول الزر */  
-}  
-#installAppBtn, #iosHelpBtn {  
-    color: #ffffff !important;            /* نص أبيض ناصع للتباين العالي ⚪ */  
-    background-color: rgba(255, 255, 255, 0.2) !important; /* خلفية بيضاء شفافة تبرز الزر 🌫️ */  
-    padding: 8px 16px;                    /* مساحة داخلية تجعل شكل الزر أوضح 📏 */  
-    border-radius: 50px;                  /* حواف دائرية انسيابية 🫧 */  
-    border: 1px solid #ffffff !important; /* إطار أبيض يحدد مكان الزر 🖼️ */  
-    font-weight: bold;                    /* خط عريض لسهولة القراءة ✍️ */  
-    font-size: 0.9rem;                    /* حجم خط مناسب لشاشات الجوال 📐 */  
-    margin: 5px;                          /* مسافة بسيطة حول الأزرار ↔️ */  
-}  
-  
-  
-    :root {  
-    /* ألوان الهوية البحرية الجديدة 🌊 */  
-    --gold: #004aad;         /* الأزرق الملكي للأزرار 🔵 */  
-    --old-brown: #002f6c;   /* الكحلي الداكن للعناوين ⚓ */  
-    --light-text: #1A1512;  /* نص داكن جداً للوضوح فوق الأبيض 🌑 */  
-    --card-bg-dark: #ffffff; /* خلفية البيضاء للبطاقات ⚪ */  
-}  
-  
-body {  
-    background-color: #f0faff; /* خلفية سماوية فاتحة ومريحة للعين */  
-    color: var(--light-text);  /* إجبار النصوص على الظهور باللون الداكن */  
-}  
-/* 🍽️ التنسيق الشامل للبطاقة: الحجم، اللون، والمظهر التراثي ⚓ */  
-/* 🍽️ التنسيق النهائي لتوحيد حجم البطاقات تماماً ⚓ */  
-.card {  
-    background: repeating-linear-gradient(  
-        to right,  
-        #5d4037,        /* لون الخشب الأساسي */  
-        #5d4037 40px,     
-        #4e342e 41px    /* فواصل الألواح الخشبية */  
-    ) !important;  
-      
-    border: 6px double #c39e6a !important; /* إطار الحبل المجدول 🧶 */  
-    border-radius: 12px;  
-    margin: 15px auto;  
-    padding: 12px;  
-      
-    /* 🏗️ ترتيب العناصر داخلياً */  
-    display: flex;  
-    flex-direction: column;  
-    justify-content: space-between; /* دفع السعر والزر للأسفل دائماً ⬇️ */  
-      
-    /* 📐 الحل الأكيد لتوحيد الأبعاد: */  
-    width: 92%;            /* 📏 توحيد العرض لجميع البطاقات */  
-    max-width: 380px;      /* منع التمدد الزائد في الشاشات الواسعة */  
-    height: 480px;         /* ❗ طول ثابت وأكيد لجعل البطاقات متساوية تماماً */  
-      
-    text-align: center;  
-    box-shadow: 0 8px 15px rgba(0,0,0,0.3);  
-    overflow: hidden;      /* 🛡️ حماية التصميم إذا كان النص طويلاً جداً */  
-}  
-  
-/* 📝 تنسيق النصوص لزيادة الوضوح فوق الخشب 🐚 */  
-.card h3, .card p {  
-    color: #fdf5e6 !important; /* لون رملي فاتح */  
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.9); /* ظل داكن خلف النص ليبرز بقوة */  
-    margin: 10px 5px;  
-}  
-  
-/* 📝 أضف .item-description إلى هذه القائمة */  
-.card h3, .card p, .item-description {  
-    color: #fdf5e6 !important;   
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.9);  
-    flex-grow: 1; /* ⬅️ أضف هذا السطر هنا */  
-}  
-  
-/* 🖼️ ضبط حجم الصور بداخل البطاقة */  
-.card img {  
-    width: 100%;  
-    height: 140px;  
-    object-fit: cover;  
-    border-radius: 8px;  
-}  
-  
-  
-.header-logo-container {  
-    display: flex;  
-    align-items: center; /* لموازنة الشعار والأيقونة عمودياً ⚖️ */  
-    gap: 15px;           /* مسافة كافية بينهما ↔️ */  
-}  
-  
-.snap-header-link i {  
-    color: #FFFC00;      /* لون سناب شات الأصفر 👻 */  
-    font-size: 2rem;     /* حجم بارز للأيقونة 📏 */  
-    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.4)); /* ظل لزيادة الوضوح */  
-}  
-  
-/* ====== تنسيق النافذة المنبثقة للإشعارات (جديد) ====== */  
-  
-#notificationPrompt {  
-    /* إخفاء افتراضياً، وسيتم إظهارها عبر JavaScript */  
-    display: none;   
-    position: fixed;  
-    top: 0;  
-    left: 0;  
-    width: 100%;  
-    height: 100%;  
-    background: rgba(0, 0, 0, 0.7);  
-    z-index: 1000;  
-    justify-content: center;  
-    align-items: center;  
-    padding: 20px;  
-    box-sizing: border-box;  
-}  
-  
-.notification-content {  
-    background: var(--card-bg-dark);  
-    color: var(--light-text);  
-    padding: 30px;  
-    border-radius: 12px;  
-    max-width: 350px;  
-    width: 90%;  
-    text-align: center;  
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);  
-    animation: fadeIn 0.3s ease-out;  
-    border: 1px solid var(--gold);  
-}  
-  
-.notification-content h3 {  
-    color: var(--gold);  
-    margin-top: 0;  
-    font-size: 1.5rem;  
-    font-weight: 700;  
-}  
-  
-.notification-content p {  
-    margin-bottom: 25px;  
-    line-height: 1.5;  
-}  
-  
-.notification-content button {  
-    padding: 12px 20px;  
-    border: none;  
-    border-radius: 8px;  
-    font-weight: 700;  
-    cursor: pointer;  
-    margin: 5px;  
-    transition: background 0.2s;  
-    width: 100%; /* جعل الأزرار بعرض كامل للموبايل */  
-}  
-  
-#allowNotifications {  
-    background-color: var(--gold);  
-    color: var(--old-brown);  
-}  
-  
-#allowNotifications:hover {  
-    background-color: #a07c4c;  
-}  
-  
-#denyNotifications {  
-    background-color: #333;  
-    color: var(--light-text);  
-}  
-  
-#denyNotifications:hover {  
-    background-color: #555;  
-}  
-  
-/* لكي لا تتضارب الأزرار في الهواتف الصغيرة */  
-@media (min-width: 480px) {  
-    .notification-content button {  
-        width: 45%;   
-    }  
-}  
-  
-@keyframes fadeIn {  
-    from { opacity: 0; transform: scale(0.9); }  
-    to { opacity: 1; transform: scale(1); }  
-}  
-/* تنسيق البطاقة الترحيبية الجديدة 🌊 */  
-.welcome-card {  
-    margin: 20px auto;  
-    width: 92%;  
-    background-color: #ffffff; /* خلفية بيضاء للبطاقة */  
-    border-radius: 15px; /* حواف منحنية */  
-    overflow: hidden; /* لقص أطراف الصورة لتناسب المنحنى */  
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* ظل خفيف */  
-    text-align: center;  
-}  
-  
-.welcome-card img {  
-    width: 100%;  
-    height: 250px; /* ارتفاع مناسب للصورة */  
-    object-fit: cover; /* يمنع تمدد الصورة ويحافظ على جودتها */  
-}  
-  
-.welcome-content {  
-    padding: 20px;  
-}  
-  
-.welcome-content h2 {  
-    color: #004aad; /* اللون الأزرق الملكي للعناوين */  
-    margin-top: 0;  
-    font-size: 1.4rem;  
-}  
-  
-.welcome-content p {  
-    color: #333; /* لون نص داكن لسهولة القراءة */  
-    font-size: 1rem;  
-    line-height: 1.6;  
-}  
-  
-</style>  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title> مطاعم ومطابخ سحايب ديرتي</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
-</head>  
-<body>  <header>  
-  <button id="installAppBtn" style="display:none;">تثبيت التطبيق 📲</button>  <button id="iosHelpBtn" style="display:none;" class="ios-btn">  
-    طريقة التثبيت 🍏  
-</button>    <div class="header-logo-container">  
-      <img src="logo-bg11.png" alt="شعار المطعم" onerror="this.style.opacity=0.25; this.style.height='50px'">  <a href="https://www.snapchat.com/add/YOUR_USER_NAME" target="_blank" class="snap-header-link">  
-      <i class="fab fa-snapchat"></i>  
-  </a>
+<link rel="manifest" href="/Dirty55/manifest.json">
+<meta name="theme-color" content="#1A1512"> 
 
-  </div>  
-</header>  <div class="welcome-card">  
-    <img src="1000365830.jpg" alt="أجواء مطعم الجنوب">  
-    <div class="welcome-content">  
-        <h2>مرحباً بكم في مطعم الجنوب للأسماك 🐟</h2>  
-        <p>استمتعوا بأشهى المأكولات البحرية الطازجة في أجوائنا الشعبية الأصيلة. نسعد بلقائكم!</p>  
-    </div>  
-</div>  <input type="search" id="searchBar" placeholder="ابحث عن وجبة سريعة أو صنف..." aria-label="البحث في القائمة">  <div id="sections" aria-hidden="false"></div>  
-<main id="menuList" role="list"></main>  <div id="cartOverlay"></div>  
-<div id="cartDrawer" aria-hidden="true">  
-  <div class="cart-header">  
-    <div>سلة الطلبات</div>  
-    <button id="closeCartBtn" title="إغلاق">✖</button>  
-  </div>  
-  <div id="cartItems"></div>  
-  <div id="cartSuggestions"></div>  
-  <div class="delivery-options-container">  
-    <input type="radio" id="deliveryTypePickup" name="deliveryType" value="pickup" checked>  
-    <label for="deliveryTypePickup" class="delivery-option">  
-      <span>استلام</span>  
-    </label>  <input type="radio" id="deliveryTypeDelivery" name="deliveryType" value="delivery">  
-<label for="deliveryTypeDelivery" class="delivery-option">  
-  <span>  
-    توصيل  
-    <span class="cost">5 ريال</span>   
-  </span>  
-</label>
+<link rel="stylesheet" href="style.css"> 
 
-  </div>    <div class="delivery-options-container" style="padding: 10px;">  
-        <button id="getLocationBtn" type="button" class="action-btn" style="background-color: #38761D; border: none; font-size: 0.9em; margin: 10px 0;">  
-            📍 تحديد موقع التوصيل الحالي  
-        </button>  
-        <p id="locationStatus" style="font-size: 0.8em; color: #fff; text-align: center; margin: 5px 0 0 0;"></p>  
-    </div>  
-    <div style="padding: 10px 20px; border-top: 1px solid var(--border-color); margin-top: 10px;">  
-        <label for="manualAddress" style="font-size: 0.9em; margin-bottom: 5px; display: block; color: var(--gold); font-weight: 700;">  
-            أو أدخل العنوان يدوياً هنا:  
-        </label>  
-        <textarea id="manualAddress"   
-                  placeholder="اسم الشارع، الحي، رقم المنزل، ملاحظات التوصيل..."   
-                  rows="2"   
-                  style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border-color); background-color: var(--search-bg); color: var(--light-text); font-size: 1em;"></textarea>  
-    </div>  
-    <div class="cart-footer">  
-    <div id="totalBreakdown">  
-      </div>  
-    <div style="display:flex;gap:8px;">  
-      <button id="sendWhatsapp" class="primary-btn" style="flex:1;">إرسال عبر واتساب</button>  
-      <button id="clearCart" class="danger-btn" style="width:120px;">مسح السلة</button>  
-    </div>  
-  </div>  
-</div>  <!-- 🔥 Premium Cart Button -->  <button id="cartBtn" aria-label="عرض السلة">  
-  <svg viewBox="0 0 24 24" class="cart-icon">  
-    <path d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.44C7.52 16.37 8 17 8.7 17H19v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12L10.1 13h6.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 21 4H7z"/>  
-  </svg>  
-  <span id="cartCount">0</span>  
-</button>  <div id="optionModal">  
-  <div class="modal-content">  
-    <h3 id="modalTitle"></h3>  
-    <div id="modalOptions"></div>  <textarea id="itemNote" placeholder="ملاحظات خاصة على هذا الصنف (مثل: بدون ملح، فلفل خفيف)..." rows="3"></textarea>  
+<style>
+/* ====== تنسيق النافذة المنبثقة للإشعارات (جديد) ====== */
+
+#notificationPrompt {
+    /* إخفاء افتراضياً، وسيتم إظهارها عبر JavaScript */
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.notification-content {
+    background: var(--card-bg-dark);
+    color: var(--light-text);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 350px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s ease-out;
+    border: 1px solid var(--gold);
+}
+
+.notification-content h3 {
+    color: var(--gold);
+    margin-top: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.notification-content p {
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.notification-content button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 5px;
+    transition: background 0.2s;
+    width: 100%; /* جعل الأزرار بعرض كامل للموبايل */
+}
+
+#allowNotifications {
+    background-color: var(--gold);
+    color: var(--old-brown);
+}
+
+#allowNotifications:hover {
+    background-color: #a07c4c;
+}
+
+#denyNotifications {
+    background-color: #333;
+    color: var(--light-text);
+}
+
+#denyNotifications:hover {
+    background-color: #555;
+}
+
+/* لكي لا تتضارب الأزرار في الهواتف الصغيرة */
+@media (min-width: 480px) {
+    .notification-content button {
+        width: 45%; 
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <button id="installAppBtn" style="display:none;">تثبيت التطبيق 📲</button>
+ 
+<button id="iosHelpBtn" style="display:none;" class="ios-btn">
+    طريقة التثبيت 🍏
+</button>
+ 
+  <div><img src="/Dirty55/logo-bg.png" alt="شعار المطعم" onerror="this.style.opacity=0.25; this.style.height='50px'"></div>
+</header>
+
+<input type="search" id="searchBar" placeholder="ابحث عن وجبة سريعة أو صنف..." aria-label="البحث في القائمة">
+
+<div id="sections" aria-hidden="false"></div>
+<main id="menuList" role="list"></main>
+
+<div id="cartOverlay"></div>
+<div id="cartDrawer" aria-hidden="true">
+  <div class="cart-header">
+    <div>سلة الطلبات</div>
+    <button id="closeCartBtn" title="إغلاق">✖</button>
+  </div>
+  <div id="cartItems"></div>
+  <div id="cartSuggestions"></div>
+  <div class="delivery-options-container">
+    <input type="radio" id="deliveryTypePickup" name="deliveryType" value="pickup" checked>
+    <label for="deliveryTypePickup" class="delivery-option">
+      <span>استلام</span>
+    </label>
+
+    <input type="radio" id="deliveryTypeDelivery" name="deliveryType" value="delivery">
+    <label for="deliveryTypeDelivery" class="delivery-option">
+      <span>
+        توصيل
+        <span class="cost">5 ريال</span> 
+      </span>
+    </label>
+  </div>
+    
+  <div class="delivery-options-container" style="padding: 10px;">
+        <button id="getLocationBtn" type="button" class="action-btn" style="background-color: #38761D; border: none; font-size: 0.9em; margin: 10px 0;">
+            📍 تحديد موقع التوصيل الحالي
+        </button>
+        <p id="locationStatus" style="font-size: 0.8em; color: #fff; text-align: center; margin: 5px 0 0 0;"></p>
+    </div>
+    <div style="padding: 10px 20px; border-top: 1px solid var(--border-color); margin-top: 10px;">
+        <label for="manualAddress" style="font-size: 0.9em; margin-bottom: 5px; display: block; color: var(--gold); font-weight: 700;">
+            أو أدخل العنوان يدوياً هنا:
+        </label>
+        <textarea id="manualAddress" 
+                  placeholder="اسم الشارع، الحي، رقم المنزل، ملاحظات التوصيل..." 
+                  rows="2" 
+                  style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border-color); background-color: var(--search-bg); color: var(--light-text); font-size: 1em;"></textarea>
+    </div>
+    <div class="cart-footer">
+    <div id="totalBreakdown">
+      </div>
+    <div style="display:flex;gap:8px;">
+      <button id="sendWhatsapp" class="primary-btn" style="flex:1;">إرسال عبر واتساب</button>
+      <button id="clearCart" class="danger-btn" style="width:120px;">مسح السلة</button>
+    </div>
+  </div>
+</div>
+
+<!-- 🔥 Premium Cart Button -->
+<button id="cartBtn" aria-label="عرض السلة">
+  <svg viewBox="0 0 24 24" class="cart-icon">
+    <path d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.44C7.52 16.37 8 17 8.7 17H19v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12L10.1 13h6.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 21 4H7z"/>
+  </svg>
+  <span id="cartCount">0</span>
+</button>
+
+<div id="optionModal">
+  <div class="modal-content">
+    <h3 id="modalTitle"></h3>
+    <div id="modalOptions"></div>
+    
+    <textarea id="itemNote" placeholder="ملاحظات خاصة على هذا الصنف (مثل: بدون ملح، فلفل خفيف)..." rows="3"></textarea>
+    
+    <button id="modalConfirm" class="primary-btn">تأكيد</button>
+  </div>
+</div>
+
+<div id="notificationPrompt">
+    <div class="notification-content">
+        <h3>هل تريد أن يصلك جديد عروضنا؟ 📢</h3>
+        <p>قم بتفعيل الإشعارات لتكون أول من يعلم عند إضافة أطباق جديدة أو خصومات مميزة!</p>
+        <button id="allowNotifications">نعم، أريد ذلك</button>
+        <button id="denyNotifications">لا شكراً</button>
+        
+    </div>
+</div>
+<div id="iosInstallBanner" class="ios-install-banner">
+  <h3 style="color: var(--gold); margin-top:0;">📱 تثبيت التطبيق على الآيفون</h3>
   
-<button id="modalConfirm" class="primary-btn">تأكيد</button>
+  <ul class="ios-steps">
+    <li>1️⃣ اضغط على زر <strong>المشاركة</strong> <span class="ios-icon">⏏️</span> في الأسفل.</li>
+    <li>2️⃣ انزل بالقائمة واختر <strong>"إضافة إلى الصفحة الرئيسية"</strong> <span class="ios-icon">➕</span>.</li>
+    <li>3️⃣ اضغط <strong>"إضافة"</strong> في الزاوية العلوية.</li>
+  </ul>
 
-  </div>  
-</div>  <div id="notificationPrompt">  
-    <div class="notification-content">  
-        <h3>هل تريد أن يصلك جديد عروضنا؟ 📢</h3>  
-        <p>قم بتفعيل الإشعارات لتكون أول من يعلم عند إضافة أطباق جديدة أو خصومات مميزة!</p>  
-        <button id="allowNotifications">نعم، أريد ذلك</button>  
-        <button id="denyNotifications">لا شكراً</button>  </div>
+  <button onclick="closeIosBanner()">مفهوم 👍</button>
+</div>
+<script src="Script.js?v=3.1" defer></script>
 
-</div>  
-<div id="iosInstallBanner" class="ios-install-banner">  
-  <h3 style="color: var(--gold); margin-top:0;">📱 تثبيت التطبيق على الآيفون</h3>    <ul class="ios-steps">  
-    <li>1️⃣ اضغط على زر <strong>المشاركة</strong> <span class="ios-icon">⏏️</span> في الأسفل.</li>  
-    <li>2️⃣ انزل بالقائمة واختر <strong>"إضافة إلى الصفحة الرئيسية"</strong> <span class="ios-icon">➕</span>.</li>  
-    <li>3️⃣ اضغط <strong>"إضافة"</strong> في الزاوية العلوية.</li>  
-  </ul>  <button onclick="closeIosBanner()">مفهوم 👍</button>
+</body>
+</html>
 
-</div>  
-<script src="Script.js?v=3.1" defer></script>  </body>  
-</html>  
+</html>
