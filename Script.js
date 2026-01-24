@@ -1,27 +1,26 @@
 /* ====== بيانات الفروع - يرجى تعديل أرقام الواتساب والأسماء حسب الرغبة ====== */
 const BRANCH_CONFIG = {
-'branch1': {
-whatsapp: '96655054112', // ⭐️ رقم واتساب فرع الرياض (كمثال)
-name: 'نجران الجوافة', // اسم الفرع في الرسائل وعنوان الصفحة
-deliveryFee: 5,
-},
-'branch3': {
-whatsapp: '96655054112', // ⚠️ يرجى تغيير رقم الواتساب لفرع مكة
-name: 'نجران طريق الرديف ',
-deliveryFee: 5,
-}
+  branch1: {
+    whatsapp: '96655054112',
+    name: 'نجران الجوافة',
+    deliveryFee: 5,
+  },
+  branch3: {
+    whatsapp: '96655054112',
+    name: 'نجران طريق الرديف',
+    deliveryFee: 5,
+  }
 };
 
-/* ====== متغير لتحديد الفرع الحالي من الرابط ====== */
-let currentBranchId = 'branch1'; // القيمة الافتراضية
+let currentBranchId = 'branch1';
 const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.has('branch')) {
-currentBranchId = urlParams.get('branch');
+  currentBranchId = urlParams.get('branch');
 }
-const currentBranch = BRANCH_CONFIG[currentBranchId] || BRANCH_CONFIG['branch1'];
-document.title = قائمة مطعم الجنوب للأسماك- فرع ${currentBranch.name}; // تحديث عنوان الصفحة باسم الفرع
 
-/* ====== بيانات المنيو - تم تحديث جميع مسارات الصور إلى صيغة WEBP وباسم قصير (مثال: /Dirty55/sh01.webp) ====== */
+const currentBranch = BRANCH_CONFIG[currentBranchId] || BRANCH_CONFIG.branch1;
+
+document.title = `قائمة مطعم الجنوب للأسماك - فرع ${currentBranch.name}`;/* ====== بيانات المنيو - تم تحديث جميع مسارات الصور إلى صيغة WEBP وباسم قصير (مثال: /Dirty55/sh01.webp) ====== */
 const menuData = [
 // 1. القسم الجديد: الكل
 {
@@ -342,36 +341,44 @@ let selectedOption = null;
 let selectedItemImage = null; // 🚀 NEW: لتخزين مرجع صورة المنتج المختار (للتأثير)
 
 /* ====== Render sections ====== */
-function renderSections(){
-sectionsEl.innerHTML = '';
-processedMenuData.forEach((sec,idx)=>{
-// منطق إخفاء القسم بالكامل
-if (sec.section !== "الكل" && sec.sectionAvailableIn && !sec.sectionAvailableIn.includes(currentBranchId)) {
-return; // يتم تخطي هذا القسم إذا لم يكن متوفراً في الفرع الحالي
+function renderSections() {
+  sectionsEl.innerHTML = '';
+
+  processedMenuData.forEach(sec => {
+
+    if (
+      sec.section !== "الكل" &&
+      sec.sectionAvailableIn &&
+      !sec.sectionAvailableIn.includes(currentBranchId)
+    ) return;
+
+    const sectionDisplayName =
+      sec.section === "الكل"
+        ? `فرع ${currentBranch.name}`
+        : sec.section;
+
+    const card = document.createElement('div');
+    card.className = 'sec-card';
+    card.innerHTML = `
+      <img src="${sec.sectionImg}" onerror="this.style.opacity=.35">
+      <div class="sec-name">${sectionDisplayName}</div>
+    `;
+
+    if (sec.section === currentSection) card.classList.add('active');
+
+    card.onclick = () => {
+      document.querySelectorAll('.sec-card').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      currentSection = sec.section;
+      renderMenu(currentSection);
+      searchBar.value = '';
+    };
+
+    sectionsEl.appendChild(card);
+  });
+
+  renderMenu(currentSection);
 }
-
-// تحديد اسم العرض: "فرع الرياض" لقسم "الكل" فقط، واسم القسم للأقسام الأخرى  
-    const sectionDisplayName = sec.section === "الكل" ? `فرع ${currentBranch.name}` : sec.section;  
-
-    const card = document.createElement('div');  
-    card.className = 'sec-card';  
-    card.innerHTML = `  
-        <img src="${sec.sectionImg}" alt="${sec.section}" onerror="this.style.opacity=.35">  
-        <div class="sec-name">${sectionDisplayName}</div>  
-    `;  
-
-    if(sec.section === currentSection) card.classList.add('active');   
-
-    card.onclick=()=>{  
-        document.querySelectorAll('.sec-card').forEach(c => c.classList.remove('active'));  
-        card.classList.add('active');  
-        currentSection = sec.section;  
-        renderMenu(currentSection);  
-        searchBar.value = '';   
-    };  
-    sectionsEl.appendChild(card);  
-});  
-renderMenu(currentSection);
 
 }
 
@@ -404,15 +411,23 @@ const filteredItems = branchFilteredItems.filter(item => {
     return item.name.toLowerCase().includes(normalizedSearch);  
 });  
 
-if(filteredItems.length === 0 && normalizedSearch.length > 0) {  
-    menuList.innerHTML = `<p style="text-align:center; padding: 20px; color: var(--light-text);">لا توجد نتائج بحث في قسم "${sectionName}" في فرع ${currentBranch.name}</p>`;  
-    return;  
-}  
+if (filteredItems.length === 0 && normalizedSearch.length > 0) {
+  menuList.innerHTML = `
+    <p style="text-align:center; padding:20px;">
+      لا توجد نتائج بحث في قسم "${sectionName}" في فرع ${currentBranch.name}
+    </p>
+  `;
+  return;
+}
 
-if (filteredItems.length === 0 && normalizedSearch.length === 0 && sectionName !== "الكل") {  
-    menuList.innerHTML = `<p style="text-align:center; padding: 20px; color: var(--light-text);">لا تتوفر وجبات في قسم "${sectionName}" حالياً في فرع ${currentBranch.name}.</p>`;  
-    return;  
-}  
+if (filteredItems.length === 0 && sectionName !== "الكل") {
+  menuList.innerHTML = `
+    <p style="text-align:center; padding:20px;">
+      لا تتوفر وجبات في هذا القسم حالياً
+    </p>
+  `;
+  return;
+}
 
 filteredItems.forEach(item=>{  
     const isAvailable = item.isAvailable !== false;   
@@ -583,7 +598,10 @@ delete obj.branchDiscounts;
 delete obj.isBestSeller;
 delete obj.availableIn;
 
-const key = obj.id + (obj.selectedOption?`-${obj.selectedOption.name}`:'') + (obj.note ? `-${obj.note}` : '');  
+const key =
+  obj.id +
+  (obj.selectedOption ? `-${obj.selectedOption.name}` : '') +
+  (obj.note ? `-${obj.note}` : '');  
 const found = cart.find(i=>i.key===key);  
 if(found) found.qty+=1;  
 else cart.push({...obj,key});  
