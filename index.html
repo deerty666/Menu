@@ -3,69 +3,54 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>مطاعم الجنوب للأسماك - اختيار الفرع</title>
+    <title>مطاعم ومطابخ سحايب ديرتي - اختيار الفرع</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
     
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#004aad"> 
+    <link rel="manifest" href="/Dirty55/manifest.json">
+    <meta name="theme-color" content="#1A1512"> 
     
     <style>
-        /* 🌊 تنسيق الجسم لتوسيط المحتوى بالكامل في منتصف الشاشة */
+        /* إضافة تنسيقات خاصة لمركزة المحتوى في صفحة اختيار الفرع */
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            margin: 0;
-            /* خلفية متدرجة تعكس الهوية البحرية الجديدة */
-            background: linear-gradient(to bottom, #ffffff 0%, #f0faff 100%);
-            background-attachment: fixed;
-            font-family: 'Cairo', sans-serif;
-            color: var(--light-text);
+            padding-top: 0;
         }
-
-        /* 🏠 حاوية اختيار الفرع بتأثير الزجاج المصنفر */
         .branch-selection-container {
             max-width: 400px;
             width: 90%;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.9); 
-            backdrop-filter: blur(10px); 
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 74, 173, 0.2); 
-            border: 2px solid var(--gold); /* إطار بلون أزرق بحري */
+            padding: 25px;
+            background: var(--card-bg-dark);
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
             text-align: center;
         }
-
         .branch-selection-container h1 {
-            color: var(--gold); 
-            font-size: 1.7rem;
+            color: var(--gold);
+            font-size: 1.6rem;
             margin-bottom: 25px;
             border-bottom: 2px solid var(--gold);
-            padding-bottom: 15px;
+            padding-bottom: 10px;
             font-weight: 800;
         }
-
-        /* ⚓ تنسيق الروابط (الأزرار) */
         .branch-link {
             display: block;
-            background: var(--gold); /* اللون الأزرق المعتمد في الهوية */
-            color: #ffffff; 
+            background: var(--gold);
+            color: var(--old-brown);
             text-decoration: none;
-            padding: 16px 20px;
+            padding: 15px 20px;
             margin-bottom: 15px;
-            border-radius: 50px; 
+            border-radius: 8px;
             font-weight: 800;
             font-size: 1.1rem;
-            transition: all 0.3s ease;
+            transition: background 0.2s, transform 0.1s;
         }
-
         .branch-link:hover {
-            background: #003580; /* لون أزرق أغمق عند التمرير */
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 74, 173, 0.3);
+            background: #a07c4c;
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -75,12 +60,17 @@
     <h1>اختر الفرع الأقرب إليك</h1>
 
     <a href="menu.html?branch=branch1" class="branch-link">
-        نجران الجوافة
+        لبن الاحمدية
+    </a>
+    
+    <a href="menu.html?branch=branch2" class="branch-link">
+        شمال الرياض مخرج ٦
     </a>
     
     <a href="menu.html?branch=branch3" class="branch-link">
-       نجران طريق الرديف
+        الروضه خالد بن الوليد
     </a>
+    
 </div>
 
 </body>
